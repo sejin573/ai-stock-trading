@@ -1,0 +1,6 @@
+.env
+__pycache__/
+.pytest_cache/
+.streamlit/
+*.pyc
+data/*.json
