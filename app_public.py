@@ -25,6 +25,7 @@ from utils.config import get_settings
 
 
 PUBLIC_RUNTIME_STATE_PATH = Path(__file__).resolve().parent / "data" / "public_runtime_state.json"
+PUBLIC_SEED_PATH = Path(__file__).resolve().parent / "public_data" / "portfolio_seed.json"
 KST = ZoneInfo("Asia/Seoul")
 
 
@@ -62,6 +63,17 @@ def load_public_runtime_state() -> dict[str, object]:
     return payload if isinstance(payload, dict) else {}
 
 
+def load_public_seed_payload() -> dict[str, object]:
+    if not PUBLIC_SEED_PATH.exists():
+        return {}
+
+    try:
+        payload = json.loads(PUBLIC_SEED_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    return payload if isinstance(payload, dict) else {}
+
+
 def save_public_runtime_state(state: dict[str, object]) -> None:
     PUBLIC_RUNTIME_STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
     PUBLIC_RUNTIME_STATE_PATH.write_text(
@@ -75,6 +87,7 @@ def get_public_cycle_config() -> dict[str, object]:
         "enabled": env_bool("PUBLIC_APP_ENABLE_AUTO_CYCLE", True),
         "refresh_seconds": max(3, env_int("PUBLIC_APP_REFRESH_SECONDS", 15)),
         "min_cycle_interval_seconds": max(10, env_int("PUBLIC_APP_MIN_CYCLE_INTERVAL_SECONDS", 30)),
+        "prefer_seed_data": env_bool("PUBLIC_APP_PREFER_SEED_DATA", True),
         "spotlight_symbol": env_text("PUBLIC_APP_SPOTLIGHT_SYMBOL", ""),
         "selected_market": str(os.getenv("PUBLIC_APP_SELECTED_MARKET", "전체")).strip() or "전체",
         "scan_pool_size": max(20, env_int("PUBLIC_APP_SCAN_POOL_SIZE", 60)),
@@ -181,6 +194,82 @@ def build_public_summary(active_positions_df: pd.DataFrame, trade_history_df: pd
         "realized_pnl": realized_pnl,
         "total_profit": total_profit,
         "cumulative_return_pct": cumulative_return_pct,
+    }
+
+
+def build_seed_positions_frame(seed_payload: dict[str, object]) -> pd.DataFrame:
+    position_rows = seed_payload.get("positions", [])
+    if not isinstance(position_rows, list) or not position_rows:
+        return pd.DataFrame(
+            columns=[
+                "id",
+                "symbol",
+                "name",
+                "market",
+                "quantity",
+                "entry_price",
+                "current_price",
+                "expected_return_pct",
+                "target_profit_pct",
+                "current_return_pct",
+                "auto_sell_enabled",
+                "created_at",
+            ]
+        )
+
+    positions_df = pd.DataFrame(position_rows).copy()
+    numeric_columns = [
+        "quantity",
+        "entry_price",
+        "current_price",
+        "expected_return_pct",
+        "target_profit_pct",
+        "current_return_pct",
+    ]
+    for column in numeric_columns:
+        if column in positions_df.columns:
+            positions_df[column] = pd.to_numeric(positions_df[column], errors="coerce").fillna(0.0)
+
+    if "auto_sell_enabled" in positions_df.columns:
+        positions_df["auto_sell_enabled"] = positions_df["auto_sell_enabled"].fillna(False).astype(bool)
+
+    return positions_df.sort_values(["current_return_pct", "target_profit_pct"], ascending=[False, False]).reset_index(drop=True)
+
+
+def build_seed_trade_history_df(seed_payload: dict[str, object]) -> pd.DataFrame:
+    trade_rows = seed_payload.get("trade_history", [])
+    if not isinstance(trade_rows, list) or not trade_rows:
+        return pd.DataFrame(
+            columns=[
+                "ordered_at",
+                "side",
+                "symbol",
+                "name",
+                "quantity",
+                "price",
+                "status",
+                "realized_pnl",
+                "realized_pnl_pct",
+            ]
+        )
+
+    trade_history_df = pd.DataFrame(trade_rows).copy()
+    numeric_columns = ["quantity", "price", "realized_pnl", "realized_pnl_pct"]
+    for column in numeric_columns:
+        if column in trade_history_df.columns:
+            trade_history_df[column] = pd.to_numeric(trade_history_df[column], errors="coerce").fillna(0.0)
+
+    trade_history_df["ordered_at"] = pd.to_datetime(trade_history_df["ordered_at"], errors="coerce")
+    return trade_history_df.sort_values("ordered_at", ascending=False).reset_index(drop=True)
+
+
+def build_seed_snapshot_payload(seed_payload: dict[str, object]) -> dict[str, object]:
+    candidates = seed_payload.get("candidates", [])
+    if not isinstance(candidates, list):
+        candidates = []
+    return {
+        "created_at": str(seed_payload.get("created_at", "")),
+        "candidates": candidates,
     }
 
 
@@ -598,6 +687,23 @@ def render_public_portfolio_fragment() -> None:
         positions_error = str(exc)
 
     trade_history_df = build_auto_trade_history_df(strategy_payload, trade_state_payload)
+    using_seed_data = False
+    seed_payload = load_public_seed_payload()
+    seed_positions_df = build_seed_positions_frame(seed_payload)
+    seed_trade_history_df = build_seed_trade_history_df(seed_payload)
+    if bool(cycle_config.get("prefer_seed_data", True)):
+        if not seed_positions_df.empty or not seed_trade_history_df.empty:
+            active_positions_df = seed_positions_df
+            trade_history_df = seed_trade_history_df
+            snapshot_payload = build_seed_snapshot_payload(seed_payload)
+            using_seed_data = True
+    elif active_positions_df.empty and trade_history_df.empty:
+        if not seed_positions_df.empty or not seed_trade_history_df.empty:
+            active_positions_df = seed_positions_df
+            trade_history_df = seed_trade_history_df
+            snapshot_payload = build_seed_snapshot_payload(seed_payload)
+            using_seed_data = True
+
     summary = build_public_summary(active_positions_df, trade_history_df)
     overview_symbol = choose_spotlight_symbol(cycle_config, active_positions_df, snapshot_payload)
     movement_df = build_public_movement_table(settings, active_positions_df, snapshot_payload)
@@ -617,6 +723,8 @@ def render_public_portfolio_fragment() -> None:
 
     if positions_error:
         st.warning(f"현재가 갱신 중 일부 데이터 조회에 실패했습니다: {positions_error}")
+    if using_seed_data:
+        st.info("공개 앱은 현재 샘플 포트폴리오 데이터를 우선 표시하고 있습니다.")
 
     render_public_summary_cards(summary)
 

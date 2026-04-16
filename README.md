@@ -156,6 +156,7 @@ KIS_ACCOUNT_PRODUCT_CODE = "01"
 PUBLIC_APP_ENABLE_AUTO_CYCLE = "true"
 PUBLIC_APP_REFRESH_SECONDS = "15"
 PUBLIC_APP_MIN_CYCLE_INTERVAL_SECONDS = "30"
+PUBLIC_APP_PREFER_SEED_DATA = "true"
 PUBLIC_APP_SPOTLIGHT_SYMBOL = "005930"
 ```
 
@@ -165,6 +166,7 @@ PUBLIC_APP_SPOTLIGHT_SYMBOL = "005930"
 - `.streamlit/secrets.toml`도 저장소에 올리지 않습니다.
 - 공개 배포에서는 실전 계좌 키 대신 모의투자 키만 사용하는 것을 권장합니다.
 - Streamlit Community Cloud의 `Main file path`는 반드시 `app_public.py`로 지정합니다.
+- `PUBLIC_APP_PREFER_SEED_DATA=true`로 두면 공개 앱은 샘플 포트폴리오를 우선 표시합니다.
 - `PUBLIC_APP_SPOTLIGHT_SYMBOL`을 지정하면 공개 화면 상단 대표 그래프 종목을 고정할 수 있습니다.
 
 ## GitHub 업로드 전 체크

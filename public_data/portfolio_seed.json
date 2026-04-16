@@ -1,0 +1,159 @@
+{
+  "created_at": "2026-04-16T16:45:00+09:00",
+  "description": "공개 배포용 샘플 포트폴리오 데이터",
+  "positions": [
+    {
+      "id": "sample-306040-1",
+      "symbol": "306040",
+      "name": "제이스이엔지",
+      "market": "KOSDAQ",
+      "quantity": 95,
+      "entry_price": 7740.0,
+      "current_price": 7800.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 4.0,
+      "current_return_pct": 0.78,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-16T13:56:06"
+    },
+    {
+      "id": "sample-308430-1",
+      "symbol": "308430",
+      "name": "대비온",
+      "market": "KOSDAQ",
+      "quantity": 86,
+      "entry_price": 34700.0,
+      "current_price": 34950.0,
+      "expected_return_pct": 5.91,
+      "target_profit_pct": 3.55,
+      "current_return_pct": 0.72,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-16T15:14:50"
+    }
+  ],
+  "trade_history": [
+    {
+      "ordered_at": "2026-04-15T08:54:00+09:00",
+      "side": "buy",
+      "symbol": "017900",
+      "name": "광전자",
+      "quantity": 21,
+      "price": 13680.0,
+      "status": "closed",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
+    {
+      "ordered_at": "2026-04-15T09:06:46+09:00",
+      "side": "sell",
+      "symbol": "017900",
+      "name": "광전자",
+      "quantity": 21,
+      "price": 16120.0,
+      "status": "closed",
+      "realized_pnl": 51240.0,
+      "realized_pnl_pct": 17.84
+    },
+    {
+      "ordered_at": "2026-04-15T09:08:28+09:00",
+      "side": "buy",
+      "symbol": "010820",
+      "name": "퍼스텍",
+      "quantity": 25,
+      "price": 11550.0,
+      "status": "closed",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
+    {
+      "ordered_at": "2026-04-15T09:34:54+09:00",
+      "side": "sell",
+      "symbol": "010820",
+      "name": "퍼스텍",
+      "quantity": 25,
+      "price": 12360.0,
+      "status": "closed",
+      "realized_pnl": 20250.0,
+      "realized_pnl_pct": 7.01
+    },
+    {
+      "ordered_at": "2026-04-16T13:56:06+09:00",
+      "side": "buy",
+      "symbol": "306040",
+      "name": "제이스이엔지",
+      "quantity": 95,
+      "price": 7740.0,
+      "status": "holding",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
+    {
+      "ordered_at": "2026-04-16T15:14:50+09:00",
+      "side": "buy",
+      "symbol": "308430",
+      "name": "대비온",
+      "quantity": 86,
+      "price": 34700.0,
+      "status": "holding",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    }
+  ],
+  "candidates": [
+    {
+      "symbol": "038060",
+      "name": "루멘스",
+      "market": "KOSDAQ",
+      "final_score": 133.15,
+      "up_probability_pct": 100.0,
+      "expected_return_pct": 8.0,
+      "realtime_change_rate": 29.99,
+      "article_count": 20,
+      "top_tags": ["general", "earnings"]
+    },
+    {
+      "symbol": "049480",
+      "name": "스피어이앤엠",
+      "market": "KOSDAQ",
+      "final_score": 101.75,
+      "up_probability_pct": 99.89,
+      "expected_return_pct": 8.0,
+      "realtime_change_rate": 29.81,
+      "article_count": 14,
+      "top_tags": ["general"]
+    },
+    {
+      "symbol": "382800",
+      "name": "지엔비에스 에코",
+      "market": "KOSDAQ",
+      "final_score": 93.96,
+      "up_probability_pct": 99.66,
+      "expected_return_pct": 8.0,
+      "realtime_change_rate": 0.82,
+      "article_count": 14,
+      "top_tags": ["general"]
+    },
+    {
+      "symbol": "306040",
+      "name": "제이스이엔지",
+      "market": "KOSDAQ",
+      "final_score": 90.62,
+      "up_probability_pct": 96.35,
+      "expected_return_pct": 8.0,
+      "realtime_change_rate": 0.0,
+      "article_count": 20,
+      "top_tags": ["general", "product_launch", "merger_acquisition"]
+    },
+    {
+      "symbol": "308430",
+      "name": "대비온",
+      "market": "KOSDAQ",
+      "final_score": 88.54,
+      "up_probability_pct": 92.14,
+      "expected_return_pct": 5.91,
+      "realtime_change_rate": -0.14,
+      "article_count": 16,
+      "top_tags": ["general", "bio"]
+    }
+  ]
+}
