@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-04-17T15:29:48+09:00",
+  "created_at": "2026-04-17T15:30:17+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 0,
@@ -1067,8 +1067,8 @@
       "name": "라닉스",
       "market": "KOSDAQ",
       "news_query": "라닉스",
-      "current_price": 2680.0,
-      "realtime_change_rate": -10.96,
+      "current_price": 2655.0,
+      "realtime_change_rate": -11.79,
       "recent_return_5d_pct": 39.15,
       "recent_volatility_pct": 10.77,
       "volatility_balance_bonus": -3.58,
@@ -1136,8 +1136,8 @@
       "name": "아이앤씨",
       "market": "KOSDAQ",
       "news_query": "아이앤씨",
-      "current_price": 5850.0,
-      "realtime_change_rate": 14.93,
+      "current_price": 5970.0,
+      "realtime_change_rate": 17.29,
       "recent_return_5d_pct": 30.0,
       "recent_volatility_pct": 6.93,
       "volatility_balance_bonus": -0.11,
@@ -1240,8 +1240,8 @@
       "name": "케이에스피",
       "market": "KOSDAQ",
       "news_query": "케이에스피",
-      "current_price": 4090.0,
-      "realtime_change_rate": 9.8,
+      "current_price": 4105.0,
+      "realtime_change_rate": 10.2,
       "recent_return_5d_pct": 14.25,
       "recent_volatility_pct": 3.79,
       "volatility_balance_bonus": 7.55,
@@ -1266,17 +1266,17 @@
         "partnership"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0696,
-      "learning_adjustment": 0.84,
-      "final_score": 95.83
+      "learning_signal": 0.0688,
+      "learning_adjustment": 0.83,
+      "final_score": 95.82
     },
     {
       "symbol": "166090",
       "name": "하나머티리얼즈",
       "market": "KOSDAQ",
       "news_query": "하나머티리얼즈",
-      "current_price": 71900.0,
-      "realtime_change_rate": -0.14,
+      "current_price": 72100.0,
+      "realtime_change_rate": 0.14,
       "recent_return_5d_pct": 18.84,
       "recent_volatility_pct": 4.04,
       "volatility_balance_bonus": 7.91,
@@ -1300,17 +1300,17 @@
         "politics_risk"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0819,
-      "learning_adjustment": 0.98,
-      "final_score": 93.98
+      "learning_signal": 0.0807,
+      "learning_adjustment": 0.97,
+      "final_score": 93.97
     },
     {
       "symbol": "281740",
       "name": "레이크머티리얼즈",
       "market": "KOSDAQ",
       "news_query": "레이크머티리얼즈",
-      "current_price": 22550.0,
-      "realtime_change_rate": 3.44,
+      "current_price": 22500.0,
+      "realtime_change_rate": 3.21,
       "recent_return_5d_pct": 12.92,
       "recent_volatility_pct": 3.55,
       "volatility_balance_bonus": 7.03,
@@ -1335,17 +1335,17 @@
         "politics_risk"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0965,
-      "learning_adjustment": 1.16,
-      "final_score": 93.61
+      "learning_signal": 0.0975,
+      "learning_adjustment": 1.17,
+      "final_score": 93.62
     },
     {
       "symbol": "078890",
       "name": "가온그룹",
       "market": "KOSDAQ",
       "news_query": "가온그룹",
-      "current_price": 7310.0,
-      "realtime_change_rate": 4.43,
+      "current_price": 7380.0,
+      "realtime_change_rate": 5.43,
       "recent_return_5d_pct": 26.03,
       "recent_volatility_pct": 10.87,
       "volatility_balance_bonus": -3.66,
@@ -1369,9 +1369,9 @@
         "policy_support"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0703,
-      "learning_adjustment": 0.84,
-      "final_score": 89.71
+      "learning_signal": 0.0659,
+      "learning_adjustment": 0.79,
+      "final_score": 89.66
     }
   ]
 }
