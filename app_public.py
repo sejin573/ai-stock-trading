@@ -84,9 +84,10 @@ def save_public_runtime_state(state: dict[str, object]) -> None:
 
 def get_public_cycle_config() -> dict[str, object]:
     return {
-        "enabled": env_bool("PUBLIC_APP_ENABLE_AUTO_CYCLE", True),
+        "enabled": env_bool("PUBLIC_APP_ENABLE_AUTO_CYCLE", False),
         "refresh_seconds": max(3, env_int("PUBLIC_APP_REFRESH_SECONDS", 15)),
         "min_cycle_interval_seconds": max(10, env_int("PUBLIC_APP_MIN_CYCLE_INTERVAL_SECONDS", 30)),
+        "cycle_once_per_day": env_bool("PUBLIC_APP_CYCLE_ONCE_PER_DAY", True),
         "prefer_seed_data": env_bool("PUBLIC_APP_PREFER_SEED_DATA", True),
         "spotlight_symbol": env_text("PUBLIC_APP_SPOTLIGHT_SYMBOL", ""),
         "selected_market": str(os.getenv("PUBLIC_APP_SELECTED_MARKET", "전체")).strip() or "전체",
@@ -119,6 +120,39 @@ def load_public_stock_series(symbol: str, kis_app_key: str, kis_app_secret: str)
     return fetch_daily_stock_data(symbol=symbol, kis_app_key=kis_app_key, kis_app_secret=kis_app_secret)
 
 
+def build_public_trade_state_signature(trade_state_payload: dict[str, object]) -> str:
+    positions = trade_state_payload.get("positions", [])
+    history = trade_state_payload.get("history", [])
+    payload = {
+        "positions": positions if isinstance(positions, list) else [],
+        "history_count": len(history) if isinstance(history, list) else 0,
+    }
+    return json.dumps(payload, ensure_ascii=False, sort_keys=True, default=str)
+
+
+@st.cache_data(ttl=15, show_spinner=False)
+def load_public_active_positions_frame(
+    trade_state_signature: str,
+    kis_app_key: str,
+    kis_app_secret: str,
+    kis_mock_app_key: str,
+    kis_mock_app_secret: str,
+    kis_account_no: str,
+    kis_account_product_code: str,
+) -> pd.DataFrame:
+    _ = (
+        trade_state_signature,
+        kis_app_key,
+        kis_app_secret,
+        kis_mock_app_key,
+        kis_mock_app_secret,
+        kis_account_no,
+        kis_account_product_code,
+    )
+    settings = get_settings()
+    return build_active_positions_frame(settings)
+
+
 def maybe_run_public_cycle(settings, cycle_config: dict[str, object]) -> tuple[bool, str]:
     if not bool(cycle_config["enabled"]):
         return False, "공개 자동 운용이 비활성화되어 있습니다."
@@ -129,16 +163,24 @@ def maybe_run_public_cycle(settings, cycle_config: dict[str, object]) -> tuple[b
     runtime_state = load_public_runtime_state()
     now_ts = time.time()
     last_cycle_ts = safe_float(runtime_state.get("last_cycle_ts"), 0.0)
+    last_cycle_at = str(runtime_state.get("last_cycle_at", "")).strip()
+    today_kst = datetime.now(KST).date().isoformat()
+    last_cycle_date = str(runtime_state.get("last_cycle_date", "")).strip()
     min_cycle_interval = safe_float(cycle_config["min_cycle_interval_seconds"], 30.0)
 
+    if bool(cycle_config.get("cycle_once_per_day", True)) and last_cycle_date == today_kst:
+        if last_cycle_at:
+            return False, f"오늘 자동 운용은 이미 실행되었습니다: {last_cycle_at}"
+        return False, "오늘 자동 운용은 이미 실행되었습니다."
+
     if now_ts - last_cycle_ts < min_cycle_interval:
-        last_cycle_at = str(runtime_state.get("last_cycle_at", "")).strip()
         if last_cycle_at:
             return False, f"최근 자동 운용 실행 시각: {last_cycle_at}"
         return False, "최근 주기에 이미 자동 운용이 실행되었습니다."
 
     runtime_state["last_cycle_ts"] = now_ts
     runtime_state["last_cycle_at"] = datetime.now(KST).isoformat(timespec="seconds")
+    runtime_state["last_cycle_date"] = today_kst
     save_public_runtime_state(runtime_state)
 
     run_auto_trading_cycle(
@@ -612,6 +654,8 @@ def render_public_candidates(snapshot_payload: dict[str, object]) -> None:
         "final_score",
         "up_probability_pct",
         "expected_return_pct",
+        "pattern_score",
+        "chart_pattern",
         "realtime_change_rate",
         "article_count",
         "top_tags",
@@ -631,6 +675,8 @@ def render_public_candidates(snapshot_payload: dict[str, object]) -> None:
             "final_score": "최종 점수",
             "up_probability_pct": "상승 확률(%)",
             "expected_return_pct": "예상 상승률(%)",
+            "pattern_score": "패턴 점수",
+            "chart_pattern": "차트 패턴",
             "realtime_change_rate": "실시간 변동률(%)",
             "article_count": "기사 수",
             "top_tags": "주요 태그",
@@ -645,6 +691,7 @@ def render_public_candidates(snapshot_payload: dict[str, object]) -> None:
             "최종 점수": st.column_config.NumberColumn("최종 점수", format="%.2f"),
             "상승 확률(%)": st.column_config.NumberColumn("상승 확률(%)", format="%.2f"),
             "예상 상승률(%)": st.column_config.NumberColumn("예상 상승률(%)", format="%.2f"),
+            "패턴 점수": st.column_config.NumberColumn("패턴 점수", format="%.2f"),
             "실시간 변동률(%)": st.column_config.NumberColumn("실시간 변동률(%)", format="%.2f"),
             "기사 수": st.column_config.NumberColumn("기사 수", format="%d"),
         },
@@ -678,10 +725,19 @@ def render_public_portfolio_fragment() -> None:
     strategy_payload = load_strategy_state_payload()
     trade_state_payload = load_mock_trade_state_payload()
     snapshot_payload = load_candidate_snapshot_payload()
+    trade_state_signature = build_public_trade_state_signature(trade_state_payload)
 
     positions_error = ""
     try:
-        active_positions_df = build_active_positions_frame(settings)
+        active_positions_df = load_public_active_positions_frame(
+            trade_state_signature,
+            getattr(settings, "kis_app_key", ""),
+            getattr(settings, "kis_app_secret", ""),
+            getattr(settings, "kis_mock_app_key", ""),
+            getattr(settings, "kis_mock_app_secret", ""),
+            getattr(settings, "kis_account_no", ""),
+            getattr(settings, "kis_account_product_code", ""),
+        )
     except Exception as exc:  # noqa: BLE001
         active_positions_df = pd.DataFrame()
         positions_error = str(exc)
