@@ -14,6 +14,7 @@ import requests
 import streamlit as st
 
 from app import (
+    FALLBACK_STOCK_CATALOG,
     build_auto_trade_history_df,
     load_candidate_snapshot_payload,
     load_mock_trade_state_payload,
@@ -782,6 +783,10 @@ def lookup_public_symbol_name(
             if str((row or {}).get("symbol", "")).strip() == clean_symbol:
                 return str((row or {}).get("name", "")).strip()
 
+    for row in FALLBACK_STOCK_CATALOG:
+        if str((row or {}).get("symbol", "")).strip() == clean_symbol:
+            return str((row or {}).get("name", "")).strip()
+
     return ""
 
 
@@ -803,7 +808,11 @@ def choose_spotlight_target(
             ascending=[False, False],
         ).reset_index(drop=True)
         top_row = ranked_positions_df.iloc[0]
-        return str(top_row["symbol"]).strip(), str(top_row["name"]).strip()
+        top_symbol = str(top_row["symbol"]).strip()
+        top_name = str(top_row["name"]).strip()
+        if not top_name or top_name == top_symbol:
+            top_name = lookup_public_symbol_name(top_symbol, active_positions_df, snapshot_payload)
+        return top_symbol, top_name or top_symbol
 
     configured_symbol = str(cycle_config.get("spotlight_symbol", "")).strip()
     if configured_symbol:
