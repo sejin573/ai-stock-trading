@@ -9,6 +9,7 @@ from zoneinfo import ZoneInfo
 
 import pandas as pd
 import plotly.express as px
+import requests
 import streamlit as st
 
 from app import (
@@ -26,6 +27,7 @@ from utils.config import get_settings
 
 PUBLIC_RUNTIME_STATE_PATH = Path(__file__).resolve().parent / "data" / "public_runtime_state.json"
 PUBLIC_SEED_PATH = Path(__file__).resolve().parent / "public_data" / "portfolio_seed.json"
+PUBLIC_SNAPSHOT_PATH = Path(__file__).resolve().parent / "public_data" / "portfolio_snapshot.json"
 KST = ZoneInfo("Asia/Seoul")
 
 
@@ -72,6 +74,49 @@ def load_public_seed_payload() -> dict[str, object]:
     except json.JSONDecodeError:
         return {}
     return payload if isinstance(payload, dict) else {}
+
+
+def load_public_snapshot_file_payload() -> dict[str, object]:
+    if not PUBLIC_SNAPSHOT_PATH.exists():
+        return {}
+
+    try:
+        payload = json.loads(PUBLIC_SNAPSHOT_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    return payload if isinstance(payload, dict) else {}
+
+
+@st.cache_data(ttl=15, show_spinner=False)
+def load_public_snapshot_url_payload(snapshot_url: str) -> dict[str, object]:
+    if not snapshot_url:
+        return {}
+
+    response = requests.get(snapshot_url, timeout=10)
+    response.raise_for_status()
+    payload = response.json()
+    return payload if isinstance(payload, dict) else {}
+
+
+def load_public_portfolio_payload() -> tuple[dict[str, object], str]:
+    snapshot_url = env_text("PUBLIC_APP_SNAPSHOT_URL", "")
+    if snapshot_url:
+        try:
+            payload = load_public_snapshot_url_payload(snapshot_url)
+            if payload:
+                return payload, "url"
+        except Exception:
+            pass
+
+    file_payload = load_public_snapshot_file_payload()
+    if file_payload:
+        return file_payload, "file"
+
+    seed_payload = load_public_seed_payload()
+    if seed_payload:
+        return seed_payload, "seed"
+
+    return {}, "empty"
 
 
 def save_public_runtime_state(state: dict[str, object]) -> None:
@@ -722,6 +767,11 @@ def render_public_portfolio_fragment() -> None:
     cycle_config = get_public_cycle_config()
     ran_cycle, cycle_message = maybe_run_public_cycle(settings, cycle_config)
 
+    portfolio_payload, portfolio_payload_source = load_public_portfolio_payload()
+    portfolio_positions_df = build_seed_positions_frame(portfolio_payload)
+    portfolio_trade_history_df = build_seed_trade_history_df(portfolio_payload)
+    portfolio_candidate_payload = build_seed_snapshot_payload(portfolio_payload)
+
     strategy_payload = load_strategy_state_payload()
     trade_state_payload = load_mock_trade_state_payload()
     snapshot_payload = load_candidate_snapshot_payload()
@@ -744,20 +794,22 @@ def render_public_portfolio_fragment() -> None:
 
     trade_history_df = build_auto_trade_history_df(strategy_payload, trade_state_payload)
     using_seed_data = False
-    seed_payload = load_public_seed_payload()
-    seed_positions_df = build_seed_positions_frame(seed_payload)
-    seed_trade_history_df = build_seed_trade_history_df(seed_payload)
-    if bool(cycle_config.get("prefer_seed_data", True)):
-        if not seed_positions_df.empty or not seed_trade_history_df.empty:
-            active_positions_df = seed_positions_df
-            trade_history_df = seed_trade_history_df
-            snapshot_payload = build_seed_snapshot_payload(seed_payload)
-            using_seed_data = True
-    elif active_positions_df.empty and trade_history_df.empty:
-        if not seed_positions_df.empty or not seed_trade_history_df.empty:
-            active_positions_df = seed_positions_df
-            trade_history_df = seed_trade_history_df
-            snapshot_payload = build_seed_snapshot_payload(seed_payload)
+    using_portfolio_snapshot = False
+    if portfolio_payload_source in {"url", "file"} and (
+        not portfolio_positions_df.empty or not portfolio_trade_history_df.empty
+    ):
+        active_positions_df = portfolio_positions_df
+        trade_history_df = portfolio_trade_history_df
+        if portfolio_candidate_payload.get("candidates"):
+            snapshot_payload = portfolio_candidate_payload
+        using_portfolio_snapshot = True
+    elif portfolio_payload_source == "seed" and (
+        bool(cycle_config.get("prefer_seed_data", True)) or (active_positions_df.empty and trade_history_df.empty)
+    ):
+        if not portfolio_positions_df.empty or not portfolio_trade_history_df.empty:
+            active_positions_df = portfolio_positions_df
+            trade_history_df = portfolio_trade_history_df
+            snapshot_payload = portfolio_candidate_payload
             using_seed_data = True
 
     summary = build_public_summary(active_positions_df, trade_history_df)
@@ -779,6 +831,11 @@ def render_public_portfolio_fragment() -> None:
 
     if positions_error:
         st.warning(f"현재가 갱신 중 일부 데이터 조회에 실패했습니다: {positions_error}")
+    if using_portfolio_snapshot:
+        if portfolio_payload_source == "url":
+            st.info("공개 앱이 외부 포트폴리오 스냅샷 URL에서 최신 포지션과 손익을 불러오고 있습니다.")
+        elif portfolio_payload_source == "file":
+            st.info("공개 앱이 `public_data/portfolio_snapshot.json` 기준으로 포지션과 손익을 표시하고 있습니다.")
     if using_seed_data:
         st.info("공개 앱은 현재 샘플 포트폴리오 데이터를 우선 표시하고 있습니다.")
 

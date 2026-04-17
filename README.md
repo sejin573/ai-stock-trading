@@ -159,6 +159,7 @@ PUBLIC_APP_MIN_CYCLE_INTERVAL_SECONDS = "30"
 PUBLIC_APP_CYCLE_ONCE_PER_DAY = "true"
 PUBLIC_APP_PREFER_SEED_DATA = "true"
 PUBLIC_APP_SPOTLIGHT_SYMBOL = "005930"
+PUBLIC_APP_SNAPSHOT_URL = "https://raw.githubusercontent.com/your_github_username/your_snapshot_repo/snapshot-data/public_data/portfolio_snapshot.json"
 ```
 
 ## Streamlit Community Cloud 배포 시 주의사항
@@ -169,6 +170,8 @@ PUBLIC_APP_SPOTLIGHT_SYMBOL = "005930"
 - Streamlit Community Cloud의 `Main file path`는 반드시 `app_public.py`로 지정합니다.
 - `PUBLIC_APP_PREFER_SEED_DATA=true`로 두면 공개 앱은 샘플 포트폴리오를 우선 표시합니다.
 - `PUBLIC_APP_SPOTLIGHT_SYMBOL`을 지정하면 공개 화면 상단 대표 그래프 종목을 고정할 수 있습니다.
+- 공개 앱에서 실시간에 가깝게 포트폴리오를 보려면 `PUBLIC_APP_SNAPSHOT_URL`에 외부 스냅샷 JSON 주소를 넣습니다.
+- 스냅샷 자동 업로드는 배포 앱이 연결된 `main` 브랜치 대신 별도 저장소나 `snapshot-data` 같은 별도 브랜치를 사용하는 것을 권장합니다.
 
 ## GitHub 업로드 전 체크
 

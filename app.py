@@ -13,10 +13,12 @@ import streamlit as st
 from analysis.event_tags import add_event_tags
 from analysis.forecast import calculate_price_forecast
 from analysis.features import build_daily_feature_frame
-from analysis.scoring import calculate_impact_signal, format_signal_summary
+from analysis.patterns import analyze_chart_patterns
+from analysis.scoring import calculate_impact_signal, calculate_issue_bias, format_signal_summary
 from analysis.sentiment import add_sentiment_columns
 from services.learning_service import apply_learning_to_row, load_learning_state, update_learning_from_history
-from services.news_service import fetch_company_news
+from services.news_service import build_market_issue_queries, fetch_company_news, fetch_news_by_queries
+from services.portfolio_sync_service import should_sync_portfolio_snapshot, sync_portfolio_snapshot_to_github
 from services.stock_service import (
     fetch_daily_stock_data,
     fetch_kis_realtime_quote,
@@ -34,6 +36,7 @@ from services.trading_service import (
     inquire_mock_orderable_cash,
     place_mock_cash_order,
     register_auto_sell_position,
+    update_position_target_profit,
 )
 from utils.config import get_settings
 from utils.helpers import (
@@ -41,6 +44,7 @@ from utils.helpers import (
     compute_recent_return,
     format_percentage,
     get_price_currency_symbol,
+    is_krx_symbol,
 )
 from workers.auto_trader import run_once as run_auto_trader_once
 from workers.market_scanner import run_once as run_market_scanner_once
@@ -87,10 +91,12 @@ FALLBACK_STOCK_CATALOG = [
 
 LIVE_CHART_HISTORY_LIMIT = 30
 DATA_DIR = Path(__file__).resolve().parent / "data"
+PUBLIC_DATA_DIR = Path(__file__).resolve().parent / "public_data"
 CANDIDATE_SNAPSHOT_PATH = DATA_DIR / "candidate_snapshot.json"
 STRATEGY_STATE_PATH = DATA_DIR / "strategy_state.json"
 MOCK_TRADE_STATE_PATH = DATA_DIR / "mock_trade_state.json"
 AUTO_RUNTIME_STATE_PATH = DATA_DIR / "auto_runtime_state.json"
+PORTFOLIO_SNAPSHOT_PATH = PUBLIC_DATA_DIR / "portfolio_snapshot.json"
 KST = ZoneInfo("Asia/Seoul")
 
 
@@ -229,6 +235,59 @@ def load_news_data(
     )
 
 
+def load_market_issue_news(
+    company_name: str,
+    client_id: str,
+    client_secret: str,
+    page_size: int,
+) -> pd.DataFrame:
+    issue_queries = build_market_issue_queries(company_name)
+    issue_news_df = fetch_news_by_queries(
+        queries=issue_queries,
+        client_id=client_id,
+        client_secret=client_secret,
+        page_size=page_size,
+    )
+    if issue_news_df.empty:
+        return issue_news_df
+    issue_news_df = issue_news_df.copy()
+    issue_news_df["news_scope"] = "정책/정치 이슈"
+    return issue_news_df
+
+
+def merge_news_frames(company_news_df: pd.DataFrame, issue_news_df: pd.DataFrame) -> pd.DataFrame:
+    frames: list[pd.DataFrame] = []
+
+    if not company_news_df.empty:
+        copied_company_df = company_news_df.copy()
+        copied_company_df["news_scope"] = copied_company_df.get("news_scope", "기업 뉴스")
+        frames.append(copied_company_df)
+
+    if not issue_news_df.empty:
+        copied_issue_df = issue_news_df.copy()
+        copied_issue_df["news_scope"] = copied_issue_df.get("news_scope", "정책/정치 이슈")
+        frames.append(copied_issue_df)
+
+    if not frames:
+        return pd.DataFrame(
+            columns=[
+                "source",
+                "author",
+                "title",
+                "description",
+                "content",
+                "url",
+                "published_at",
+                "article_text",
+                "news_scope",
+            ]
+        )
+
+    merged_df = pd.concat(frames, ignore_index=True)
+    merged_df = merged_df.drop_duplicates(subset=["url", "title"]).sort_values("published_at")
+    return merged_df.reset_index(drop=True)
+
+
 def filter_news_window(news_df: pd.DataFrame, latest_date: pd.Timestamp, news_days: int) -> pd.DataFrame:
     if news_df.empty:
         return news_df.copy()
@@ -246,6 +305,7 @@ def enrich_news_and_signal(
     enriched_news_df = add_event_tags(enriched_news_df)
     feature_df = build_daily_feature_frame(stock_df=stock_df, news_df=enriched_news_df)
     signal = calculate_impact_signal(stock_df=stock_df, news_df=enriched_news_df, feature_df=feature_df)
+    signal = {**signal, **analyze_chart_patterns(stock_df)}
     return enriched_news_df, feature_df, signal
 
 
@@ -253,6 +313,7 @@ def build_price_only_signal(stock_df: pd.DataFrame) -> tuple[pd.DataFrame, dict[
     empty_news_df = pd.DataFrame(columns=["published_at", "title", "sentiment_score", "event_tag_list"])
     feature_df = build_daily_feature_frame(stock_df=stock_df, news_df=empty_news_df)
     signal = calculate_impact_signal(stock_df=stock_df, news_df=empty_news_df, feature_df=feature_df)
+    signal = {**signal, **analyze_chart_patterns(stock_df)}
     return feature_df, signal
 
 
@@ -265,7 +326,50 @@ def build_recommendation_row(candidate: dict[str, object], settings) -> dict[str
         if stock_df.empty:
             return None
 
-        _, signal = build_price_only_signal(stock_df)
+        latest_date = pd.to_datetime(stock_df["date"].max())
+        company_news_query = build_news_query(ticker=symbol, company_name=display_name)
+        company_news_df = pd.DataFrame()
+        issue_news_df = pd.DataFrame()
+
+        if getattr(settings, "naver_client_id", "") and getattr(settings, "naver_client_secret", ""):
+            try:
+                company_news_df = load_news_data(
+                    query=company_news_query,
+                    client_id=settings.naver_client_id,
+                    client_secret=settings.naver_client_secret,
+                    page_size=10,
+                )
+                company_news_df = filter_news_window(company_news_df, latest_date=latest_date, news_days=7)
+                if not company_news_df.empty:
+                    company_news_df = company_news_df.copy()
+                    company_news_df["news_scope"] = "기업 뉴스"
+            except Exception:
+                company_news_df = pd.DataFrame()
+
+            try:
+                issue_news_df = load_market_issue_news(
+                    company_name=display_name,
+                    client_id=settings.naver_client_id,
+                    client_secret=settings.naver_client_secret,
+                    page_size=4,
+                )
+                issue_news_df = filter_news_window(issue_news_df, latest_date=latest_date, news_days=7)
+            except Exception:
+                issue_news_df = pd.DataFrame()
+
+        combined_news_df = merge_news_frames(company_news_df, issue_news_df)
+        chart_pattern = analyze_chart_patterns(stock_df)
+        if combined_news_df.empty:
+            _, signal = build_price_only_signal(stock_df)
+            issue_signal = calculate_issue_bias(pd.DataFrame())
+        else:
+            combined_news_df = add_sentiment_columns(combined_news_df)
+            combined_news_df = add_event_tags(combined_news_df)
+            feature_df = build_daily_feature_frame(stock_df=stock_df, news_df=combined_news_df)
+            signal = calculate_impact_signal(stock_df=stock_df, news_df=combined_news_df, feature_df=feature_df)
+            issue_signal = calculate_issue_bias(combined_news_df[combined_news_df["news_scope"] == "정책/정치 이슈"].copy())
+        signal = {**signal, **chart_pattern}
+
         realtime_quote: dict[str, object] = {}
 
         if getattr(settings, "kis_app_key", "") and getattr(settings, "kis_app_secret", ""):
@@ -295,6 +399,13 @@ def build_recommendation_row(candidate: dict[str, object], settings) -> dict[str
 
         market_cap_score = min(15.0, safe_float(candidate.get("market_cap")) / 15000.0)
         roe_score = max(0.0, min(12.0, safe_float(candidate.get("roe")) / 2.0))
+        average_sentiment = safe_float(signal.get("average_sentiment"))
+        issue_bias_score = safe_float(issue_signal.get("policy_bias_score"))
+        company_article_count = int(len(company_news_df))
+        issue_article_count = int(issue_signal.get("policy_article_count", 0))
+        pattern_score = safe_float(chart_pattern.get("pattern_score"))
+        pattern_bias = safe_float(chart_pattern.get("pattern_bias"))
+        pattern_label = str(chart_pattern.get("pattern_label", "중립"))
 
         opportunity_score = (
             expected_return_pct * 3.55
@@ -304,6 +415,9 @@ def build_recommendation_row(candidate: dict[str, object], settings) -> dict[str
             + safe_float(signal.get("impact_score")) * 0.18
             + max(0.0, min(realtime_change_rate, 4.0)) * 0.55
             + max(0.0, recent_return_5d_pct) * 0.9
+            + max(-4.0, min(issue_bias_score, 6.0)) * 0.85
+            + max(0.0, average_sentiment) * 8.0
+            + pattern_score * 0.95
             + market_cap_score * 0.2
             + roe_score * 0.2
             - max(0.0, recent_volatility_pct - 9.0) * 0.85
@@ -317,13 +431,22 @@ def build_recommendation_row(candidate: dict[str, object], settings) -> dict[str
             "realtime_change_rate": realtime_change_rate,
             "opportunity_score": round(opportunity_score, 1),
             "impact_score": int(safe_float(signal.get("impact_score"))),
-            "article_count": 0,
+            "article_count": int(len(combined_news_df)),
+            "company_article_count": company_article_count,
+            "policy_article_count": issue_article_count,
+            "policy_sentiment": safe_float(issue_signal.get("policy_sentiment")),
+            "policy_bias_score": issue_bias_score,
+            "pattern_score": pattern_score,
+            "pattern_bias": pattern_bias,
+            "chart_pattern": pattern_label,
+            "pattern_tags": chart_pattern.get("pattern_tags", []),
             "direction": str(forecast.get("direction", "중립")),
             "expected_return_pct": expected_return_pct,
             "up_probability": up_probability_pct,
             "recent_volatility_pct": recent_volatility_pct,
             "recent_return_5d_pct": recent_return_5d_pct,
             "volatility_balance_bonus": round(volatility_balance_bonus, 2),
+            "average_sentiment": average_sentiment,
         }
         return apply_learning_to_row(row, score_key="opportunity_score")
     except Exception:
@@ -352,6 +475,8 @@ def scan_recommendation_universe(
                 "opportunity_score",
                 "impact_score",
                 "article_count",
+                "pattern_score",
+                "chart_pattern",
                 "direction",
                 "expected_return_pct",
                 "up_probability",
@@ -375,6 +500,8 @@ def build_market_scan_candidates(
         return RECOMMENDATION_UNIVERSE
 
     candidate_df = stock_catalog_df.copy()
+    if "symbol" in candidate_df.columns:
+        candidate_df = candidate_df[candidate_df["symbol"].astype(str).map(is_krx_symbol)].copy()
 
     if selected_market != "전체" and "market" in candidate_df.columns:
         candidate_df = candidate_df[candidate_df["market"] == selected_market].copy()
@@ -558,6 +685,8 @@ def render_recommendation_table(recommendation_df: pd.DataFrame) -> None:
             "expected_return_pct",
             "up_probability",
             "impact_score",
+            "pattern_score",
+            "chart_pattern",
             "direction",
         ]
     ].rename(
@@ -573,6 +702,8 @@ def render_recommendation_table(recommendation_df: pd.DataFrame) -> None:
             "expected_return_pct": "예상 상승률(%)",
             "up_probability": "상승 확률(%)",
             "impact_score": "영향 점수",
+            "pattern_score": "패턴 점수",
+            "chart_pattern": "차트 패턴",
             "direction": "예상 방향",
         }
     )
@@ -590,6 +721,7 @@ def render_recommendation_table(recommendation_df: pd.DataFrame) -> None:
             "예상 상승률(%)": st.column_config.NumberColumn("예상 상승률(%)", format="%.2f"),
             "상승 확률(%)": st.column_config.NumberColumn("상승 확률(%)", format="%.1f"),
             "영향 점수": st.column_config.NumberColumn("영향 점수", format="%d"),
+            "패턴 점수": st.column_config.NumberColumn("패턴 점수", format="%.2f"),
         },
     )
 
@@ -1032,6 +1164,10 @@ def _ensure_data_dir() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 
+def _ensure_public_data_dir() -> None:
+    PUBLIC_DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+
 def _load_json_payload(path: Path) -> dict[str, object]:
     _ensure_data_dir()
     if not path.exists():
@@ -1050,6 +1186,111 @@ def _save_json_payload(path: Path, payload: dict[str, object]) -> None:
         json.dumps(payload, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
+
+
+def _to_snapshot_records(frame: pd.DataFrame, columns: list[str]) -> list[dict[str, object]]:
+    if frame.empty:
+        return []
+
+    available_columns = [column for column in columns if column in frame.columns]
+    records: list[dict[str, object]] = []
+
+    for row in frame[available_columns].to_dict("records"):
+        normalized_row: dict[str, object] = {}
+        for key, value in row.items():
+            if isinstance(value, pd.Timestamp):
+                normalized_row[key] = value.isoformat()
+            elif pd.isna(value):
+                normalized_row[key] = None
+            else:
+                normalized_row[key] = value
+        records.append(normalized_row)
+
+    return records
+
+
+def save_portfolio_snapshot(
+    settings,
+    active_positions_df: pd.DataFrame,
+    trade_history_df: pd.DataFrame,
+    snapshot_payload: dict[str, object],
+) -> None:
+    _ensure_public_data_dir()
+
+    total_buy_amount = (
+        float((active_positions_df["entry_price"] * active_positions_df["quantity"]).sum())
+        if not active_positions_df.empty else 0.0
+    )
+    total_eval_amount = (
+        float((active_positions_df["current_price"] * active_positions_df["quantity"]).sum())
+        if not active_positions_df.empty else 0.0
+    )
+    unrealized_pnl = total_eval_amount - total_buy_amount
+    realized_sell_df = trade_history_df[trade_history_df["side"] == "sell"] if not trade_history_df.empty else pd.DataFrame()
+    realized_pnl = float(realized_sell_df["realized_pnl"].sum()) if not realized_sell_df.empty else 0.0
+    total_profit = unrealized_pnl + realized_pnl
+    cumulative_return_pct = (total_profit / total_buy_amount * 100) if total_buy_amount > 0 else 0.0
+
+    payload = {
+        "created_at": datetime.now(KST).isoformat(timespec="seconds"),
+        "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
+        "summary": {
+            "holding_count": int(len(active_positions_df)),
+            "holding_quantity": int(active_positions_df["quantity"].sum()) if not active_positions_df.empty else 0,
+            "total_buy_amount": total_buy_amount,
+            "total_eval_amount": total_eval_amount,
+            "unrealized_pnl": unrealized_pnl,
+            "realized_pnl": realized_pnl,
+            "total_profit": total_profit,
+            "cumulative_return_pct": cumulative_return_pct,
+        },
+        "positions": _to_snapshot_records(
+            active_positions_df,
+            [
+                "id",
+                "symbol",
+                "name",
+                "market",
+                "quantity",
+                "entry_price",
+                "current_price",
+                "expected_return_pct",
+                "target_profit_pct",
+                "current_return_pct",
+                "auto_sell_enabled",
+                "created_at",
+            ],
+        ),
+        "trade_history": _to_snapshot_records(
+            trade_history_df,
+            [
+                "ordered_at",
+                "side",
+                "symbol",
+                "name",
+                "quantity",
+                "price",
+                "status",
+                "realized_pnl",
+                "realized_pnl_pct",
+            ],
+        ),
+        "candidates": snapshot_payload.get("candidates", []) if isinstance(snapshot_payload.get("candidates", []), list) else [],
+    }
+    snapshot_content = json.dumps(payload, ensure_ascii=False, indent=2)
+    PORTFOLIO_SNAPSHOT_PATH.write_text(snapshot_content, encoding="utf-8")
+
+    if should_sync_portfolio_snapshot(settings):
+        try:
+            synced, sync_target = sync_portfolio_snapshot_to_github(
+                settings,
+                snapshot_content=snapshot_content,
+                source_label="local auto trading",
+            )
+            if synced:
+                append_auto_log(f"포트폴리오 스냅샷 동기화 완료: {sync_target}")
+        except Exception as exc:  # noqa: BLE001
+            append_auto_log(f"포트폴리오 스냅샷 동기화 실패: {exc}")
 
 
 def load_auto_runtime_state() -> dict[str, object]:
@@ -1208,6 +1449,52 @@ def render_position_sell_controls(settings, positions_df: pd.DataFrame, *, key_p
                 st.error(f"즉시 매도에 실패했습니다: {exc}")
 
 
+def render_position_target_profit_controls(positions_df: pd.DataFrame, *, key_prefix: str = "position_target") -> None:
+    if positions_df.empty:
+        return
+
+    st.markdown("**자동 매도 목표 수정**")
+    st.caption("보유 중인 포지션의 목표 수익률(%)을 종목별로 조정할 수 있습니다.")
+
+    for _, row in positions_df.iterrows():
+        position_id = str(row.get("id", ""))
+        if not position_id:
+            continue
+
+        current_target_profit = safe_float(row.get("target_profit_pct"), 0.0)
+        expected_return_pct = safe_float(row.get("expected_return_pct"), 0.0)
+        quantity = int(safe_float(row.get("quantity"), 0))
+
+        info_col, input_col, button_col = st.columns([3.0, 1.4, 1.0])
+        info_col.markdown(
+            f"**{row.get('name', '')} ({row.get('symbol', '')})**  \n"
+            f"보유 {quantity:,}주 / 현재 목표 {current_target_profit:.2f}% / 예상 상승률 {expected_return_pct:.2f}%"
+        )
+        new_target_profit = input_col.number_input(
+            "목표 수익률(%)",
+            min_value=0.1,
+            max_value=30.0,
+            value=float(current_target_profit if current_target_profit > 0 else 1.0),
+            step=0.1,
+            key=f"{key_prefix}_{position_id}",
+            label_visibility="collapsed",
+        )
+        if button_col.button("목표 저장", key=f"{key_prefix}_save_{position_id}", use_container_width=True):
+            try:
+                updated_position = update_position_target_profit(position_id, float(new_target_profit))
+                append_auto_log(
+                    f"목표 수익률 수정: {updated_position.get('name', '')}({updated_position.get('symbol', '')}) "
+                    f"-> {safe_float(updated_position.get('target_profit_pct')):.2f}%"
+                )
+                st.success(
+                    f"{updated_position.get('name', '')}({updated_position.get('symbol', '')})의 "
+                    f"자동 매도 목표를 {safe_float(updated_position.get('target_profit_pct')):.2f}%로 변경했습니다."
+                )
+                st.rerun()
+            except Exception as exc:  # noqa: BLE001
+                st.error(f"자동 매도 목표 수정에 실패했습니다: {exc}")
+
+
 def render_auto_snapshot_table(snapshot_payload: dict[str, object]) -> None:
     candidate_rows = snapshot_payload.get("candidates", [])
     if not isinstance(candidate_rows, list) or not candidate_rows:
@@ -1222,6 +1509,8 @@ def render_auto_snapshot_table(snapshot_payload: dict[str, object]) -> None:
         "final_score",
         "up_probability_pct",
         "expected_return_pct",
+        "pattern_score",
+        "chart_pattern",
         "realtime_change_rate",
         "article_count",
         "top_tags",
@@ -1244,6 +1533,8 @@ def render_auto_snapshot_table(snapshot_payload: dict[str, object]) -> None:
             "final_score": st.column_config.NumberColumn("최종점수", format="%.2f"),
             "up_probability_pct": st.column_config.NumberColumn("상승확률(%)", format="%.2f"),
             "expected_return_pct": st.column_config.NumberColumn("예상수익률(%)", format="%.2f"),
+            "pattern_score": st.column_config.NumberColumn("패턴점수", format="%.2f"),
+            "chart_pattern": "차트패턴",
             "realtime_change_rate": st.column_config.NumberColumn("실시간등락률(%)", format="%.2f"),
             "article_count": st.column_config.NumberColumn("뉴스수", format="%d"),
             "top_tags": "주요태그",
@@ -1474,6 +1765,7 @@ def run_auto_trading_cycle(
     scan_interval_seconds: int,
     buy_interval_seconds: int,
     monitor_interval_seconds: int,
+    aggressive_short_term: bool,
 ) -> None:
     now_ts = time.time()
     scan_due = (now_ts - float(st.session_state.get("auto_last_scan_ts", 0.0))) >= scan_interval_seconds
@@ -1525,6 +1817,7 @@ def run_auto_trading_cycle(
                 min_target_profit=min_target_profit,
                 max_target_profit=max_target_profit,
                 ignore_market_hours=False,
+                aggressive_short_term=aggressive_short_term,
             )
             append_auto_log("자동 매수 판단을 실행했습니다.")
         except Exception as exc:  # noqa: BLE001
@@ -1541,6 +1834,7 @@ def render_auto_trading_fragment(
     *,
     portfolio_view_only: bool,
     auto_trading_enabled: bool,
+    aggressive_short_term: bool,
     selected_symbol: str,
     selected_market: str,
     scan_pool_size: int,
@@ -1599,6 +1893,7 @@ def render_auto_trading_fragment(
         scan_interval_seconds=scan_interval_seconds,
         buy_interval_seconds=buy_interval_seconds,
         monitor_interval_seconds=monitor_interval_seconds,
+        aggressive_short_term=aggressive_short_term,
     )
 
     snapshot_payload = load_candidate_snapshot_payload()
@@ -1619,6 +1914,7 @@ def render_auto_trading_fragment(
         append_auto_log(f"모의 잔고 조회 실패: {exc}")
     active_positions_df = build_active_positions_frame(settings)
     trade_history_df = build_auto_trade_history_df(strategy_payload, trade_state_payload)
+    save_portfolio_snapshot(settings, active_positions_df, trade_history_df, snapshot_payload)
 
     status_cols = st.columns(5)
     status_cols[0].metric("자동 상태", "실행 중")
@@ -1631,6 +1927,9 @@ def render_auto_trading_fragment(
         f"화면은 3초마다 갱신되고, 탐색은 {scan_interval_seconds}초마다, 자동 매수는 {buy_interval_seconds}초마다, "
         f"포지션 감시는 {monitor_interval_seconds}초마다 실행됩니다."
     )
+
+    if aggressive_short_term:
+        st.caption("공격적 단타 모드가 활성화되어 최근 가격 탄력과 뉴스 주목도를 더 공격적으로 반영합니다.")
 
     render_auto_trade_summary_cards(active_positions_df, trade_history_df, account_summary=account_summary)
 
@@ -1657,6 +1956,7 @@ def render_portfolio_monitor_fragment(
     settings,
     *,
     auto_trading_enabled: bool,
+    aggressive_short_term: bool,
     selected_symbol: str,
     selected_market: str,
     scan_pool_size: int,
@@ -1712,6 +2012,7 @@ def render_portfolio_monitor_fragment(
             scan_interval_seconds=scan_interval_seconds,
             buy_interval_seconds=buy_interval_seconds,
             monitor_interval_seconds=monitor_interval_seconds,
+            aggressive_short_term=aggressive_short_term,
         )
 
     strategy_payload = load_strategy_state_payload()
@@ -1731,6 +2032,7 @@ def render_portfolio_monitor_fragment(
 
     active_positions_df = build_active_positions_frame(settings)
     trade_history_df = build_auto_trade_history_df(strategy_payload, trade_state_payload)
+    save_portfolio_snapshot(settings, active_positions_df, trade_history_df, load_candidate_snapshot_payload())
 
     status_cols = st.columns(4)
     status_cols[0].metric("자동 상태", "실행 중" if auto_trading_enabled else "모니터링")
@@ -1933,6 +2235,11 @@ def main() -> None:
 
         st.divider()
         st.subheader("자동 운용 설정")
+        auto_aggressive_short_term = st.toggle(
+            "공격적 단타 모드",
+            value=True,
+            help="최근 가격 탄력과 뉴스 주목도를 더 강하게 반영해 단기 기회를 넓게 탐색합니다.",
+        )
         auto_trading_enabled = st.toggle(
             "상승 기대주 자동 탐색 + 모의 자동매매",
             value=bool(auto_runtime_state.get("enabled", False)),
@@ -1958,6 +2265,27 @@ def main() -> None:
             auto_scan_interval_seconds = st.number_input("자동 탐색 주기(초)", min_value=30, value=180, step=30)
             auto_buy_interval_seconds = st.number_input("자동 매수 판단 주기(초)", min_value=5, value=30, step=5)
             auto_monitor_interval_seconds = st.number_input("자동 감시 주기(초)", min_value=5, value=15, step=5)
+
+        if auto_aggressive_short_term:
+            recommendation_limit = max(int(recommendation_limit), 10)
+            scan_pool_size = max(int(scan_pool_size), 90)
+            auto_max_positions = max(int(auto_max_positions), 6)
+            auto_stop_loss_pct = min(float(auto_stop_loss_pct), 1.5)
+            auto_max_hold_hours = min(float(auto_max_hold_hours), 6.0)
+            auto_min_final_score = min(float(auto_min_final_score), 42.0)
+            auto_min_up_probability = min(float(auto_min_up_probability), 50.0)
+            auto_min_expected_return = min(float(auto_min_expected_return), 0.6)
+            auto_min_sentiment = min(float(auto_min_sentiment), 0.0)
+            auto_max_realtime_change = max(float(auto_max_realtime_change), 12.0)
+            auto_target_profit_factor = min(float(auto_target_profit_factor), 0.45)
+            auto_min_target_profit = min(float(auto_min_target_profit), 0.8)
+            auto_max_target_profit = min(float(auto_max_target_profit), 2.2)
+            auto_scan_interval_seconds = min(int(auto_scan_interval_seconds), 60)
+            auto_buy_interval_seconds = min(int(auto_buy_interval_seconds), 10)
+            auto_monitor_interval_seconds = min(int(auto_monitor_interval_seconds), 5)
+            st.caption(
+                "공격적 단타 모드가 적용되어 후보 수를 넓히고, 더 짧은 보유 시간과 빠른 손절/익절 기준으로 자동 운용합니다."
+            )
 
         button_cols = st.columns(3)
         run_analysis_clicked = button_cols[0].button("분석 실행", use_container_width=True)
@@ -1995,6 +2323,7 @@ def main() -> None:
         render_portfolio_monitor_fragment(
             settings,
             auto_trading_enabled=auto_trading_enabled,
+            aggressive_short_term=auto_aggressive_short_term,
             selected_symbol=selected_symbol,
             selected_market=selected_market,
             scan_pool_size=scan_pool_size,
@@ -2025,6 +2354,7 @@ def main() -> None:
         settings,
         portfolio_view_only=False,
         auto_trading_enabled=auto_trading_enabled,
+        aggressive_short_term=auto_aggressive_short_term,
         selected_symbol=selected_symbol,
         selected_market=selected_market,
         scan_pool_size=scan_pool_size,
@@ -2164,6 +2494,11 @@ def main() -> None:
 
     st.subheader("종합 해석")
     st.write(format_signal_summary(signal))
+    if signal.get("pattern_summary"):
+        st.caption(
+            f"차트 패턴 분석: {signal.get('pattern_summary')} "
+            f"(패턴 점수 {safe_float(signal.get('pattern_score')):.2f})"
+        )
 
     st.subheader("예상 시나리오")
     st.caption("아래 수치는 최근 뉴스 흐름과 가격 변동성을 바탕으로 계산한 실험적 추정치입니다.")
@@ -2360,6 +2695,7 @@ def render_mock_positions_dashboard_safe(
             ascending=[False, False],
         )
     display_df = display_df.reset_index(drop=True)
+    position_ids = display_df["id"].astype(str).tolist() if "id" in display_df.columns else []
 
     display_df = display_df.rename(
         columns={
@@ -2401,58 +2737,56 @@ def render_mock_positions_dashboard_safe(
     table_df["자동매도"] = table_df["자동매도"].map(lambda value: "ON" if bool(value) else "OFF")
 
     st.caption("정렬 기준을 바꾸면서 종목별 투자금, 평가금액, 평가손익을 한눈에 비교할 수 있습니다.")
-
+    st.caption("표 안의 `자동매도 목표(%)` 값을 직접 수정한 뒤 아래 `변경사항 저장` 버튼을 누르세요.")
     if highlight_enabled:
-        def _profit_style(value: object) -> str:
-            number = safe_float(value)
-            if number > 0:
-                return "color: #15803d; font-weight: 700;"
-            if number < 0:
-                return "color: #b91c1c; font-weight: 700;"
-            return "color: #475569;"
+        st.caption("편집형 표에서는 셀 색상 강조 대신 수치 편집과 정렬에 집중해 보여줍니다.")
 
-        def _auto_sell_style(value: object) -> str:
-            if str(value).upper() == "ON":
-                return "background-color: rgba(21, 128, 61, 0.10); color: #166534; font-weight: 700;"
-            return "color: #64748b;"
+    editable_columns = ["자동매도 목표(%)"]
+    edited_df = st.data_editor(
+        table_df,
+        use_container_width=True,
+        hide_index=True,
+        key=f"{key_prefix}_editor",
+        disabled=[column for column in table_df.columns if column not in editable_columns],
+        column_config={
+            "보유수량": st.column_config.NumberColumn("보유수량", format="%d"),
+            "매수단가": st.column_config.NumberColumn("매수단가", format="₩%.0f"),
+            "총 매수금액": st.column_config.NumberColumn("총 매수금액", format="₩%.0f"),
+            "현재가": st.column_config.NumberColumn("현재가", format="₩%.0f"),
+            "현재 평가금액": st.column_config.NumberColumn("현재 평가금액", format="₩%.0f"),
+            "평가손익": st.column_config.NumberColumn("평가손익", format="₩%.0f"),
+            "현재 수익률(%)": st.column_config.NumberColumn("현재 수익률(%)", format="%.2f"),
+            "예상 상승률(%)": st.column_config.NumberColumn("예상 상승률(%)", format="%.2f"),
+            "자동매도 목표(%)": st.column_config.NumberColumn("자동매도 목표(%)", min_value=0.1, max_value=30.0, step=0.1, format="%.2f"),
+        },
+    )
 
-        styler = table_df.style.format(
-            {
-                "보유수량": "{:,.0f}",
-                "매수단가": "₩{:,.0f}",
-                "총 매수금액": "₩{:,.0f}",
-                "현재가": "₩{:,.0f}",
-                "현재 평가금액": "₩{:,.0f}",
-                "평가손익": "₩{:,.0f}",
-                "현재 수익률(%)": "{:,.2f}",
-                "예상 상승률(%)": "{:,.2f}",
-                "자동매도 목표(%)": "{:,.2f}",
-            }
-        )
-        if hasattr(styler, "map"):
-            styler = styler.map(_profit_style, subset=["평가손익", "현재 수익률(%)", "예상 상승률(%)"])
-            styler = styler.map(_auto_sell_style, subset=["자동매도"])
+    if st.button("변경사항 저장", key=f"{key_prefix}_save_inline_targets", use_container_width=True):
+        updated_count = 0
+        for row_idx, position_id in enumerate(position_ids):
+            if row_idx >= len(edited_df):
+                continue
+
+            original_target = safe_float(table_df.iloc[row_idx]["자동매도 목표(%)"])
+            edited_target = safe_float(edited_df.iloc[row_idx]["자동매도 목표(%)"], original_target)
+            if abs(original_target - edited_target) < 1e-9:
+                continue
+
+            try:
+                updated_position = update_position_target_profit(position_id, float(edited_target))
+                append_auto_log(
+                    f"목표 수익률 수정: {updated_position.get('name', '')}({updated_position.get('symbol', '')}) "
+                    f"-> {safe_float(updated_position.get('target_profit_pct')):.2f}%"
+                )
+                updated_count += 1
+            except Exception as exc:  # noqa: BLE001
+                st.error(f"목표 수익률 수정 실패 ({position_id}): {exc}")
+
+        if updated_count:
+            st.success(f"{updated_count}개 포지션의 자동매도 목표를 저장했습니다.")
+            st.rerun()
         else:
-            styler = styler.applymap(_profit_style, subset=["평가손익", "현재 수익률(%)", "예상 상승률(%)"])
-            styler = styler.applymap(_auto_sell_style, subset=["자동매도"])
-        st.dataframe(styler, use_container_width=True, hide_index=True)
-    else:
-        st.dataframe(
-            table_df,
-            use_container_width=True,
-            hide_index=True,
-            column_config={
-                "보유수량": st.column_config.NumberColumn("보유수량", format="%d"),
-                "매수단가": st.column_config.NumberColumn("매수단가", format="₩%.0f"),
-                "총 매수금액": st.column_config.NumberColumn("총 매수금액", format="₩%.0f"),
-                "현재가": st.column_config.NumberColumn("현재가", format="₩%.0f"),
-                "현재 평가금액": st.column_config.NumberColumn("현재 평가금액", format="₩%.0f"),
-                "평가손익": st.column_config.NumberColumn("평가손익", format="₩%.0f"),
-                "현재 수익률(%)": st.column_config.NumberColumn("현재 수익률(%)", format="%.2f"),
-                "예상 상승률(%)": st.column_config.NumberColumn("예상 상승률(%)", format="%.2f"),
-                "자동매도 목표(%)": st.column_config.NumberColumn("자동매도 목표(%)", format="%.2f"),
-            },
-        )
+            st.info("변경된 목표값이 없습니다.")
 
 
 if __name__ == "__main__":
