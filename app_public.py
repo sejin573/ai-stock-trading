@@ -9,6 +9,7 @@ from zoneinfo import ZoneInfo
 
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
 import requests
 import streamlit as st
 
@@ -761,6 +762,162 @@ def render_public_realized_chart(trade_history_df: pd.DataFrame) -> None:
     st.line_chart(chart_df.set_index("체결 시각"), height=260)
 
 
+def lookup_public_symbol_name(
+    symbol: str,
+    active_positions_df: pd.DataFrame,
+    snapshot_payload: dict[str, object],
+) -> str:
+    clean_symbol = str(symbol).strip()
+    if not clean_symbol:
+        return ""
+
+    if not active_positions_df.empty and {"symbol", "name"}.issubset(active_positions_df.columns):
+        matched_df = active_positions_df[active_positions_df["symbol"].astype(str) == clean_symbol]
+        if not matched_df.empty:
+            return str(matched_df.iloc[0]["name"]).strip()
+
+    candidate_rows = snapshot_payload.get("candidates", [])
+    if isinstance(candidate_rows, list):
+        for row in candidate_rows:
+            if str((row or {}).get("symbol", "")).strip() == clean_symbol:
+                return str((row or {}).get("name", "")).strip()
+
+    return ""
+
+
+def choose_spotlight_target(
+    cycle_config: dict[str, object],
+    active_positions_df: pd.DataFrame,
+    snapshot_payload: dict[str, object],
+) -> tuple[str, str]:
+    if not active_positions_df.empty and {"symbol", "name", "quantity", "current_price", "current_return_pct"}.issubset(
+        active_positions_df.columns
+    ):
+        ranked_positions_df = active_positions_df.copy()
+        ranked_positions_df["position_value"] = (
+            pd.to_numeric(ranked_positions_df["quantity"], errors="coerce").fillna(0.0)
+            * pd.to_numeric(ranked_positions_df["current_price"], errors="coerce").fillna(0.0)
+        )
+        ranked_positions_df = ranked_positions_df.sort_values(
+            ["position_value", "current_return_pct"],
+            ascending=[False, False],
+        ).reset_index(drop=True)
+        top_row = ranked_positions_df.iloc[0]
+        return str(top_row["symbol"]).strip(), str(top_row["name"]).strip()
+
+    configured_symbol = str(cycle_config.get("spotlight_symbol", "")).strip()
+    if configured_symbol:
+        configured_name = lookup_public_symbol_name(configured_symbol, active_positions_df, snapshot_payload)
+        return configured_symbol, configured_name or configured_symbol
+
+    candidate_rows = snapshot_payload.get("candidates", [])
+    if isinstance(candidate_rows, list):
+        for row in candidate_rows:
+            symbol = str((row or {}).get("symbol", "")).strip()
+            if symbol:
+                name = str((row or {}).get("name", "")).strip()
+                return symbol, name or symbol
+
+    fallback_symbol = "005930"
+    fallback_name = lookup_public_symbol_name(fallback_symbol, active_positions_df, snapshot_payload)
+    return fallback_symbol, fallback_name or fallback_symbol
+
+
+def render_public_spotlight_chart(settings, symbol: str, company_name: str = "") -> None:
+    if not symbol:
+        st.info("\ud45c\uc2dc\ud560 \uc885\ubaa9 \ub370\uc774\ud130\uac00 \uc5c6\uc2b5\ub2c8\ub2e4.")
+        return
+
+    try:
+        stock_df = load_public_stock_series(
+            symbol,
+            getattr(settings, "kis_app_key", ""),
+            getattr(settings, "kis_app_secret", ""),
+        )
+    except Exception as exc:  # noqa: BLE001
+        st.warning(f"\uc885\ubaa9 \uadf8\ub798\ud504\ub97c \ubd88\ub7ec\uc624\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4: {exc}")
+        return
+
+    if stock_df.empty:
+        st.info("\uc885\ubaa9 \uadf8\ub798\ud504\ub97c \ud45c\uc2dc\ud560 \ub370\uc774\ud130\uac00 \uc5c6\uc2b5\ub2c8\ub2e4.")
+        return
+
+    stock_df = stock_df.copy().sort_values("date").reset_index(drop=True)
+    chart_df = stock_df.tail(90).copy()
+    latest_close = safe_float(chart_df["close"].iloc[-1], 0.0)
+    previous_close = safe_float(chart_df["close"].iloc[-2], latest_close) if len(chart_df) > 1 else latest_close
+    daily_change_pct = ((latest_close / previous_close) - 1) * 100 if previous_close else 0.0
+    low_90 = safe_float(chart_df["low"].min(), latest_close)
+    high_90 = safe_float(chart_df["high"].max(), latest_close)
+    clean_name = str(company_name).strip()
+    display_label = f"{clean_name} ({symbol})" if clean_name and clean_name != symbol else symbol
+
+    metric_cols = st.columns(4)
+    metric_cols[0].metric("\uc885\ubaa9", display_label)
+    metric_cols[1].metric("\ud604\uc7ac \uc885\uac00", f"\u20a9{latest_close:,.0f}")
+    metric_cols[2].metric("\uc804\uc77c \ub300\ube44", f"{daily_change_pct:.2f}%")
+    metric_cols[3].metric("90\uc77c \ubc94\uc704", f"\u20a9{low_90:,.0f} ~ \u20a9{high_90:,.0f}")
+
+    fig = px.line(
+        chart_df,
+        x="date",
+        y="close",
+        markers=True,
+        title=f"{display_label} \ucd5c\uadfc 90\uc77c \uc885\uac00 \ucd94\uc774",
+    )
+    fig.update_traces(line_color="#0f766e")
+    fig.update_layout(
+        height=360,
+        margin=dict(l=20, r=20, t=60, b=20),
+        xaxis_title="\ub0a0\uc9dc",
+        yaxis_title="\uc885\uac00",
+    )
+    st.plotly_chart(fig, use_container_width=True)
+
+
+def render_public_realized_chart(trade_history_df: pd.DataFrame) -> None:
+    if trade_history_df.empty:
+        return
+
+    sell_df = trade_history_df[trade_history_df["side"] == "sell"].copy()
+    if sell_df.empty:
+        return
+
+    sell_df["ordered_at"] = pd.to_datetime(sell_df["ordered_at"], errors="coerce")
+    sell_df = sell_df.dropna(subset=["ordered_at"]).sort_values("ordered_at")
+    if sell_df.empty:
+        return
+
+    sell_df["cumulative_realized_pnl"] = sell_df["realized_pnl"].cumsum()
+    chart_df = sell_df[["ordered_at", "cumulative_realized_pnl"]].copy()
+    latest_value = safe_float(chart_df["cumulative_realized_pnl"].iloc[-1], 0.0)
+    line_color = "#2563eb" if latest_value >= 0 else "#dc2626"
+    fill_color = "rgba(37, 99, 235, 0.14)" if latest_value >= 0 else "rgba(220, 38, 38, 0.14)"
+
+    fig = go.Figure()
+    fig.add_trace(
+        go.Scatter(
+            x=chart_df["ordered_at"],
+            y=chart_df["cumulative_realized_pnl"],
+            mode="lines+markers",
+            line=dict(color=line_color, width=3),
+            marker=dict(color=line_color, size=7),
+            fill="tozeroy",
+            fillcolor=fill_color,
+            name="\uc2e4\ud604 \uc190\uc775",
+        )
+    )
+    fig.update_layout(
+        height=300,
+        margin=dict(l=20, r=20, t=20, b=20),
+        xaxis_title="\uccb4\uacb0 \uc2dc\uac01",
+        yaxis_title="\ub204\uc801 \uc2e4\ud604 \uc190\uc775",
+        showlegend=False,
+    )
+    fig.update_yaxes(zeroline=True, zerolinecolor="#94a3b8")
+    st.plotly_chart(fig, use_container_width=True)
+
+
 @st.fragment(run_every=f"{get_public_cycle_config()['refresh_seconds']}s")
 def render_public_portfolio_fragment() -> None:
     settings = get_settings()
@@ -860,6 +1017,116 @@ def render_public_portfolio_fragment() -> None:
         render_public_trade_history(trade_history_df)
         st.markdown("**누적 실현손익 추이**")
         render_public_realized_chart(trade_history_df)
+    with candidates_tab:
+        render_public_candidates(snapshot_payload)
+
+
+@st.fragment(run_every=f"{get_public_cycle_config()['refresh_seconds']}s")
+def render_public_portfolio_fragment() -> None:
+    settings = get_settings()
+    cycle_config = get_public_cycle_config()
+    ran_cycle, cycle_message = maybe_run_public_cycle(settings, cycle_config)
+
+    portfolio_payload, portfolio_payload_source = load_public_portfolio_payload()
+    portfolio_positions_df = build_seed_positions_frame(portfolio_payload)
+    portfolio_trade_history_df = build_seed_trade_history_df(portfolio_payload)
+    portfolio_candidate_payload = build_seed_snapshot_payload(portfolio_payload)
+
+    strategy_payload = load_strategy_state_payload()
+    trade_state_payload = load_mock_trade_state_payload()
+    snapshot_payload = load_candidate_snapshot_payload()
+    trade_state_signature = build_public_trade_state_signature(trade_state_payload)
+
+    positions_error = ""
+    try:
+        active_positions_df = load_public_active_positions_frame(
+            trade_state_signature,
+            getattr(settings, "kis_app_key", ""),
+            getattr(settings, "kis_app_secret", ""),
+            getattr(settings, "kis_mock_app_key", ""),
+            getattr(settings, "kis_mock_app_secret", ""),
+            getattr(settings, "kis_account_no", ""),
+            getattr(settings, "kis_account_product_code", ""),
+        )
+    except Exception as exc:  # noqa: BLE001
+        active_positions_df = pd.DataFrame()
+        positions_error = str(exc)
+
+    trade_history_df = build_auto_trade_history_df(strategy_payload, trade_state_payload)
+    using_seed_data = False
+    using_portfolio_snapshot = False
+    if portfolio_payload_source in {"url", "file"} and (
+        not portfolio_positions_df.empty or not portfolio_trade_history_df.empty
+    ):
+        active_positions_df = portfolio_positions_df
+        trade_history_df = portfolio_trade_history_df
+        if portfolio_candidate_payload.get("candidates"):
+            snapshot_payload = portfolio_candidate_payload
+        using_portfolio_snapshot = True
+    elif portfolio_payload_source == "seed" and (
+        bool(cycle_config.get("prefer_seed_data", True)) or (active_positions_df.empty and trade_history_df.empty)
+    ):
+        if not portfolio_positions_df.empty or not portfolio_trade_history_df.empty:
+            active_positions_df = portfolio_positions_df
+            trade_history_df = portfolio_trade_history_df
+            snapshot_payload = portfolio_candidate_payload
+            using_seed_data = True
+
+    summary = build_public_summary(active_positions_df, trade_history_df)
+    overview_symbol, overview_name = choose_spotlight_target(cycle_config, active_positions_df, snapshot_payload)
+    movement_df = build_public_movement_table(settings, active_positions_df, snapshot_payload)
+    runtime_state = load_public_runtime_state()
+    last_cycle_at = str(runtime_state.get("last_cycle_at", "")).strip() or "-"
+
+    status_cols = st.columns(4)
+    status_cols[0].metric(
+        "\uacf5\uac1c \uc790\ub3d9 \uc6b4\uc6a9",
+        "\uc2e4\ud589 \uc911" if bool(cycle_config["enabled"]) else "\ubaa8\ub2c8\ud130 \uc804\uc6a9",
+    )
+    status_cols[1].metric("\ucd5c\uadfc \uc6b4\uc6a9 \uc2e4\ud589", last_cycle_at)
+    status_cols[2].metric("\ubcf4\uc720 \uc885\ubaa9 \uc218", f"{int(summary['holding_count']):,}")
+    status_cols[3].metric("\ucd5c\uadfc \uac70\ub798 \uac74\uc218", f"{len(trade_history_df):,}")
+
+    if ran_cycle:
+        st.success(cycle_message)
+    else:
+        st.caption(cycle_message)
+
+    if positions_error:
+        st.warning(f"\ud604\uc7ac\uac00 \uac31\uc2e0 \uc911 \uc77c\ubd80 \ub370\uc774\ud130 \uc870\ud68c\uc5d0 \uc2e4\ud328\ud588\uc2b5\ub2c8\ub2e4: {positions_error}")
+    if using_portfolio_snapshot:
+        if portfolio_payload_source == "url":
+            st.info("\uacf5\uac1c \uc571\uc774 \uc678\ubd80 \ud3ec\ud2b8\ud3f4\ub9ac\uc624 \uc2a4\ub0c5\uc0f7 URL\uc5d0\uc11c \ucd5c\uc2e0 \uc0c1\ud0dc\ub97c \ubd88\ub7ec\uc624\uace0 \uc788\uc2b5\ub2c8\ub2e4.")
+        elif portfolio_payload_source == "file":
+            st.info("\uacf5\uac1c \uc571\uc774 `public_data/portfolio_snapshot.json` \uae30\uc900\uc73c\ub85c \ucd5c\uc2e0 \uc0c1\ud0dc\ub97c \ud45c\uc2dc\ud558\uace0 \uc788\uc2b5\ub2c8\ub2e4.")
+    if using_seed_data:
+        st.info("\uacf5\uac1c \uc571\uc774 \ud604\uc7ac \uc0d8\ud50c \ud3ec\ud2b8\ud3f4\ub9ac\uc624 \ub370\uc774\ud130\ub97c \uc6b0\uc120 \ud45c\uc2dc\ud558\uace0 \uc788\uc2b5\ub2c8\ub2e4.")
+
+    render_public_summary_cards(summary)
+
+    st.subheader("\uc2e4\ud604 \uc190\uc775 \ucd94\uc774")
+    st.caption("\ucd5c\uadfc \ub9e4\ub3c4 \uc774\ub825\uc744 \uae30\uc900\uc73c\ub85c \ub204\uc801 \uc2e4\ud604 \uc190\uc775 \ud750\ub984\uc744 \uba3c\uc800 \ubcf4\uc5ec\uc90d\ub2c8\ub2e4.")
+    render_public_realized_chart(trade_history_df)
+
+    st.subheader("\ud604\uc7ac \ud3ec\uc9c0\uc158 \uc8fc\uac00 \uadf8\ub798\ud504")
+    st.caption("\ud604\uc7ac \ubcf4\uc720 \ud3ec\uc9c0\uc158\uc744 \uae30\uc900\uc73c\ub85c \uc0c1\ub2e8 \uadf8\ub798\ud504\ub97c \ud45c\uc2dc\ud569\ub2c8\ub2e4. \ud3ec\uc9c0\uc158\uc774 \uc5c6\uc73c\uba74 \ub300\ud45c \uc885\ubaa9\uc73c\ub85c \ub300\uccb4\ud569\ub2c8\ub2e4.")
+    render_public_spotlight_chart(settings, overview_symbol, overview_name)
+
+    st.subheader("\uc8fc\uac00 \ubcc0\ub3d9 \uc694\uc57d")
+    st.caption("\ubcf4\uc720 \uc885\ubaa9\uacfc \ucd5c\uadfc \ucd94\ucc9c \ud6c4\ubcf4\ub97c \uae30\uc900\uc73c\ub85c \uc77c\uc77c, 5\uc77c, 20\uc77c \ubcc0\ud654\ub97c \uc694\uc57d\ud569\ub2c8\ub2e4.")
+    render_public_movement_table(movement_df)
+
+    holdings_tab, history_tab, candidates_tab = st.tabs(
+        ["\ud604\uc7ac \ud3ec\uc9c0\uc158", "\ucd5c\uadfc \ub9e4\ub9e4 \uc774\ub825", "\ucd5c\uadfc \ucd94\ucc9c \ud6c4\ubcf4"]
+    )
+    with holdings_tab:
+        selected_symbol, selected_name = render_public_positions(active_positions_df)
+        if selected_symbol:
+            st.markdown("**\uc120\ud0dd\ud55c \ubcf4\uc720 \uc885\ubaa9 \uc8fc\uac00 \uadf8\ub798\ud504**")
+            st.caption(f"{selected_name} ({selected_symbol})\uc758 \ucd5c\uadfc \uc8fc\uac00 \ud750\ub984\uc785\ub2c8\ub2e4.")
+            render_public_spotlight_chart(settings, selected_symbol, selected_name)
+    with history_tab:
+        render_public_trade_history(trade_history_df)
     with candidates_tab:
         render_public_candidates(snapshot_payload)
 
