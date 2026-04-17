@@ -5,6 +5,8 @@ import json
 import sys
 import types
 import zipfile
+from datetime import datetime, timedelta
+from pathlib import Path
 from typing import Any
 
 import pandas as pd
@@ -61,6 +63,8 @@ pykrx_stock = _load_pykrx_stock_module()
 KIS_BASE_URL = "https://openapi.koreainvestment.com:9443"
 KIS_MOCK_BASE_URL = "https://openapivts.koreainvestment.com:29443"
 KIS_MASTER_BASE_URL = "https://new.real.download.dws.co.kr/common/master"
+KIS_TOKEN_CACHE_PATH = Path(__file__).resolve().parent.parent / "data" / "kis_token_cache.json"
+KIS_TOKEN_REFRESH_BUFFER_SECONDS = 600
 KIS_MASTER_FILES = {
     "KOSPI": ("kospi_code.mst.zip", "kospi_code.mst", 228),
     "KOSDAQ": ("kosdaq_code.mst.zip", "kosdaq_code.mst", 222),
@@ -76,6 +80,49 @@ KOSDAQ_MASTER_WIDTHS = [
     9, 5, 5, 1, 1, 1, 2, 1, 1, 1, 2, 2, 2, 3, 1, 3, 12, 12, 8, 15, 21, 2, 7, 1, 1, 1, 1,
     9, 9, 9, 5, 9, 8, 9, 3, 1, 1, 1,
 ]
+
+
+def _ensure_token_cache_dir() -> None:
+    KIS_TOKEN_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+
+def _load_token_cache() -> dict[str, Any]:
+    _ensure_token_cache_dir()
+    if not KIS_TOKEN_CACHE_PATH.exists():
+        return {}
+
+    try:
+        payload = json.loads(KIS_TOKEN_CACHE_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    return payload if isinstance(payload, dict) else {}
+
+
+def _save_token_cache(payload: dict[str, Any]) -> None:
+    _ensure_token_cache_dir()
+    KIS_TOKEN_CACHE_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _kis_token_cache_key(base_url: str, app_key: str) -> str:
+    return f"{base_url}:{app_key}"
+
+
+def _parse_token_expiry_epoch(payload: dict[str, Any], now: datetime) -> int:
+    expires_in = int(float(payload.get("expires_in") or 0))
+    token_expired_at = str(payload.get("access_token_token_expired", "")).strip()
+
+    if token_expired_at:
+        for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M:%S%z"):
+            try:
+                parsed = datetime.strptime(token_expired_at, fmt)
+                return int(parsed.timestamp())
+            except ValueError:
+                continue
+
+    if expires_in > 0:
+        return int((now + timedelta(seconds=expires_in)).timestamp())
+
+    return int((now + timedelta(hours=23)).timestamp())
 
 
 def _build_derived_columns(stock_df: pd.DataFrame) -> pd.DataFrame:
@@ -224,7 +271,27 @@ def _load_catalog_from_kis_master(markets: list[str]) -> pd.DataFrame:
     return catalog_df.reset_index(drop=True)
 
 
-def issue_kis_access_token(app_key: str, app_secret: str, base_url: str = KIS_BASE_URL) -> str:
+def issue_kis_access_token(
+    app_key: str,
+    app_secret: str,
+    base_url: str = KIS_BASE_URL,
+    *,
+    force_refresh: bool = False,
+) -> str:
+    now = datetime.now()
+    cache = _load_token_cache()
+    cache_key = _kis_token_cache_key(base_url, app_key)
+    cached = cache.get(cache_key, {})
+    cached_token = str(cached.get("access_token", "")).strip()
+    expires_at_epoch = int(float(cached.get("expires_at_epoch") or 0))
+
+    if (
+        not force_refresh
+        and cached_token
+        and expires_at_epoch > int(now.timestamp()) + KIS_TOKEN_REFRESH_BUFFER_SECONDS
+    ):
+        return cached_token
+
     headers = {"Content-Type": "application/json; charset=UTF-8"}
     body = {
         "grant_type": "client_credentials",
@@ -246,6 +313,16 @@ def issue_kis_access_token(app_key: str, app_secret: str, base_url: str = KIS_BA
     if not access_token:
         message = payload.get("msg1") or payload.get("message") or "KIS access token was not returned."
         raise ValueError(message)
+
+    expires_at_epoch = _parse_token_expiry_epoch(payload, now)
+    cache[cache_key] = {
+        "access_token": access_token,
+        "issued_at": now.isoformat(timespec="seconds"),
+        "expires_at_epoch": expires_at_epoch,
+        "access_token_token_expired": str(payload.get("access_token_token_expired", "")).strip(),
+        "expires_in": int(float(payload.get("expires_in") or 0)),
+    }
+    _save_token_cache(cache)
     return access_token
 
 

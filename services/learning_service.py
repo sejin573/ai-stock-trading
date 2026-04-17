@@ -17,6 +17,7 @@ DEFAULT_WEIGHTS = {
     "sentiment": 0.50,
     "volatility": 0.40,
     "entry_timing": 0.40,
+    "chart_pattern": 0.55,
 }
 
 
@@ -96,6 +97,7 @@ def extract_learning_features(row: dict[str, Any]) -> dict[str, float]:
     average_sentiment = _safe_float(row.get("average_sentiment", 0.0))
     recent_volatility_pct = _safe_float(row.get("recent_volatility_pct", 0.0))
     realtime_change_rate = _safe_float(row.get("realtime_change_rate", 0.0))
+    pattern_bias = _safe_float(row.get("pattern_bias", row.get("pattern_score", 0.0) / 10.0))
 
     return {
         "model_score": _clip((final_score - 50.0) / 50.0, -1.0, 1.0),
@@ -104,6 +106,7 @@ def extract_learning_features(row: dict[str, Any]) -> dict[str, float]:
         "sentiment": _clip(average_sentiment, -1.0, 1.0),
         "volatility": _clip((recent_volatility_pct - 5.0) / 10.0, -1.0, 1.0),
         "entry_timing": _clip((-realtime_change_rate) / 10.0, -1.0, 1.0),
+        "chart_pattern": _clip(pattern_bias, -1.0, 1.0),
     }
 
 

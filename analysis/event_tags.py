@@ -12,6 +12,8 @@ EVENT_RULES = {
     "merger_acquisition": {"acquire", "acquisition", "merge", "takeover"},
     "partnership": {"partnership", "collaboration", "joint", "alliance"},
     "regulation": {"regulation", "probe", "antitrust", "compliance"},
+    "policy_support": {"subsidy", "stimulus", "support", "budget", "approval", "easing"},
+    "politics_risk": {"political", "election", "tariff", "sanction", "strike", "conflict"},
 }
 
 KOREAN_EVENT_RULES = {
@@ -21,6 +23,8 @@ KOREAN_EVENT_RULES = {
     "merger_acquisition": {"인수", "합병", "M&A", "매각"},
     "partnership": {"제휴", "협력", "동맹", "파트너십", "공동개발"},
     "regulation": {"규제", "조사", "반독점", "당국", "제재"},
+    "policy_support": {"지원", "보조금", "예산", "추경", "완화", "승인", "육성", "진흥"},
+    "politics_risk": {"정치", "선거", "탄핵", "관세", "제재", "갈등", "파업", "불확실성"},
 }
 
 EVENT_LABELS = {
@@ -30,6 +34,8 @@ EVENT_LABELS = {
     "merger_acquisition": "인수합병",
     "partnership": "제휴",
     "regulation": "규제",
+    "policy_support": "정책 수혜",
+    "politics_risk": "정치/정책 리스크",
     "general": "일반",
 }
 

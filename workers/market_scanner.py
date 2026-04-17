@@ -13,6 +13,7 @@ import pandas as pd
 from analysis.event_tags import add_event_tags
 from analysis.features import build_daily_feature_frame
 from analysis.forecast import calculate_price_forecast
+from analysis.patterns import analyze_chart_patterns
 from analysis.scoring import calculate_impact_signal
 from analysis.sentiment import add_sentiment_columns
 from services.learning_service import apply_learning_to_row, update_learning_from_history
@@ -23,7 +24,7 @@ from services.stock_service import (
     get_krx_stock_catalog,
 )
 from utils.config import get_settings
-from utils.helpers import build_news_query, compute_recent_return
+from utils.helpers import build_news_query, compute_recent_return, is_krx_symbol
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 SNAPSHOT_PATH = DATA_DIR / "candidate_snapshot.json"
@@ -92,6 +93,8 @@ def build_market_scan_candidates(
         return []
 
     candidate_df = stock_catalog_df.copy()
+    if "symbol" in candidate_df.columns:
+        candidate_df = candidate_df[candidate_df["symbol"].astype(str).map(is_krx_symbol)].copy()
 
     if selected_market != "전체" and "market" in candidate_df.columns:
         candidate_df = candidate_df[candidate_df["market"] == selected_market].copy()
@@ -158,6 +161,7 @@ def build_price_only_signal(stock_df: pd.DataFrame) -> tuple[pd.DataFrame, dict[
     empty_news_df = pd.DataFrame(columns=["published_at", "title", "sentiment_score", "event_tag_list"])
     feature_df = build_daily_feature_frame(stock_df=stock_df, news_df=empty_news_df)
     signal = calculate_impact_signal(stock_df=stock_df, news_df=empty_news_df, feature_df=feature_df)
+    signal = {**signal, **analyze_chart_patterns(stock_df)}
     return feature_df, signal
 
 
@@ -170,6 +174,8 @@ def analyze_price_candidate(candidate: dict[str, Any]) -> dict[str, Any] | None:
             return None
 
         _, signal = build_price_only_signal(stock_df)
+        chart_pattern = analyze_chart_patterns(stock_df)
+        signal = {**signal, **chart_pattern}
         current_price = safe_float(stock_df["close"].iloc[-1])
         forecast = calculate_price_forecast(
             stock_df=stock_df,
@@ -192,6 +198,9 @@ def analyze_price_candidate(candidate: dict[str, Any]) -> dict[str, Any] | None:
 
         market_cap_score = min(15.0, safe_float(candidate.get("market_cap")) / 15000.0)
         roe_score = max(0.0, min(12.0, safe_float(candidate.get("roe")) / 2.0))
+        pattern_score = safe_float(chart_pattern.get("pattern_score"))
+        pattern_bias = safe_float(chart_pattern.get("pattern_bias"))
+        pattern_label = str(chart_pattern.get("pattern_label", "중립"))
 
         base_score = (
             expected_return_pct * 3.35
@@ -200,6 +209,7 @@ def analyze_price_candidate(candidate: dict[str, Any]) -> dict[str, Any] | None:
             + volatility_balance_bonus
             + safe_float(signal.get("impact_score")) * 0.18
             + max(0.0, recent_return_5d_pct) * 0.9
+            + pattern_score * 0.95
             + market_cap_score * 0.2
             + roe_score * 0.2
             - max(0.0, recent_volatility_pct - 9.0) * 0.85
@@ -219,6 +229,10 @@ def analyze_price_candidate(candidate: dict[str, Any]) -> dict[str, Any] | None:
             "impact_score": int(safe_float(signal.get("impact_score"))),
             "expected_return_pct": round(expected_return_pct, 2),
             "up_probability_pct": round(up_probability_pct, 2),
+            "pattern_score": round(pattern_score, 2),
+            "pattern_bias": round(pattern_bias, 3),
+            "chart_pattern": pattern_label,
+            "pattern_tags": chart_pattern.get("pattern_tags", []),
             "average_sentiment": 0.0,
             "article_count": 0,
             "top_tags": [],
@@ -278,6 +292,8 @@ def enrich_candidate_with_news(
         news_df = add_event_tags(news_df)
         feature_df = build_daily_feature_frame(stock_df=stock_df, news_df=news_df)
         signal = calculate_impact_signal(stock_df=stock_df, news_df=news_df, feature_df=feature_df)
+        chart_pattern = analyze_chart_patterns(stock_df)
+        signal = {**signal, **chart_pattern}
 
         current_price = candidate_row["current_price"]
         realtime_change_rate = candidate_row["realtime_change_rate"]
@@ -302,12 +318,16 @@ def enrich_candidate_with_news(
         up_probability_pct = safe_float(forecast.get("up_probability")) * 100
         article_count = int(len(news_df))
         top_tags = extract_top_tags(news_df)
+        pattern_score = safe_float(chart_pattern.get("pattern_score"))
+        pattern_bias = safe_float(chart_pattern.get("pattern_bias"))
+        pattern_label = str(chart_pattern.get("pattern_label", "중립"))
 
         final_score = (
             safe_float(candidate_row["base_score"]) * 0.45
             + impact_score * 0.30
             + up_probability_pct * 0.18
             + max(0.0, avg_sentiment) * 10.0
+            + pattern_score * 0.70
             + min(article_count, 15) * 0.35
         )
 
@@ -322,6 +342,10 @@ def enrich_candidate_with_news(
                 "average_sentiment": round(avg_sentiment, 3),
                 "article_count": article_count,
                 "top_tags": top_tags,
+                "pattern_score": round(pattern_score, 2),
+                "pattern_bias": round(pattern_bias, 3),
+                "chart_pattern": pattern_label,
+                "pattern_tags": chart_pattern.get("pattern_tags", []),
                 "direction": str(forecast.get("direction", "중립")),
                 "final_score": round(final_score, 2),
             }

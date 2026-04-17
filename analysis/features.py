@@ -17,10 +17,10 @@ def build_daily_feature_frame(stock_df: pd.DataFrame, news_df: pd.DataFrame) -> 
     news_copy = news_df.copy()
     news_copy["date"] = pd.to_datetime(news_copy["published_at"]).dt.normalize()
     news_copy["has_negative_event"] = news_copy["event_tag_list"].map(
-        lambda tags: int(any(tag in {"lawsuit", "regulation"} for tag in tags))
+        lambda tags: int(any(tag in {"lawsuit", "regulation", "politics_risk"} for tag in tags))
     )
     news_copy["has_positive_event"] = news_copy["event_tag_list"].map(
-        lambda tags: int(any(tag in {"earnings", "product_launch", "partnership"} for tag in tags))
+        lambda tags: int(any(tag in {"earnings", "product_launch", "partnership", "policy_support"} for tag in tags))
     )
 
     daily_news = (
@@ -42,4 +42,3 @@ def build_daily_feature_frame(stock_df: pd.DataFrame, news_df: pd.DataFrame) -> 
         "positive_event_count": 0,
     }
     return merged_df.fillna(fill_map)
-

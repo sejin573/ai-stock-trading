@@ -474,6 +474,20 @@ def load_active_positions() -> list[dict[str, Any]]:
     return [row for row in state.get("positions", []) if row.get("status") == "active"]
 
 
+def update_position_target_profit(position_id: str, target_profit_pct: float) -> dict[str, Any]:
+    state = _load_trade_state()
+    normalized_target_profit = max(0.1, float(target_profit_pct))
+
+    for row in state.get("positions", []):
+        if row.get("id") != position_id or row.get("status") != "active":
+            continue
+        row["target_profit_pct"] = normalized_target_profit
+        _save_trade_state(state)
+        return row.copy()
+
+    raise ValueError("수정할 활성 포지션을 찾지 못했습니다.")
+
+
 def build_active_positions_frame(settings: Settings) -> pd.DataFrame:
     rows: list[dict[str, Any]] = []
     for position in load_active_positions():

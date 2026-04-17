@@ -89,6 +89,7 @@ def choose_trade_candidates(
     min_expected_return: float,
     min_sentiment: float,
     max_realtime_change: float,
+    aggressive_short_term: bool = False,
 ) -> list[dict[str, Any]]:
     candidates = snapshot.get("candidates", [])
     filtered: list[dict[str, Any]] = []
@@ -121,7 +122,22 @@ def choose_trade_candidates(
 
         filtered.append(row)
 
-    return sorted(filtered, key=lambda x: safe_float(x.get("final_score")), reverse=True)
+    def _candidate_rank(row: dict[str, Any]) -> float:
+        base_score = safe_float(row.get("final_score"))
+        if not aggressive_short_term:
+            return base_score
+
+        realtime_change_rate = max(0.0, safe_float(row.get("realtime_change_rate")))
+        recent_return_5d_pct = max(0.0, safe_float(row.get("recent_return_5d_pct")))
+        article_count = max(0.0, safe_float(row.get("article_count")))
+        return (
+            base_score
+            + (realtime_change_rate * 1.4)
+            + (recent_return_5d_pct * 0.18)
+            + (article_count * 0.35)
+        )
+
+    return sorted(filtered, key=_candidate_rank, reverse=True)
 
 
 def record_buy(
@@ -182,6 +198,7 @@ def run_once(
     min_target_profit: float,
     max_target_profit: float,
     ignore_market_hours: bool,
+    aggressive_short_term: bool = False,
 ) -> None:
     settings = get_settings()
 
@@ -220,6 +237,7 @@ def run_once(
         min_expected_return=min_expected_return,
         min_sentiment=min_sentiment,
         max_realtime_change=max_realtime_change,
+        aggressive_short_term=aggressive_short_term,
     )
 
     if not candidates:
@@ -255,47 +273,55 @@ def run_once(
             min(max_target_profit, expected_return_pct * target_profit_factor),
         )
 
-        try:
-            order_payload = place_mock_cash_order(
-                settings=settings,
-                side="buy",
-                symbol=symbol,
-                quantity=quantity,
-                order_type="market",
-            )
+        while quantity >= 1:
+            try:
+                order_payload = place_mock_cash_order(
+                    settings=settings,
+                    side="buy",
+                    symbol=symbol,
+                    quantity=quantity,
+                    order_type="market",
+                )
 
-            register_auto_sell_position(
-                symbol=symbol,
-                name=name,
-                market=market,
-                quantity=quantity,
-                entry_price=current_price,
-                expected_return_pct=expected_return_pct,
-                target_profit_pct=target_profit_pct,
-                auto_sell_enabled=True,
-                order_payload=order_payload,
-            )
+                register_auto_sell_position(
+                    symbol=symbol,
+                    name=name,
+                    market=market,
+                    quantity=quantity,
+                    entry_price=current_price,
+                    expected_return_pct=expected_return_pct,
+                    target_profit_pct=target_profit_pct,
+                    auto_sell_enabled=True,
+                    order_payload=order_payload,
+                )
 
-            record_buy(
-                state=state,
-                symbol=symbol,
-                name=name,
-                quantity=quantity,
-                price=current_price,
-                target_profit_pct=target_profit_pct,
-                candidate_row=row,
-            )
-            save_strategy_state(state)
+                record_buy(
+                    state=state,
+                    symbol=symbol,
+                    name=name,
+                    quantity=quantity,
+                    price=current_price,
+                    target_profit_pct=target_profit_pct,
+                    candidate_row=row,
+                )
+                save_strategy_state(state)
 
-            print(
-                f"[auto_trader] BUY {name}({symbol}) "
-                f"qty={quantity} price={current_price:.2f} "
-                f"target_profit={target_profit_pct:.2f}%"
-            )
-            return
+                print(
+                    f"[auto_trader] BUY {name}({symbol}) "
+                    f"qty={quantity} price={current_price:.2f} "
+                    f"target_profit={target_profit_pct:.2f}%"
+                )
+                return
 
-        except Exception as exc:
-            print(f"[auto_trader] 주문 실패 {symbol}: {exc}")
+            except Exception as exc:
+                error_text = str(exc)
+                if ("주문가능금액이 부족" in error_text or "40250000" in error_text) and quantity > 1:
+                    quantity -= 1
+                    print(f"[auto_trader] 주문 가능 금액 부족으로 수량 축소 재시도 {symbol} -> qty={quantity}")
+                    continue
+
+                print(f"[auto_trader] 주문 실패 {symbol}: {exc}")
+                break
 
     print("[auto_trader] 매수 가능한 종목을 끝까지 찾지 못했습니다.")
 

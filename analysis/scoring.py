@@ -67,6 +67,50 @@ def calculate_impact_signal(
     }
 
 
+def calculate_issue_bias(news_df: pd.DataFrame) -> dict[str, Any]:
+    if news_df.empty:
+        return {
+            "policy_bias_score": 0.0,
+            "policy_sentiment": 0.0,
+            "policy_article_count": 0,
+            "policy_positive_count": 0,
+            "policy_negative_count": 0,
+        }
+
+    average_sentiment = _safe_float(news_df["sentiment_score"].mean()) if "sentiment_score" in news_df else 0.0
+    positive_count = int((news_df["sentiment_score"] >= 0.2).sum()) if "sentiment_score" in news_df else 0
+    negative_count = int((news_df["sentiment_score"] <= -0.2).sum()) if "sentiment_score" in news_df else 0
+
+    positive_event_count = 0
+    negative_event_count = 0
+    if "event_tag_list" in news_df.columns:
+        positive_event_count = int(
+            news_df["event_tag_list"].map(
+                lambda tags: int(any(tag in {"policy_support", "partnership", "earnings"} for tag in (tags or [])))
+            ).sum()
+        )
+        negative_event_count = int(
+            news_df["event_tag_list"].map(
+                lambda tags: int(any(tag in {"politics_risk", "regulation", "lawsuit"} for tag in (tags or [])))
+            ).sum()
+        )
+
+    raw_bias_score = (
+        average_sentiment * 11.0
+        + (positive_count - negative_count) * 0.9
+        + (positive_event_count - negative_event_count) * 1.4
+    )
+    policy_bias_score = max(-12.0, min(12.0, raw_bias_score))
+
+    return {
+        "policy_bias_score": round(policy_bias_score, 2),
+        "policy_sentiment": round(average_sentiment, 3),
+        "policy_article_count": int(len(news_df)),
+        "policy_positive_count": int(positive_count + positive_event_count),
+        "policy_negative_count": int(negative_count + negative_event_count),
+    }
+
+
 def format_signal_summary(signal: dict[str, Any]) -> str:
     score = int(signal["impact_score"])
     direction = str(signal["direction"])

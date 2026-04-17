@@ -21,6 +21,7 @@ def calculate_price_forecast(
     recent_return_20d = compute_recent_return(stock_df["close"], periods=20)
     recent_volatility = float(signal.get("recent_volatility", 0.0) or 0.0)
     average_sentiment = float(signal.get("average_sentiment", 0.0) or 0.0)
+    pattern_bias = float(signal.get("pattern_bias", 0.0) or 0.0)
     positive_events = int(signal.get("positive_events", 0) or 0)
     negative_events = int(signal.get("negative_events", 0) or 0)
     event_balance = (positive_events - negative_events) / max(positive_events + negative_events, 1)
@@ -28,6 +29,7 @@ def calculate_price_forecast(
     raw_probability = (
         average_sentiment * 2.2
         + event_balance * 1.1
+        + pattern_bias * 2.4
         + recent_return_5d * 10
         + recent_return_20d * 4
         - recent_volatility * 3
@@ -37,6 +39,7 @@ def calculate_price_forecast(
     expected_return_pct = (
         average_sentiment * 0.018
         + event_balance * 0.012
+        + pattern_bias * 0.018
         + recent_return_5d * 0.35
         + recent_return_20d * 0.15
     )
@@ -60,4 +63,5 @@ def calculate_price_forecast(
         "predicted_price": predicted_price,
         "recent_return_5d": recent_return_5d,
         "recent_return_20d": recent_return_20d,
+        "pattern_bias": pattern_bias,
     }
