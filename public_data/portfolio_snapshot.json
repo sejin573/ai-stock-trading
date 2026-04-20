@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-20T11:05:18+09:00",
+  "created_at": "2026-04-20T11:06:02+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 3,
-    "holding_quantity": 373,
-    "total_buy_amount": 5157360.0,
-    "total_eval_amount": 5169640.0,
-    "unrealized_pnl": 12280.0,
-    "realized_pnl": -89015.0,
-    "total_profit": -76735.0,
-    "cumulative_return_pct": -1.487873640777452
+    "holding_count": 2,
+    "holding_quantity": 295,
+    "total_buy_amount": 3962400.0,
+    "total_eval_amount": 3991850.0,
+    "unrealized_pnl": 29450.0,
+    "realized_pnl": -107735.0,
+    "total_profit": -78285.0,
+    "cumulative_return_pct": -1.9756965475469412
   },
   "positions": [
     {
@@ -19,10 +19,10 @@
       "market": "KOSDAQ",
       "quantity": 49,
       "entry_price": 40200.0,
-      "current_price": 40600.0,
+      "current_price": 40550.0,
       "expected_return_pct": 6.56,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.995024875621886,
+      "current_return_pct": 0.8706467661691475,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T10:47:16"
     },
@@ -33,26 +33,12 @@
       "market": "KOSDAQ",
       "quantity": 246,
       "entry_price": 8100.0,
-      "current_price": 8140.0,
+      "current_price": 8150.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.49382716049382047,
+      "current_return_pct": 0.6172839506172867,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:38:30"
-    },
-    {
-      "id": "241520-20260420094358",
-      "symbol": "241520",
-      "name": "DSC인베스트먼트",
-      "market": "KOSDAQ",
-      "quantity": 78,
-      "entry_price": 15320.0,
-      "current_price": 15100.0,
-      "expected_return_pct": 7.33,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -1.436031331592691,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-20T09:43:58"
     }
   ],
   "trade_history": [
@@ -107,7 +93,7 @@
       "name": "DSC인베스트먼트",
       "quantity": 78,
       "price": 15320.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -1386,6 +1372,17 @@
       "status": "closed",
       "realized_pnl": -45000.0,
       "realized_pnl_pct": -2.3076923076923106
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "241520",
+      "name": "DSC인베스트먼트",
+      "quantity": 78,
+      "price": 15080.0,
+      "status": "closed",
+      "realized_pnl": -18720.0,
+      "realized_pnl_pct": -1.5665796344647487
     }
   ],
   "candidates": [
