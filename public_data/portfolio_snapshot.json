@@ -1,33 +1,29 @@
 {
-  "created_at": "2026-04-20T12:15:19+09:00",
+  "created_at": "2026-04-20T12:15:59+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 1,
-    "holding_quantity": 49,
-    "total_buy_amount": 1969800.0,
-    "total_eval_amount": 2013900.0,
-    "unrealized_pnl": 44100.0,
-    "realized_pnl": -172155.0,
-    "total_profit": -128055.0,
-    "cumulative_return_pct": -6.500913798355162
+    "holding_count": 0,
+    "holding_quantity": 0,
+    "total_buy_amount": 0.0,
+    "total_eval_amount": 0.0,
+    "unrealized_pnl": 0.0,
+    "realized_pnl": -125605.0,
+    "total_profit": -125605.0,
+    "cumulative_return_pct": 0.0
   },
-  "positions": [
+  "positions": [],
+  "trade_history": [
     {
-      "id": "115180-20260420104716",
+      "ordered_at": "2026-04-20T12:15:57",
+      "side": "sell",
       "symbol": "115180",
       "name": "큐리언트",
-      "market": "KOSDAQ",
       "quantity": 49,
-      "entry_price": 40200.0,
-      "current_price": 41100.0,
-      "expected_return_pct": 6.56,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 2.238805970149249,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-20T10:47:16"
-    }
-  ],
-  "trade_history": [
+      "price": 41150.0,
+      "status": "closed",
+      "realized_pnl": 46550.0,
+      "realized_pnl_pct": 2.3631840796019876
+    },
     {
       "ordered_at": "2026-04-20T11:08:14",
       "side": "buy",
@@ -46,7 +42,7 @@
       "name": "큐리언트",
       "quantity": 49,
       "price": 40200.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
