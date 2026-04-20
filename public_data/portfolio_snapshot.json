@@ -1,32 +1,17 @@
 {
-  "created_at": "2026-04-20T13:13:17+09:00",
+  "created_at": "2026-04-20T13:13:33+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 1,
-    "holding_quantity": 239,
-    "total_buy_amount": 3984130.0,
-    "total_eval_amount": 3921990.0,
-    "unrealized_pnl": -62140.0,
-    "realized_pnl": -125605.0,
+    "holding_count": 0,
+    "holding_quantity": 0,
+    "total_buy_amount": 0.0,
+    "total_eval_amount": 0.0,
+    "unrealized_pnl": 0.0,
+    "realized_pnl": -187745.0,
     "total_profit": -187745.0,
-    "cumulative_return_pct": -4.71232113409954
+    "cumulative_return_pct": 0.0
   },
-  "positions": [
-    {
-      "id": "356680-20260420130727",
-      "symbol": "356680",
-      "name": "엑스게이트",
-      "market": "KOSDAQ",
-      "quantity": 239,
-      "entry_price": 16670.0,
-      "current_price": 16410.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -1.559688062387521,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-20T13:07:27"
-    }
-  ],
+  "positions": [],
   "trade_history": [
     {
       "ordered_at": "2026-04-20T13:07:27",
@@ -35,7 +20,7 @@
       "name": "엑스게이트",
       "quantity": 239,
       "price": 16670.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -1424,6 +1409,17 @@
       "status": "closed",
       "realized_pnl": -31980.0,
       "realized_pnl_pct": -1.6049382716049387
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "356680",
+      "name": "엑스게이트",
+      "quantity": 239,
+      "price": 16410.0,
+      "status": "closed",
+      "realized_pnl": -62140.0,
+      "realized_pnl_pct": -1.559688062387521
     }
   ],
   "candidates": [
