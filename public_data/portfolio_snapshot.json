@@ -1,30 +1,44 @@
 {
-  "created_at": "2026-04-20T09:07:26+09:00",
+  "created_at": "2026-04-20T09:07:42+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 3,
-    "holding_quantity": 1996,
-    "total_buy_amount": 5989430.0,
-    "total_eval_amount": 5960694.0,
-    "unrealized_pnl": -28736.0,
+    "holding_count": 4,
+    "holding_quantity": 2067,
+    "total_buy_amount": 7963230.0,
+    "total_eval_amount": 7932530.0,
+    "unrealized_pnl": -30700.0,
     "realized_pnl": 4503.0,
-    "total_profit": -24233.0,
-    "cumulative_return_pct": -0.4045960967905126
+    "total_profit": -26197.0,
+    "cumulative_return_pct": -0.32897454927209185
   },
   "positions": [
     {
-      "id": "309930-20260420090658",
-      "symbol": "309930",
-      "name": "조이웍스앤코",
+      "id": "064290-20260420090734",
+      "symbol": "064290",
+      "name": "인텍플러스",
       "market": "KOSDAQ",
-      "quantity": 1226,
-      "entry_price": 1630.0,
-      "current_price": 1634.0,
+      "quantity": 71,
+      "entry_price": 27800.0,
+      "current_price": 27800.0,
+      "expected_return_pct": 5.76,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.0,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-20T09:07:34"
+    },
+    {
+      "id": "065450-20260420090723",
+      "symbol": "065450",
+      "name": "빅텍",
+      "market": "KOSDAQ",
+      "quantity": 304,
+      "entry_price": 6560.0,
+      "current_price": 6530.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.24539877300613355,
+      "current_return_pct": -0.45731707317072656,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-20T09:06:58"
+      "created_at": "2026-04-20T09:07:23"
     },
     {
       "id": "073010-20260420090704",
@@ -41,21 +55,32 @@
       "created_at": "2026-04-20T09:07:04"
     },
     {
-      "id": "065450-20260420090723",
-      "symbol": "065450",
-      "name": "빅텍",
+      "id": "309930-20260420090658",
+      "symbol": "309930",
+      "name": "조이웍스앤코",
       "market": "KOSDAQ",
-      "quantity": 304,
-      "entry_price": 6560.0,
-      "current_price": 6480.0,
+      "quantity": 1226,
+      "entry_price": 1630.0,
+      "current_price": 1620.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.2195121951219523,
+      "current_return_pct": -0.6134969325153339,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-20T09:07:23"
+      "created_at": "2026-04-20T09:06:58"
     }
   ],
   "trade_history": [
+    {
+      "ordered_at": "2026-04-20T09:07:34",
+      "side": "buy",
+      "symbol": "064290",
+      "name": "인텍플러스",
+      "quantity": 71,
+      "price": 27800.0,
+      "status": "holding",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
     {
       "ordered_at": "2026-04-20T09:07:23",
       "side": "buy",
