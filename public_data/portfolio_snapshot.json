@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-20T09:16:20+09:00",
+  "created_at": "2026-04-20T09:17:05+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 6,
     "holding_quantity": 481,
     "total_buy_amount": 7650140.0,
-    "total_eval_amount": 7662840.0,
-    "unrealized_pnl": 12700.0,
+    "total_eval_amount": 7659282.0,
+    "unrealized_pnl": 9142.0,
     "realized_pnl": -194229.0,
-    "total_profit": -181529.0,
-    "cumulative_return_pct": -2.3728846792346285
+    "total_profit": -185087.0,
+    "cumulative_return_pct": -2.419393632011963
   },
   "positions": [
     {
@@ -33,26 +33,12 @@
       "market": "KOSDAQ",
       "quantity": 8,
       "entry_price": 71300.0,
-      "current_price": 72400.0,
+      "current_price": 72100.0,
       "expected_return_pct": 6.58,
       "target_profit_pct": 2.2,
-      "current_return_pct": 1.5427769985974837,
+      "current_return_pct": 1.1220196353436185,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:09:26"
-    },
-    {
-      "id": "488900-20260420090901",
-      "symbol": "488900",
-      "name": "비츠로넥스텍",
-      "market": "KOSDAQ",
-      "quantity": 85,
-      "entry_price": 19730.0,
-      "current_price": 19770.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.20273694880892368,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-20T09:09:01"
     },
     {
       "id": "051980-20260420091215",
@@ -61,26 +47,26 @@
       "market": "KOSDAQ",
       "quantity": 112,
       "entry_price": 1655.0,
-      "current_price": 1650.0,
+      "current_price": 1656.0,
       "expected_return_pct": 6.82,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.30211480362537513,
+      "current_return_pct": 0.06042296072508169,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:12:15"
     },
     {
-      "id": "040160-20260420091202",
-      "symbol": "040160",
-      "name": "누리플렉스",
+      "id": "488900-20260420090901",
+      "symbol": "488900",
+      "name": "비츠로넥스텍",
       "market": "KOSDAQ",
-      "quantity": 101,
-      "entry_price": 19020.0,
-      "current_price": 18920.0,
-      "expected_return_pct": 6.53,
+      "quantity": 85,
+      "entry_price": 19730.0,
+      "current_price": 19740.0,
+      "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.525762355415349,
+      "current_return_pct": 0.05068423720222537,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-20T09:12:02"
+      "created_at": "2026-04-20T09:09:01"
     },
     {
       "id": "281740-20260420091417",
@@ -89,12 +75,26 @@
       "market": "KOSDAQ",
       "quantity": 88,
       "entry_price": 22500.0,
-      "current_price": 22350.0,
+      "current_price": 22450.0,
       "expected_return_pct": 7.61,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.666666666666671,
+      "current_return_pct": -0.22222222222222365,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:14:17"
+    },
+    {
+      "id": "040160-20260420091202",
+      "symbol": "040160",
+      "name": "누리플렉스",
+      "market": "KOSDAQ",
+      "quantity": 101,
+      "entry_price": 19020.0,
+      "current_price": 18840.0,
+      "expected_return_pct": 6.53,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.9463722397476393,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-20T09:12:02"
     }
   ],
   "trade_history": [
