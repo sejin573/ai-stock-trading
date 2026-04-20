@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-20T09:08:29+09:00",
+  "created_at": "2026-04-20T09:09:05+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 5,
-    "holding_quantity": 2154,
-    "total_buy_amount": 9279540.0,
-    "total_eval_amount": 9174330.0,
-    "unrealized_pnl": -105210.0,
-    "realized_pnl": 4503.0,
-    "total_profit": -100707.0,
-    "cumulative_return_pct": -1.0852585365222844
+    "holding_quantity": 1935,
+    "total_buy_amount": 8962350.0,
+    "total_eval_amount": 8932776.0,
+    "unrealized_pnl": -29574.0,
+    "realized_pnl": -38057.0,
+    "total_profit": -67631.0,
+    "cumulative_return_pct": -0.7546123505553789
   },
   "positions": [
     {
@@ -19,12 +19,26 @@
       "market": "KOSDAQ",
       "quantity": 71,
       "entry_price": 27800.0,
-      "current_price": 27800.0,
+      "current_price": 27900.0,
       "expected_return_pct": 5.76,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
+      "current_return_pct": 0.3597122302158251,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:07:34"
+    },
+    {
+      "id": "488900-20260420090901",
+      "symbol": "488900",
+      "name": "비츠로넥스텍",
+      "market": "KOSDAQ",
+      "quantity": 85,
+      "entry_price": 19730.0,
+      "current_price": 19720.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.05068423720222537,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-20T09:09:01"
     },
     {
       "id": "358570-20260420090825",
@@ -33,10 +47,10 @@
       "market": "KOSDAQ",
       "quantity": 87,
       "entry_price": 15130.0,
-      "current_price": 15090.0,
+      "current_price": 15110.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.26437541308658163,
+      "current_return_pct": -0.13218770654329637,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:08:25"
     },
@@ -47,10 +61,10 @@
       "market": "KOSDAQ",
       "quantity": 466,
       "entry_price": 4285.0,
-      "current_price": 4250.0,
+      "current_price": 4275.0,
       "expected_return_pct": 7.15,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.8168028004667427,
+      "current_return_pct": -0.2333722287047868,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:07:04"
     },
@@ -61,29 +75,26 @@
       "market": "KOSDAQ",
       "quantity": 1226,
       "entry_price": 1630.0,
-      "current_price": 1600.0,
+      "current_price": 1606.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.8404907975460127,
+      "current_return_pct": -1.4723926380368124,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:06:58"
-    },
-    {
-      "id": "065450-20260420090723",
-      "symbol": "065450",
-      "name": "빅텍",
-      "market": "KOSDAQ",
-      "quantity": 304,
-      "entry_price": 6560.0,
-      "current_price": 6400.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -2.4390243902439046,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-20T09:07:23"
     }
   ],
   "trade_history": [
+    {
+      "ordered_at": "2026-04-20T09:09:01",
+      "side": "buy",
+      "symbol": "488900",
+      "name": "비츠로넥스텍",
+      "quantity": 85,
+      "price": 19730.0,
+      "status": "holding",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
     {
       "ordered_at": "2026-04-20T09:08:25",
       "side": "buy",
@@ -113,7 +124,7 @@
       "name": "빅텍",
       "quantity": 304,
       "price": 6560.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -1150,6 +1161,17 @@
       "status": "closed",
       "realized_pnl": -65520.0,
       "realized_pnl_pct": -3.282532239155922
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "065450",
+      "name": "빅텍",
+      "quantity": 304,
+      "price": 6420.0,
+      "status": "closed",
+      "realized_pnl": -42560.0,
+      "realized_pnl_pct": -2.1341463414634165
     }
   ],
   "candidates": [
