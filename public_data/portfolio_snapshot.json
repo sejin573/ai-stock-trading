@@ -1,31 +1,17 @@
 {
-  "created_at": "2026-04-20T09:09:53+09:00",
+  "created_at": "2026-04-20T09:10:21+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 5,
     "holding_quantity": 717,
     "total_buy_amount": 7534370.0,
-    "total_eval_amount": 7539190.0,
-    "unrealized_pnl": 4820.0,
+    "total_eval_amount": 7530300.0,
+    "unrealized_pnl": -4070.0,
     "realized_pnl": -95679.0,
-    "total_profit": -90859.0,
-    "cumulative_return_pct": -1.2059269719963315
+    "total_profit": -99749.0,
+    "cumulative_return_pct": -1.323919584517352
   },
   "positions": [
-    {
-      "id": "166090-20260420090926",
-      "symbol": "166090",
-      "name": "하나머티리얼즈",
-      "market": "KOSDAQ",
-      "quantity": 8,
-      "entry_price": 71300.0,
-      "current_price": 71800.0,
-      "expected_return_pct": 6.58,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.7012622720897532,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-20T09:09:26"
-    },
     {
       "id": "358570-20260420090825",
       "symbol": "358570",
@@ -33,26 +19,26 @@
       "market": "KOSDAQ",
       "quantity": 87,
       "entry_price": 15130.0,
-      "current_price": 15190.0,
+      "current_price": 15250.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.396563119629878,
+      "current_return_pct": 0.793126239259756,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:08:25"
     },
     {
-      "id": "073010-20260420090704",
-      "symbol": "073010",
-      "name": "케이에스피",
+      "id": "166090-20260420090926",
+      "symbol": "166090",
+      "name": "하나머티리얼즈",
       "market": "KOSDAQ",
-      "quantity": 466,
-      "entry_price": 4285.0,
-      "current_price": 4285.0,
-      "expected_return_pct": 7.15,
+      "quantity": 8,
+      "entry_price": 71300.0,
+      "current_price": 71400.0,
+      "expected_return_pct": 6.58,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
+      "current_return_pct": 0.14025245441795509,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-20T09:07:04"
+      "created_at": "2026-04-20T09:09:26"
     },
     {
       "id": "488900-20260420090901",
@@ -61,12 +47,26 @@
       "market": "KOSDAQ",
       "quantity": 85,
       "entry_price": 19730.0,
-      "current_price": 19720.0,
+      "current_price": 19730.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.05068423720222537,
+      "current_return_pct": 0.0,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:09:01"
+    },
+    {
+      "id": "073010-20260420090704",
+      "symbol": "073010",
+      "name": "케이에스피",
+      "market": "KOSDAQ",
+      "quantity": 466,
+      "entry_price": 4285.0,
+      "current_price": 4275.0,
+      "expected_return_pct": 7.15,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.2333722287047868,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-20T09:07:04"
     },
     {
       "id": "064290-20260420090734",
@@ -75,10 +75,10 @@
       "market": "KOSDAQ",
       "quantity": 71,
       "entry_price": 27800.0,
-      "current_price": 27750.0,
+      "current_price": 27650.0,
       "expected_return_pct": 5.76,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.17985611510791255,
+      "current_return_pct": -0.5395683453237377,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:07:34"
     }
