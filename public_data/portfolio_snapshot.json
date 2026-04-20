@@ -1,31 +1,17 @@
 {
-  "created_at": "2026-04-20T09:43:27+09:00",
+  "created_at": "2026-04-20T09:43:45+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 5,
-    "holding_quantity": 760,
-    "total_buy_amount": 8214720.0,
-    "total_eval_amount": 8302770.0,
-    "unrealized_pnl": 88050.0,
-    "realized_pnl": -247845.0,
-    "total_profit": -159795.0,
-    "cumulative_return_pct": -1.9452275914456
+    "holding_count": 4,
+    "holding_quantity": 427,
+    "total_buy_amount": 6220050.0,
+    "total_eval_amount": 6249100.0,
+    "unrealized_pnl": 29050.0,
+    "realized_pnl": -194565.0,
+    "total_profit": -165515.0,
+    "cumulative_return_pct": -2.6609914711296536
   },
   "positions": [
-    {
-      "id": "200350-20260420093118",
-      "symbol": "200350",
-      "name": "아티스트스튜디오",
-      "market": "KOSDAQ",
-      "quantity": 333,
-      "entry_price": 5990.0,
-      "current_price": 6150.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 2.6711185308847973,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-20T09:31:18"
-    },
     {
       "id": "166090-20260420090926",
       "symbol": "166090",
@@ -33,10 +19,10 @@
       "market": "KOSDAQ",
       "quantity": 8,
       "entry_price": 71300.0,
-      "current_price": 72700.0,
+      "current_price": 72600.0,
       "expected_return_pct": 6.58,
       "target_profit_pct": 2.2,
-      "current_return_pct": 1.9635343618513268,
+      "current_return_pct": 1.8232819074333717,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:09:26"
     },
@@ -61,10 +47,10 @@
       "market": "KOSDAQ",
       "quantity": 246,
       "entry_price": 8100.0,
-      "current_price": 8170.0,
+      "current_price": 8150.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.8641975308641969,
+      "current_return_pct": 0.6172839506172867,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:38:30"
     },
@@ -85,6 +71,17 @@
   ],
   "trade_history": [
     {
+      "ordered_at": "2026-04-20T09:43:31",
+      "side": "sell",
+      "symbol": "200350",
+      "name": "아티스트스튜디오",
+      "quantity": 333,
+      "price": 6150.0,
+      "status": "closed",
+      "realized_pnl": 53280.0,
+      "realized_pnl_pct": 2.6711185308847973
+    },
+    {
       "ordered_at": "2026-04-20T09:38:30",
       "side": "buy",
       "symbol": "014940",
@@ -102,7 +99,7 @@
       "name": "아티스트스튜디오",
       "quantity": 333,
       "price": 5990.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
