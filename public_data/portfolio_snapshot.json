@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-04-20T12:06:15+09:00",
+  "created_at": "2026-04-20T12:07:13+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 1,
@@ -1410,12 +1410,12 @@
       "name": "엑스게이트",
       "market": "KOSDAQ",
       "news_query": "엑스게이트",
-      "current_price": 17890.0,
-      "realtime_change_rate": 19.35,
-      "recent_return_5d_pct": 133.29,
-      "recent_volatility_pct": 15.8,
-      "volatility_balance_bonus": -8.1,
-      "base_score": 205.8,
+      "current_price": 17900.0,
+      "realtime_change_rate": 19.41,
+      "recent_return_5d_pct": 132.77,
+      "recent_volatility_pct": 15.78,
+      "volatility_balance_bonus": -8.09,
+      "base_score": 205.35,
       "impact_score": 60,
       "expected_return_pct": 8.0,
       "up_probability_pct": 100.0,
@@ -1438,7 +1438,7 @@
       "direction": "상승 예상",
       "learning_signal": 0.0703,
       "learning_adjustment": 0.84,
-      "final_score": 141.34
+      "final_score": 141.14
     },
     {
       "symbol": "040160",
@@ -1480,8 +1480,8 @@
       "name": "조이웍스앤코",
       "market": "KOSDAQ",
       "news_query": "조이웍스앤코",
-      "current_price": 1580.0,
-      "realtime_change_rate": 5.05,
+      "current_price": 1596.0,
+      "realtime_change_rate": 6.12,
       "recent_return_5d_pct": 56.38,
       "recent_volatility_pct": 10.9,
       "volatility_balance_bonus": -3.69,
@@ -1505,9 +1505,9 @@
         "earnings"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0978,
-      "learning_adjustment": 1.17,
-      "final_score": 115.84
+      "learning_signal": 0.0916,
+      "learning_adjustment": 1.1,
+      "final_score": 115.77
     },
     {
       "symbol": "073010",
@@ -1516,13 +1516,13 @@
       "news_query": "케이에스피",
       "current_price": 4320.0,
       "realtime_change_rate": 5.24,
-      "recent_return_5d_pct": 20.64,
-      "recent_volatility_pct": 4.07,
-      "volatility_balance_bonus": 7.86,
-      "base_score": 114.0,
+      "recent_return_5d_pct": 20.5,
+      "recent_volatility_pct": 4.06,
+      "volatility_balance_bonus": 7.88,
+      "base_score": 113.82,
       "impact_score": 70,
-      "expected_return_pct": 6.96,
-      "up_probability_pct": 99.58,
+      "expected_return_pct": 6.94,
+      "up_probability_pct": 99.57,
       "pattern_score": 5.6,
       "pattern_bias": 0.56,
       "chart_pattern": "강한 상승 패턴",
@@ -1540,9 +1540,9 @@
         "earnings"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0833,
+      "learning_signal": 0.0832,
       "learning_adjustment": 1.0,
-      "final_score": 104.44
+      "final_score": 104.35
     },
     {
       "symbol": "115180",
@@ -1578,12 +1578,47 @@
       "final_score": 96.55
     },
     {
+      "symbol": "200350",
+      "name": "아티스트스튜디오",
+      "market": "KOSDAQ",
+      "news_query": "아티스트스튜디오",
+      "current_price": 6030.0,
+      "realtime_change_rate": 0.5,
+      "recent_return_5d_pct": 15.68,
+      "recent_volatility_pct": 5.12,
+      "volatility_balance_bonus": 5.6,
+      "base_score": 108.25,
+      "impact_score": 65,
+      "expected_return_pct": 8.0,
+      "up_probability_pct": 99.2,
+      "pattern_score": 3.8,
+      "pattern_bias": 0.38,
+      "chart_pattern": "완만한 상승 패턴",
+      "pattern_tags": [
+        "정배열 추세",
+        "20일선 상승",
+        "단기 과열",
+        "아랫꼬리 매수세"
+      ],
+      "average_sentiment": 0.16,
+      "article_count": 50,
+      "top_tags": [
+        "general",
+        "product_launch",
+        "earnings"
+      ],
+      "direction": "상승 예상",
+      "learning_signal": 0.0788,
+      "learning_adjustment": 0.95,
+      "final_score": 96.53
+    },
+    {
       "symbol": "014940",
       "name": "오리엔탈정공",
       "market": "KOSDAQ",
       "news_query": "오리엔탈정공",
-      "current_price": 7860.0,
-      "realtime_change_rate": 8.56,
+      "current_price": 7880.0,
+      "realtime_change_rate": 8.84,
       "recent_return_5d_pct": 17.26,
       "recent_volatility_pct": 4.1,
       "volatility_balance_bonus": 7.8,
@@ -1608,51 +1643,17 @@
         "policy_support"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0185,
-      "learning_adjustment": 0.22,
-      "final_score": 95.13
-    },
-    {
-      "symbol": "200350",
-      "name": "아티스트스튜디오",
-      "market": "KOSDAQ",
-      "news_query": "아티스트스튜디오",
-      "current_price": 6050.0,
-      "realtime_change_rate": 0.83,
-      "recent_return_5d_pct": 15.49,
-      "recent_volatility_pct": 5.13,
-      "volatility_balance_bonus": 5.58,
-      "base_score": 106.25,
-      "impact_score": 65,
-      "expected_return_pct": 8.0,
-      "up_probability_pct": 98.9,
-      "pattern_score": 2.6,
-      "pattern_bias": 0.26,
-      "chart_pattern": "완만한 상승 패턴",
-      "pattern_tags": [
-        "정배열 추세",
-        "20일선 상승",
-        "단기 과열"
-      ],
-      "average_sentiment": 0.16,
-      "article_count": 50,
-      "top_tags": [
-        "general",
-        "product_launch",
-        "earnings"
-      ],
-      "direction": "상승 예상",
-      "learning_signal": 0.0664,
-      "learning_adjustment": 0.8,
-      "final_score": 94.59
+      "learning_signal": 0.0168,
+      "learning_adjustment": 0.2,
+      "final_score": 95.11
     },
     {
       "symbol": "358570",
       "name": "지아이이노베이션",
       "market": "KOSDAQ",
       "news_query": "지아이이노베이션",
-      "current_price": 15680.0,
-      "realtime_change_rate": 6.59,
+      "current_price": 15640.0,
+      "realtime_change_rate": 6.32,
       "recent_return_5d_pct": 18.33,
       "recent_volatility_pct": 4.91,
       "volatility_balance_bonus": 6.05,
@@ -1676,17 +1677,17 @@
         "merger_acquisition"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0176,
-      "learning_adjustment": 0.21,
-      "final_score": 92.76
+      "learning_signal": 0.0192,
+      "learning_adjustment": 0.23,
+      "final_score": 92.78
     },
     {
       "symbol": "065450",
       "name": "빅텍",
       "market": "KOSDAQ",
       "news_query": "빅텍",
-      "current_price": 6490.0,
-      "realtime_change_rate": 5.53,
+      "current_price": 6500.0,
+      "realtime_change_rate": 5.69,
       "recent_return_5d_pct": 15.69,
       "recent_volatility_pct": 6.02,
       "volatility_balance_bonus": 3.67,
@@ -1709,24 +1710,24 @@
         "lawsuit"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0517,
-      "learning_adjustment": 0.62,
-      "final_score": 91.77
+      "learning_signal": 0.0507,
+      "learning_adjustment": 0.61,
+      "final_score": 91.76
     },
     {
       "symbol": "488900",
       "name": "비츠로넥스텍",
       "market": "KOSDAQ",
       "news_query": "비츠로넥스텍",
-      "current_price": 20200.0,
-      "realtime_change_rate": -1.94,
-      "recent_return_5d_pct": 17.73,
-      "recent_volatility_pct": 4.0,
-      "volatility_balance_bonus": 8.0,
-      "base_score": 108.05,
+      "current_price": 20250.0,
+      "realtime_change_rate": -1.7,
+      "recent_return_5d_pct": 17.44,
+      "recent_volatility_pct": 4.02,
+      "volatility_balance_bonus": 7.95,
+      "base_score": 107.92,
       "impact_score": 57,
-      "expected_return_pct": 7.51,
-      "up_probability_pct": 95.49,
+      "expected_return_pct": 7.64,
+      "up_probability_pct": 95.3,
       "pattern_score": 1.9,
       "pattern_bias": 0.19,
       "chart_pattern": "완만한 상승 패턴",
@@ -1740,9 +1741,9 @@
         "general"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0654,
-      "learning_adjustment": 0.79,
-      "final_score": 88.03
+      "learning_signal": 0.0645,
+      "learning_adjustment": 0.77,
+      "final_score": 87.92
     }
   ]
 }
