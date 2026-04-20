@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-20T09:35:18+09:00",
+  "created_at": "2026-04-20T09:35:36+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 5,
-    "holding_quantity": 544,
-    "total_buy_amount": 8172120.0,
-    "total_eval_amount": 8230020.0,
-    "unrealized_pnl": 57900.0,
-    "realized_pnl": -202845.0,
-    "total_profit": -144945.0,
-    "cumulative_return_pct": -1.7736523692750472
+    "holding_count": 4,
+    "holding_quantity": 514,
+    "total_buy_amount": 6222120.0,
+    "total_eval_amount": 6272510.0,
+    "unrealized_pnl": 50390.0,
+    "realized_pnl": -247845.0,
+    "total_profit": -197455.0,
+    "cumulative_return_pct": -3.173436063592473
   },
   "positions": [
     {
@@ -33,10 +33,10 @@
       "market": "KOSDAQ",
       "quantity": 85,
       "entry_price": 19730.0,
-      "current_price": 19980.0,
+      "current_price": 19970.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 1.2671059300557452,
+      "current_return_pct": 1.2164216928535199,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:09:01"
     },
@@ -47,10 +47,10 @@
       "market": "KOSDAQ",
       "quantity": 333,
       "entry_price": 5990.0,
-      "current_price": 6040.0,
+      "current_price": 6020.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.8347245409014992,
+      "current_return_pct": 0.5008347245408995,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:31:18"
     },
@@ -67,20 +67,6 @@
       "current_return_pct": 0.4444444444444473,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:14:17"
-    },
-    {
-      "id": "372320-20260420092002",
-      "symbol": "372320",
-      "name": "큐로셀",
-      "market": "KOSDAQ",
-      "quantity": 30,
-      "entry_price": 65000.0,
-      "current_price": 65000.0,
-      "expected_return_pct": 5.9,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-20T09:20:02"
     }
   ],
   "trade_history": [
@@ -124,7 +110,7 @@
       "name": "큐로셀",
       "quantity": 30,
       "price": 65000.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -1326,6 +1312,17 @@
       "status": "closed",
       "realized_pnl": -49490.0,
       "realized_pnl_pct": -2.576235541535221
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "372320",
+      "name": "큐로셀",
+      "quantity": 30,
+      "price": 63500.0,
+      "status": "closed",
+      "realized_pnl": -45000.0,
+      "realized_pnl_pct": -2.3076923076923106
     }
   ],
   "candidates": [
