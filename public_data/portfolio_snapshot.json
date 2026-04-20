@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-20T09:12:06+09:00",
+  "created_at": "2026-04-20T09:12:39+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 6,
-    "holding_quantity": 818,
-    "total_buy_amount": 9455390.0,
-    "total_eval_amount": 9417430.0,
-    "unrealized_pnl": -37960.0,
-    "realized_pnl": -95679.0,
-    "total_profit": -133639.0,
-    "cumulative_return_pct": -1.4133631716936055
+    "holding_quantity": 464,
+    "total_buy_amount": 7643940.0,
+    "total_eval_amount": 7630110.0,
+    "unrealized_pnl": -13830.0,
+    "realized_pnl": -125969.0,
+    "total_profit": -139799.0,
+    "cumulative_return_pct": -1.8288866736264282
   },
   "positions": [
     {
@@ -19,10 +19,10 @@
       "market": "KOSDAQ",
       "quantity": 87,
       "entry_price": 15130.0,
-      "current_price": 15310.0,
+      "current_price": 15360.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 1.189689358889634,
+      "current_return_pct": 1.5201586252478583,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:08:25"
     },
@@ -33,26 +33,12 @@
       "market": "KOSDAQ",
       "quantity": 8,
       "entry_price": 71300.0,
-      "current_price": 71400.0,
+      "current_price": 71700.0,
       "expected_return_pct": 6.58,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.14025245441795509,
+      "current_return_pct": 0.5610098176718203,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:09:26"
-    },
-    {
-      "id": "488900-20260420090901",
-      "symbol": "488900",
-      "name": "비츠로넥스텍",
-      "market": "KOSDAQ",
-      "quantity": 85,
-      "entry_price": 19730.0,
-      "current_price": 19750.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.10136847440445074,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-20T09:09:01"
     },
     {
       "id": "040160-20260420091202",
@@ -61,12 +47,40 @@
       "market": "KOSDAQ",
       "quantity": 101,
       "entry_price": 19020.0,
-      "current_price": 18940.0,
+      "current_price": 19030.0,
       "expected_return_pct": 6.53,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.4206098843322792,
+      "current_return_pct": 0.0525762355415349,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:12:02"
+    },
+    {
+      "id": "051980-20260420091215",
+      "symbol": "051980",
+      "name": "중앙첨단소재",
+      "market": "KOSDAQ",
+      "quantity": 112,
+      "entry_price": 1655.0,
+      "current_price": 1655.0,
+      "expected_return_pct": 6.82,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.0,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-20T09:12:15"
+    },
+    {
+      "id": "488900-20260420090901",
+      "symbol": "488900",
+      "name": "비츠로넥스텍",
+      "market": "KOSDAQ",
+      "quantity": 85,
+      "entry_price": 19730.0,
+      "current_price": 19700.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.1520527116066872,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-20T09:09:01"
     },
     {
       "id": "064290-20260420090734",
@@ -75,29 +89,26 @@
       "market": "KOSDAQ",
       "quantity": 71,
       "entry_price": 27800.0,
-      "current_price": 27550.0,
+      "current_price": 27300.0,
       "expected_return_pct": 5.76,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.8992805755395739,
+      "current_return_pct": -1.7985611510791366,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:07:34"
-    },
-    {
-      "id": "073010-20260420090704",
-      "symbol": "073010",
-      "name": "케이에스피",
-      "market": "KOSDAQ",
-      "quantity": 466,
-      "entry_price": 4285.0,
-      "current_price": 4220.0,
-      "expected_return_pct": 7.15,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -1.516919486581092,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-20T09:07:04"
     }
   ],
   "trade_history": [
+    {
+      "ordered_at": "2026-04-20T09:12:15",
+      "side": "buy",
+      "symbol": "051980",
+      "name": "중앙첨단소재",
+      "quantity": 112,
+      "price": 1655.0,
+      "status": "holding",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
     {
       "ordered_at": "2026-04-20T09:12:02",
       "side": "buy",
@@ -171,7 +182,7 @@
       "name": "케이에스피",
       "quantity": 466,
       "price": 4285.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -1219,6 +1230,17 @@
       "status": "closed",
       "realized_pnl": -57622.0,
       "realized_pnl_pct": -2.8834355828220803
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "073010",
+      "name": "케이에스피",
+      "quantity": 466,
+      "price": 4220.0,
+      "status": "closed",
+      "realized_pnl": -30290.0,
+      "realized_pnl_pct": -1.516919486581092
     }
   ],
   "candidates": [
