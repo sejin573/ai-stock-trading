@@ -1,31 +1,17 @@
 {
-  "created_at": "2026-04-20T09:49:10+09:00",
+  "created_at": "2026-04-20T09:49:25+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 5,
-    "holding_quantity": 505,
-    "total_buy_amount": 7415010.0,
-    "total_eval_amount": 7433440.0,
-    "unrealized_pnl": 18430.0,
-    "realized_pnl": -194565.0,
-    "total_profit": -176135.0,
-    "cumulative_return_pct": -2.3753845240936964
+    "holding_count": 4,
+    "holding_quantity": 497,
+    "total_buy_amount": 6844610.0,
+    "total_eval_amount": 6851940.0,
+    "unrealized_pnl": 7330.0,
+    "realized_pnl": -181765.0,
+    "total_profit": -174435.0,
+    "cumulative_return_pct": -2.5485016677356342
   },
   "positions": [
-    {
-      "id": "166090-20260420090926",
-      "symbol": "166090",
-      "name": "하나머티리얼즈",
-      "market": "KOSDAQ",
-      "quantity": 8,
-      "entry_price": 71300.0,
-      "current_price": 72900.0,
-      "expected_return_pct": 6.58,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 2.244039270687237,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-20T09:09:26"
-    },
     {
       "id": "488900-20260420090901",
       "symbol": "488900",
@@ -33,10 +19,10 @@
       "market": "KOSDAQ",
       "quantity": 85,
       "entry_price": 19730.0,
-      "current_price": 19900.0,
+      "current_price": 19920.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.8616320324379201,
+      "current_return_pct": 0.9630005068423708,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:09:01"
     },
@@ -84,6 +70,17 @@
     }
   ],
   "trade_history": [
+    {
+      "ordered_at": "2026-04-20T09:49:13",
+      "side": "sell",
+      "symbol": "166090",
+      "name": "하나머티리얼즈",
+      "quantity": 8,
+      "price": 72900.0,
+      "status": "closed",
+      "realized_pnl": 12800.0,
+      "realized_pnl_pct": 2.244039270687237
+    },
     {
       "ordered_at": "2026-04-20T09:43:58",
       "side": "buy",
@@ -212,7 +209,7 @@
       "name": "하나머티리얼즈",
       "quantity": 8,
       "price": 71300.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
