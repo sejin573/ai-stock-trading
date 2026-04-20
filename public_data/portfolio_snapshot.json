@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-20T09:42:37+09:00",
+  "created_at": "2026-04-20T09:42:54+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 5,
     "holding_quantity": 760,
     "total_buy_amount": 8214720.0,
-    "total_eval_amount": 8276850.0,
-    "unrealized_pnl": 62130.0,
+    "total_eval_amount": 8283740.0,
+    "unrealized_pnl": 69020.0,
     "realized_pnl": -247845.0,
-    "total_profit": -185715.0,
-    "cumulative_return_pct": -2.2607587355381558
+    "total_profit": -178825.0,
+    "cumulative_return_pct": -2.1768849090413305
   },
   "positions": [
     {
@@ -41,32 +41,32 @@
       "created_at": "2026-04-20T09:31:18"
     },
     {
-      "id": "014940-20260420093830",
-      "symbol": "014940",
-      "name": "오리엔탈정공",
-      "market": "KOSDAQ",
-      "quantity": 246,
-      "entry_price": 8100.0,
-      "current_price": 8180.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.9876543209876631,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-20T09:38:30"
-    },
-    {
       "id": "488900-20260420090901",
       "symbol": "488900",
       "name": "비츠로넥스텍",
       "market": "KOSDAQ",
       "quantity": 85,
       "entry_price": 19730.0,
-      "current_price": 19880.0,
+      "current_price": 19990.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.7602635580334471,
+      "current_return_pct": 1.3177901672579928,
       "auto_sell_enabled": true,
       "created_at": "2026-04-20T09:09:01"
+    },
+    {
+      "id": "014940-20260420093830",
+      "symbol": "014940",
+      "name": "오리엔탈정공",
+      "market": "KOSDAQ",
+      "quantity": 246,
+      "entry_price": 8100.0,
+      "current_price": 8170.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.8641975308641969,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-20T09:38:30"
     },
     {
       "id": "281740-20260420091417",
