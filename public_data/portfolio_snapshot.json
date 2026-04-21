@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-21T09:51:37+09:00",
+  "created_at": "2026-04-21T09:52:10+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 6,
     "holding_quantity": 199,
     "total_buy_amount": 5802106.0,
-    "total_eval_amount": 5718970.0,
-    "unrealized_pnl": -83136.0,
+    "total_eval_amount": 5721760.0,
+    "unrealized_pnl": -80346.0,
     "realized_pnl": -466287.0,
-    "total_profit": -549423.0,
-    "cumulative_return_pct": -9.469371983207477
+    "total_profit": -546633.0,
+    "cumulative_return_pct": -9.421285995119703
   },
   "positions": [
     {
@@ -33,10 +33,10 @@
       "market": "KOSDAQ",
       "quantity": 1,
       "entry_price": 2400.0,
-      "current_price": 2400.0,
+      "current_price": 2390.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
+      "current_return_pct": -0.4166666666666652,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:48:36"
     },
@@ -69,6 +69,20 @@
       "created_at": "2026-04-21T09:33:41"
     },
     {
+      "id": "023530-20260421093023",
+      "symbol": "023530",
+      "name": "롯데쇼핑",
+      "market": "KOSPI",
+      "quantity": 14,
+      "entry_price": 120600.0,
+      "current_price": 118900.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -1.4096185737976774,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-21T09:30:23"
+    },
+    {
       "id": "112040-20260421092748",
       "symbol": "112040",
       "name": "위메이드",
@@ -81,20 +95,6 @@
       "current_return_pct": -1.4170040485829927,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:27:48"
-    },
-    {
-      "id": "023530-20260421093023",
-      "symbol": "023530",
-      "name": "롯데쇼핑",
-      "market": "KOSPI",
-      "quantity": 14,
-      "entry_price": 120600.0,
-      "current_price": 118700.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -1.5754560530679917,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:30:23"
     }
   ],
   "trade_history": [
