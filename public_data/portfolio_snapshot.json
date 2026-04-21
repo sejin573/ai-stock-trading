@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-21T09:40:12+09:00",
+  "created_at": "2026-04-21T09:40:40+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 5,
     "holding_quantity": 200,
     "total_buy_amount": 5803140.0,
-    "total_eval_amount": 5764005.0,
-    "unrealized_pnl": -39135.0,
+    "total_eval_amount": 5762365.0,
+    "unrealized_pnl": -40775.0,
     "realized_pnl": -464487.0,
-    "total_profit": -503622.0,
-    "cumulative_return_pct": -8.678439603387131
+    "total_profit": -505262.0,
+    "cumulative_return_pct": -8.706700165772324
   },
   "positions": [
     {
@@ -27,6 +27,20 @@
       "created_at": "2026-04-21T09:33:41"
     },
     {
+      "id": "452190-20260421093039",
+      "symbol": "452190",
+      "name": "한빛레이저",
+      "market": "KOSDAQ",
+      "quantity": 4,
+      "entry_price": 6380.0,
+      "current_price": 6370.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.15673981191222097,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-21T09:30:39"
+    },
+    {
       "id": "112040-20260421092748",
       "symbol": "112040",
       "name": "위메이드",
@@ -41,46 +55,32 @@
       "created_at": "2026-04-21T09:27:48"
     },
     {
-      "id": "020710-20260421092850",
-      "symbol": "020710",
-      "name": "시공테크",
-      "market": "KOSDAQ",
-      "quantity": 20,
-      "entry_price": 5470.0,
-      "current_price": 5430.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.7312614259597838,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:28:50"
-    },
-    {
-      "id": "452190-20260421093039",
-      "symbol": "452190",
-      "name": "한빛레이저",
-      "market": "KOSDAQ",
-      "quantity": 4,
-      "entry_price": 6380.0,
-      "current_price": 6330.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.7836990595611271,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:30:39"
-    },
-    {
       "id": "023530-20260421093023",
       "symbol": "023530",
       "name": "롯데쇼핑",
       "market": "KOSPI",
       "quantity": 14,
       "entry_price": 120600.0,
-      "current_price": 119600.0,
+      "current_price": 119500.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.8291873963515717,
+      "current_return_pct": -0.9121061359867344,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:30:23"
+    },
+    {
+      "id": "020710-20260421092850",
+      "symbol": "020710",
+      "name": "시공테크",
+      "market": "KOSDAQ",
+      "quantity": 20,
+      "entry_price": 5470.0,
+      "current_price": 5410.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -1.0968921389396757,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-21T09:28:50"
     }
   ],
   "trade_history": [
@@ -1620,12 +1620,12 @@
       "name": "덕산테코피아",
       "market": "KOSDAQ",
       "news_query": "덕산테코피아",
-      "current_price": 26150.0,
-      "realtime_change_rate": 4.6,
-      "recent_return_5d_pct": 35.75,
-      "recent_volatility_pct": 5.47,
+      "current_price": 26100.0,
+      "realtime_change_rate": 4.4,
+      "recent_return_5d_pct": 36.01,
+      "recent_volatility_pct": 5.46,
       "volatility_balance_bonus": 4.86,
-      "base_score": 125.89,
+      "base_score": 126.11,
       "impact_score": 60,
       "expected_return_pct": 8.0,
       "up_probability_pct": 99.97,
@@ -1646,21 +1646,21 @@
         "partnership"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0176,
-      "learning_adjustment": 0.21,
-      "final_score": 103.68
+      "learning_signal": 0.0187,
+      "learning_adjustment": 0.22,
+      "final_score": 103.79
     },
     {
       "symbol": "309930",
       "name": "조이웍스앤코",
       "market": "KOSDAQ",
       "news_query": "조이웍스앤코",
-      "current_price": 1498.0,
-      "realtime_change_rate": -3.35,
-      "recent_return_5d_pct": 40.62,
-      "recent_volatility_pct": 10.75,
-      "volatility_balance_bonus": -3.56,
-      "base_score": 121.41,
+      "current_price": 1506.0,
+      "realtime_change_rate": -2.84,
+      "recent_return_5d_pct": 42.52,
+      "recent_volatility_pct": 10.64,
+      "volatility_balance_bonus": -3.45,
+      "base_score": 124.65,
       "impact_score": 65,
       "expected_return_pct": 8.0,
       "up_probability_pct": 99.99,
@@ -1679,9 +1679,9 @@
         "earnings"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.051,
-      "learning_adjustment": 0.61,
-      "final_score": 101.76
+      "learning_signal": 0.0481,
+      "learning_adjustment": 0.58,
+      "final_score": 103.19
     },
     {
       "symbol": "452190",
@@ -1690,13 +1690,13 @@
       "news_query": "한빛레이저",
       "current_price": 6360.0,
       "realtime_change_rate": -5.5,
-      "recent_return_5d_pct": 35.25,
-      "recent_volatility_pct": 10.87,
-      "volatility_balance_bonus": -3.66,
-      "base_score": 116.35,
+      "recent_return_5d_pct": 35.04,
+      "recent_volatility_pct": 10.89,
+      "volatility_balance_bonus": -3.68,
+      "base_score": 116.14,
       "impact_score": 60,
       "expected_return_pct": 8.0,
-      "up_probability_pct": 99.85,
+      "up_probability_pct": 99.84,
       "pattern_score": 0.7,
       "pattern_bias": 0.07,
       "chart_pattern": "중립",
@@ -1716,22 +1716,22 @@
       "direction": "상승 예상",
       "learning_signal": 0.056,
       "learning_adjustment": 0.67,
-      "final_score": 98.21
+      "final_score": 98.11
     },
     {
       "symbol": "293580",
       "name": "나우IB",
       "market": "KOSDAQ",
       "news_query": "나우IB",
-      "current_price": 2420.0,
-      "realtime_change_rate": -2.62,
-      "recent_return_5d_pct": 27.44,
-      "recent_volatility_pct": 9.88,
-      "volatility_balance_bonus": -2.77,
-      "base_score": 111.32,
+      "current_price": 2425.0,
+      "realtime_change_rate": -2.41,
+      "recent_return_5d_pct": 27.96,
+      "recent_volatility_pct": 9.85,
+      "volatility_balance_bonus": -2.75,
+      "base_score": 111.85,
       "impact_score": 59,
       "expected_return_pct": 8.0,
-      "up_probability_pct": 99.54,
+      "up_probability_pct": 99.58,
       "pattern_score": 2.1,
       "pattern_bias": 0.21,
       "chart_pattern": "완만한 상승 패턴",
@@ -1748,24 +1748,24 @@
         "merger_acquisition"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0423,
-      "learning_adjustment": 0.51,
-      "final_score": 94.68
+      "learning_signal": 0.0412,
+      "learning_adjustment": 0.49,
+      "final_score": 94.91
     },
     {
       "symbol": "307870",
       "name": "비투엔",
       "market": "KOSDAQ",
       "news_query": "비투엔",
-      "current_price": 1521.0,
-      "realtime_change_rate": 4.25,
-      "recent_return_5d_pct": 36.21,
-      "recent_volatility_pct": 7.25,
-      "volatility_balance_bonus": -0.4,
-      "base_score": 121.12,
+      "current_price": 1517.0,
+      "realtime_change_rate": 3.98,
+      "recent_return_5d_pct": 35.41,
+      "recent_volatility_pct": 7.23,
+      "volatility_balance_bonus": -0.39,
+      "base_score": 120.43,
       "impact_score": 43,
       "expected_return_pct": 8.0,
-      "up_probability_pct": 98.91,
+      "up_probability_pct": 98.78,
       "pattern_score": 2.6,
       "pattern_bias": 0.26,
       "chart_pattern": "완만한 상승 패턴",
@@ -1782,9 +1782,9 @@
         "lawsuit"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0064,
-      "learning_adjustment": 0.08,
-      "final_score": 94.03
+      "learning_signal": 0.0078,
+      "learning_adjustment": 0.09,
+      "final_score": 93.7
     },
     {
       "symbol": "317120",
@@ -1855,51 +1855,19 @@
       "final_score": 90.67
     },
     {
-      "symbol": "419650",
-      "name": "PLUS 글로벌수소&차세대연료전지",
-      "market": "KOSPI",
-      "news_query": "PLUS 글로벌수소&차세대연료전지",
-      "current_price": 5885.0,
-      "realtime_change_rate": 4.44,
-      "recent_return_5d_pct": 13.61,
-      "recent_volatility_pct": 2.96,
-      "volatility_balance_bonus": 5.77,
-      "base_score": 93.08,
-      "impact_score": 68,
-      "expected_return_pct": 5.44,
-      "up_probability_pct": 97.88,
-      "pattern_score": 2.6,
-      "pattern_bias": 0.26,
-      "chart_pattern": "완만한 상승 패턴",
-      "pattern_tags": [
-        "정배열 추세",
-        "20일선 상승",
-        "단기 과열"
-      ],
-      "average_sentiment": 0.403,
-      "article_count": 3,
-      "top_tags": [
-        "general"
-      ],
-      "direction": "상승 예상",
-      "learning_signal": 0.0039,
-      "learning_adjustment": 0.05,
-      "final_score": 86.86
-    },
-    {
       "symbol": "020710",
       "name": "시공테크",
       "market": "KOSDAQ",
       "news_query": "시공테크",
       "current_price": 5410.0,
       "realtime_change_rate": 0.56,
-      "recent_return_5d_pct": 15.76,
-      "recent_volatility_pct": 10.79,
-      "volatility_balance_bonus": -3.59,
-      "base_score": 95.95,
+      "recent_return_5d_pct": 16.4,
+      "recent_volatility_pct": 10.78,
+      "volatility_balance_bonus": -3.58,
+      "base_score": 96.76,
       "impact_score": 63,
       "expected_return_pct": 8.0,
-      "up_probability_pct": 98.5,
+      "up_probability_pct": 98.63,
       "pattern_score": 0.9,
       "pattern_bias": 0.09,
       "chart_pattern": "중립",
@@ -1916,17 +1884,49 @@
         "earnings"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.013,
+      "learning_signal": 0.0132,
       "learning_adjustment": 0.16,
-      "final_score": 86.84
+      "final_score": 87.22
+    },
+    {
+      "symbol": "419650",
+      "name": "PLUS 글로벌수소&차세대연료전지",
+      "market": "KOSPI",
+      "news_query": "PLUS 글로벌수소&차세대연료전지",
+      "current_price": 5890.0,
+      "realtime_change_rate": 4.53,
+      "recent_return_5d_pct": 13.51,
+      "recent_volatility_pct": 2.95,
+      "volatility_balance_bonus": 5.75,
+      "base_score": 92.88,
+      "impact_score": 68,
+      "expected_return_pct": 5.48,
+      "up_probability_pct": 97.94,
+      "pattern_score": 2.6,
+      "pattern_bias": 0.26,
+      "chart_pattern": "완만한 상승 패턴",
+      "pattern_tags": [
+        "정배열 추세",
+        "20일선 상승",
+        "단기 과열"
+      ],
+      "average_sentiment": 0.403,
+      "article_count": 3,
+      "top_tags": [
+        "general"
+      ],
+      "direction": "상승 예상",
+      "learning_signal": 0.0035,
+      "learning_adjustment": 0.04,
+      "final_score": 86.77
     },
     {
       "symbol": "023530",
       "name": "롯데쇼핑",
       "market": "KOSPI",
       "news_query": "롯데쇼핑",
-      "current_price": 119700.0,
-      "realtime_change_rate": -0.5,
+      "current_price": 119800.0,
+      "realtime_change_rate": -0.42,
       "recent_return_5d_pct": 13.68,
       "recent_volatility_pct": 4.76,
       "volatility_balance_bonus": 6.37,
@@ -1951,9 +1951,9 @@
         "lawsuit"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0105,
-      "learning_adjustment": 0.13,
-      "final_score": 83.87
+      "learning_signal": 0.01,
+      "learning_adjustment": 0.12,
+      "final_score": 83.86
     }
   ]
 }
