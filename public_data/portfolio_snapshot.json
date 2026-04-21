@@ -1,31 +1,17 @@
 {
-  "created_at": "2026-04-21T09:58:49+09:00",
+  "created_at": "2026-04-21T09:59:10+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 6,
-    "holding_quantity": 124,
-    "total_buy_amount": 4113006.0,
-    "total_eval_amount": 4070215.0,
-    "unrealized_pnl": -42791.0,
-    "realized_pnl": -538737.0,
-    "total_profit": -581528.0,
-    "cumulative_return_pct": -14.13875885422973
+    "holding_count": 5,
+    "holding_quantity": 110,
+    "total_buy_amount": 2424606.0,
+    "total_eval_amount": 2411305.0,
+    "unrealized_pnl": -13301.0,
+    "realized_pnl": -565337.0,
+    "total_profit": -578638.0,
+    "cumulative_return_pct": -23.865238310884326
   },
   "positions": [
-    {
-      "id": "293580-20260421094836",
-      "symbol": "293580",
-      "name": "나우IB",
-      "market": "KOSDAQ",
-      "quantity": 1,
-      "entry_price": 2400.0,
-      "current_price": 2410.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.4166666666666652,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:48:36"
-    },
     {
       "id": "419650-20260421094808",
       "symbol": "419650",
@@ -41,16 +27,30 @@
       "created_at": "2026-04-21T09:48:08"
     },
     {
+      "id": "293580-20260421094836",
+      "symbol": "293580",
+      "name": "나우IB",
+      "market": "KOSDAQ",
+      "quantity": 1,
+      "entry_price": 2400.0,
+      "current_price": 2395.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.2083333333333326,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-21T09:48:36"
+    },
+    {
       "id": "317330-20260421095616",
       "symbol": "317330",
       "name": "덕산테코피아",
       "market": "KOSDAQ",
       "quantity": 86,
       "entry_price": 26600.0,
-      "current_price": 26400.0,
+      "current_price": 26450.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.7518796992481258,
+      "current_return_pct": -0.5639097744360888,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:56:16"
     },
@@ -75,26 +75,12 @@
       "market": "KOSDAQ",
       "quantity": 1,
       "entry_price": 3120.0,
-      "current_price": 3075.0,
+      "current_price": 3080.0,
       "expected_return_pct": 7.33,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.4423076923076872,
+      "current_return_pct": -1.2820512820512775,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:33:41"
-    },
-    {
-      "id": "023530-20260421093023",
-      "symbol": "023530",
-      "name": "롯데쇼핑",
-      "market": "KOSPI",
-      "quantity": 14,
-      "entry_price": 120600.0,
-      "current_price": 118800.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -1.4925373134328401,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:30:23"
     }
   ],
   "trade_history": [
@@ -171,7 +157,7 @@
       "name": "롯데쇼핑",
       "quantity": 14,
       "price": 120600.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -1681,6 +1667,17 @@
       "status": "closed",
       "realized_pnl": -72450.0,
       "realized_pnl_pct": -1.8218623481781382
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "023530",
+      "name": "롯데쇼핑",
+      "quantity": 14,
+      "price": 118700.0,
+      "status": "closed",
+      "realized_pnl": -26600.0,
+      "realized_pnl_pct": -1.5754560530679917
     }
   ],
   "candidates": [
