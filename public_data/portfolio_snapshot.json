@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-21T09:55:37+09:00",
+  "created_at": "2026-04-21T09:56:09+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 6,
-    "holding_quantity": 199,
-    "total_buy_amount": 5802106.0,
-    "total_eval_amount": 5720365.0,
-    "unrealized_pnl": -81741.0,
-    "realized_pnl": -466287.0,
-    "total_profit": -548028.0,
-    "cumulative_return_pct": -9.44532898916359
+    "holding_count": 5,
+    "holding_quantity": 38,
+    "total_buy_amount": 1825406.0,
+    "total_eval_amount": 1801190.0,
+    "unrealized_pnl": -24216.0,
+    "realized_pnl": -538737.0,
+    "total_profit": -562953.0,
+    "cumulative_return_pct": -30.839878909130352
   },
   "positions": [
     {
@@ -19,10 +19,10 @@
       "market": "KOSPI",
       "quantity": 18,
       "entry_price": 5887.0,
-      "current_price": 5890.0,
+      "current_price": 5880.0,
       "expected_return_pct": 5.48,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.050959741803979774,
+      "current_return_pct": -0.11890606420927874,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:48:08"
     },
@@ -33,10 +33,10 @@
       "market": "KOSDAQ",
       "quantity": 1,
       "entry_price": 2400.0,
-      "current_price": 2390.0,
+      "current_price": 2385.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.4166666666666652,
+      "current_return_pct": -0.6249999999999978,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:48:36"
     },
@@ -47,10 +47,10 @@
       "market": "KOSDAQ",
       "quantity": 4,
       "entry_price": 6380.0,
-      "current_price": 6330.0,
+      "current_price": 6320.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.7836990595611271,
+      "current_return_pct": -0.9404388714733591,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:30:39"
     },
@@ -69,30 +69,16 @@
       "created_at": "2026-04-21T09:33:41"
     },
     {
-      "id": "112040-20260421092748",
-      "symbol": "112040",
-      "name": "위메이드",
-      "market": "KOSDAQ",
-      "quantity": 161,
-      "entry_price": 24700.0,
-      "current_price": 24350.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -1.4170040485829927,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:27:48"
-    },
-    {
       "id": "023530-20260421093023",
       "symbol": "023530",
       "name": "롯데쇼핑",
       "market": "KOSPI",
       "quantity": 14,
       "entry_price": 120600.0,
-      "current_price": 118800.0,
+      "current_price": 118900.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.4925373134328401,
+      "current_return_pct": -1.4096185737976774,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:30:23"
     }
@@ -193,7 +179,7 @@
       "name": "위메이드",
       "quantity": 161,
       "price": 24700.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -1659,6 +1645,17 @@
       "status": "closed",
       "realized_pnl": -1800.0,
       "realized_pnl_pct": -1.645338208409508
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "112040",
+      "name": "위메이드",
+      "quantity": 161,
+      "price": 24250.0,
+      "status": "closed",
+      "realized_pnl": -72450.0,
+      "realized_pnl_pct": -1.8218623481781382
     }
   ],
   "candidates": [
