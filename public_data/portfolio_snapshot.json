@@ -1,31 +1,17 @@
 {
-  "created_at": "2026-04-21T09:43:38+09:00",
+  "created_at": "2026-04-21T09:44:09+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 5,
     "holding_quantity": 200,
     "total_buy_amount": 5803140.0,
-    "total_eval_amount": 5770455.0,
-    "unrealized_pnl": -32685.0,
+    "total_eval_amount": 5768870.0,
+    "unrealized_pnl": -34270.0,
     "realized_pnl": -464487.0,
-    "total_profit": -497172.0,
-    "cumulative_return_pct": -8.567292879372202
+    "total_profit": -498757.0,
+    "cumulative_return_pct": -8.594605678994476
   },
   "positions": [
-    {
-      "id": "221840-20260421093341",
-      "symbol": "221840",
-      "name": "하이즈항공",
-      "market": "KOSDAQ",
-      "quantity": 1,
-      "entry_price": 3120.0,
-      "current_price": 3135.0,
-      "expected_return_pct": 7.33,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.48076923076922906,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:33:41"
-    },
     {
       "id": "452190-20260421093039",
       "symbol": "452190",
@@ -33,12 +19,26 @@
       "market": "KOSDAQ",
       "quantity": 4,
       "entry_price": 6380.0,
-      "current_price": 6380.0,
+      "current_price": 6390.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
+      "current_return_pct": 0.15673981191222097,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:30:39"
+    },
+    {
+      "id": "221840-20260421093341",
+      "symbol": "221840",
+      "name": "하이즈항공",
+      "market": "KOSDAQ",
+      "quantity": 1,
+      "entry_price": 3120.0,
+      "current_price": 3110.0,
+      "expected_return_pct": 7.33,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.3205128205128194,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-21T09:33:41"
     },
     {
       "id": "112040-20260421092748",
@@ -61,10 +61,10 @@
       "market": "KOSPI",
       "quantity": 14,
       "entry_price": 120600.0,
-      "current_price": 119500.0,
+      "current_price": 119400.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.9121061359867344,
+      "current_return_pct": -0.995024875621886,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:30:23"
     },
@@ -75,10 +75,10 @@
       "market": "KOSDAQ",
       "quantity": 20,
       "entry_price": 5470.0,
-      "current_price": 5410.0,
+      "current_price": 5400.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.0968921389396757,
+      "current_return_pct": -1.2797074954296161,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:28:50"
     }
