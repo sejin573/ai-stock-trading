@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-21T09:30:30+09:00",
+  "created_at": "2026-04-21T09:30:54+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 4,
-    "holding_quantity": 1502,
-    "total_buy_amount": 9773920.0,
-    "total_eval_amount": 9479500.0,
-    "unrealized_pnl": -294420.0,
-    "realized_pnl": -189965.0,
-    "total_profit": -484385.0,
-    "cumulative_return_pct": -4.9558928249873135
+    "holding_count": 5,
+    "holding_quantity": 201,
+    "total_buy_amount": 5803160.0,
+    "total_eval_amount": 5782795.0,
+    "unrealized_pnl": -20365.0,
+    "realized_pnl": -464435.0,
+    "total_profit": -484800.0,
+    "cumulative_return_pct": -8.354069162318462
   },
   "positions": [
     {
@@ -19,12 +19,40 @@
       "market": "KOSPI",
       "quantity": 14,
       "entry_price": 120600.0,
-      "current_price": 120900.0,
+      "current_price": 120600.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.24875621890547706,
+      "current_return_pct": 0.0,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:30:23"
+    },
+    {
+      "id": "307870-20260421093050",
+      "symbol": "307870",
+      "name": "비투엔",
+      "market": "KOSDAQ",
+      "quantity": 2,
+      "entry_price": 1570.0,
+      "current_price": 1570.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.0,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-21T09:30:50"
+    },
+    {
+      "id": "452190-20260421093039",
+      "symbol": "452190",
+      "name": "한빛레이저",
+      "market": "KOSDAQ",
+      "quantity": 4,
+      "entry_price": 6380.0,
+      "current_price": 6370.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.15673981191222097,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-21T09:30:39"
     },
     {
       "id": "020710-20260421092850",
@@ -33,10 +61,10 @@
       "market": "KOSDAQ",
       "quantity": 20,
       "entry_price": 5470.0,
-      "current_price": 5470.0,
+      "current_price": 5460.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
+      "current_return_pct": -0.1828153564899404,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:28:50"
     },
@@ -47,29 +75,37 @@
       "market": "KOSDAQ",
       "quantity": 161,
       "entry_price": 24700.0,
-      "current_price": 24550.0,
+      "current_price": 24575.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.6072874493927127,
+      "current_return_pct": -0.5060728744939236,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:27:48"
-    },
-    {
-      "id": "317120-20260421092632",
-      "symbol": "317120",
-      "name": "라닉스",
-      "market": "KOSDAQ",
-      "quantity": 1307,
-      "entry_price": 3060.0,
-      "current_price": 2850.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -6.8627450980392135,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:26:32"
     }
   ],
   "trade_history": [
+    {
+      "ordered_at": "2026-04-21T09:30:50",
+      "side": "buy",
+      "symbol": "307870",
+      "name": "비투엔",
+      "quantity": 2,
+      "price": 1570.0,
+      "status": "holding",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
+    {
+      "ordered_at": "2026-04-21T09:30:39",
+      "side": "buy",
+      "symbol": "452190",
+      "name": "한빛레이저",
+      "quantity": 4,
+      "price": 6380.0,
+      "status": "holding",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
     {
       "ordered_at": "2026-04-21T09:30:23",
       "side": "buy",
@@ -121,7 +157,7 @@
       "name": "라닉스",
       "quantity": 1307,
       "price": 3060.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -1543,6 +1579,17 @@
       "status": "closed",
       "realized_pnl": -2220.0,
       "realized_pnl_pct": -2.0107238605898137
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "317120",
+      "name": "라닉스",
+      "quantity": 1307,
+      "price": 2850.0,
+      "status": "closed",
+      "realized_pnl": -274470.0,
+      "realized_pnl_pct": -6.8627450980392135
     }
   ],
   "candidates": [
