@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-04-21T13:24:05+09:00",
+  "created_at": "2026-04-21T13:25:18+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 1,
@@ -1740,12 +1740,12 @@
       "name": "조이웍스앤코",
       "market": "KOSDAQ",
       "news_query": "조이웍스앤코",
-      "current_price": 1586.0,
-      "realtime_change_rate": 2.32,
-      "recent_return_5d_pct": 46.97,
-      "recent_volatility_pct": 10.43,
-      "volatility_balance_bonus": -3.26,
-      "base_score": 130.31,
+      "current_price": 1575.0,
+      "realtime_change_rate": 1.61,
+      "recent_return_5d_pct": 49.53,
+      "recent_volatility_pct": 10.34,
+      "volatility_balance_bonus": -3.19,
+      "base_score": 132.61,
       "impact_score": 65,
       "expected_return_pct": 8.0,
       "up_probability_pct": 100.0,
@@ -1765,17 +1765,17 @@
         "earnings"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0163,
-      "learning_adjustment": 0.2,
-      "final_score": 106.55
+      "learning_signal": 0.0198,
+      "learning_adjustment": 0.24,
+      "final_score": 107.63
     },
     {
       "symbol": "317330",
       "name": "덕산테코피아",
       "market": "KOSDAQ",
       "news_query": "덕산테코피아",
-      "current_price": 25200.0,
-      "realtime_change_rate": 0.8,
+      "current_price": 25150.0,
+      "realtime_change_rate": 0.6,
       "recent_return_5d_pct": 31.06,
       "recent_volatility_pct": 5.62,
       "volatility_balance_bonus": 4.53,
@@ -1800,9 +1800,9 @@
         "partnership"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.008,
-      "learning_adjustment": 0.1,
-      "final_score": 99.37
+      "learning_signal": 0.0089,
+      "learning_adjustment": 0.11,
+      "final_score": 99.38
     },
     {
       "symbol": "419650",
@@ -1844,13 +1844,13 @@
       "news_query": "한빛레이저",
       "current_price": 6270.0,
       "realtime_change_rate": -6.84,
-      "recent_return_5d_pct": 33.33,
-      "recent_volatility_pct": 11.03,
-      "volatility_balance_bonus": -3.8,
-      "base_score": 110.55,
+      "recent_return_5d_pct": 33.55,
+      "recent_volatility_pct": 11.01,
+      "volatility_balance_bonus": -3.79,
+      "base_score": 110.77,
       "impact_score": 61,
       "expected_return_pct": 8.0,
-      "up_probability_pct": 99.58,
+      "up_probability_pct": 99.59,
       "pattern_score": -2.5,
       "pattern_bias": -0.25,
       "chart_pattern": "약한 하락 패턴",
@@ -1869,7 +1869,42 @@
       "direction": "상승 예상",
       "learning_signal": 0.0155,
       "learning_adjustment": 0.19,
-      "final_score": 93.31
+      "final_score": 93.41
+    },
+    {
+      "symbol": "221840",
+      "name": "하이즈항공",
+      "market": "KOSDAQ",
+      "news_query": "하이즈항공",
+      "current_price": 3080.0,
+      "realtime_change_rate": -0.65,
+      "recent_return_5d_pct": 14.93,
+      "recent_volatility_pct": 3.91,
+      "volatility_balance_bonus": 7.81,
+      "base_score": 102.27,
+      "impact_score": 70,
+      "expected_return_pct": 7.73,
+      "up_probability_pct": 97.91,
+      "pattern_score": 1.2,
+      "pattern_bias": 0.12,
+      "chart_pattern": "중립",
+      "pattern_tags": [
+        "정배열 추세",
+        "20일선 상승",
+        "단기 과열",
+        "종가 약세"
+      ],
+      "average_sentiment": 0.231,
+      "article_count": 11,
+      "top_tags": [
+        "general",
+        "policy_support",
+        "partnership"
+      ],
+      "direction": "상승 예상",
+      "learning_signal": 0.0075,
+      "learning_adjustment": 0.09,
+      "final_score": 91.73
     },
     {
       "symbol": "293580",
@@ -1972,54 +2007,19 @@
       "final_score": 89.58
     },
     {
-      "symbol": "221840",
-      "name": "하이즈항공",
-      "market": "KOSDAQ",
-      "news_query": "하이즈항공",
-      "current_price": 3070.0,
-      "realtime_change_rate": -0.97,
-      "recent_return_5d_pct": 14.55,
-      "recent_volatility_pct": 3.94,
-      "volatility_balance_bonus": 7.86,
-      "base_score": 97.78,
-      "impact_score": 70,
-      "expected_return_pct": 7.84,
-      "up_probability_pct": 97.08,
-      "pattern_score": 0.0,
-      "pattern_bias": 0.0,
-      "chart_pattern": "중립",
-      "pattern_tags": [
-        "정배열 추세",
-        "20일선 상승",
-        "단기 과열",
-        "종가 약세"
-      ],
-      "average_sentiment": 0.231,
-      "article_count": 11,
-      "top_tags": [
-        "general",
-        "policy_support",
-        "partnership"
-      ],
-      "direction": "상승 예상",
-      "learning_signal": -0.0008,
-      "learning_adjustment": -0.01,
-      "final_score": 88.62
-    },
-    {
       "symbol": "208350",
       "name": "지란지교시큐리티",
       "market": "KOSDAQ",
       "news_query": "지란지교시큐리티",
       "current_price": 3450.0,
       "realtime_change_rate": 1.32,
-      "recent_return_5d_pct": 10.59,
+      "recent_return_5d_pct": 10.75,
       "recent_volatility_pct": 3.49,
       "volatility_balance_bonus": 6.9,
-      "base_score": 93.4,
+      "base_score": 93.92,
       "impact_score": 62,
-      "expected_return_pct": 7.42,
-      "up_probability_pct": 95.08,
+      "expected_return_pct": 7.5,
+      "up_probability_pct": 95.19,
       "pattern_score": 1.8,
       "pattern_bias": 0.18,
       "chart_pattern": "완만한 상승 패턴",
@@ -2035,30 +2035,31 @@
         "general"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0092,
+      "learning_signal": 0.0094,
       "learning_adjustment": 0.11,
-      "final_score": 88.52
+      "final_score": 88.77
     },
     {
       "symbol": "307870",
       "name": "비투엔",
       "market": "KOSDAQ",
       "news_query": "비투엔",
-      "current_price": 1386.0,
-      "realtime_change_rate": -5.0,
-      "recent_return_5d_pct": 23.31,
-      "recent_volatility_pct": 7.64,
-      "volatility_balance_bonus": -0.75,
-      "base_score": 109.14,
+      "current_price": 1402.0,
+      "realtime_change_rate": -3.91,
+      "recent_return_5d_pct": 25.0,
+      "recent_volatility_pct": 7.51,
+      "volatility_balance_bonus": -0.64,
+      "base_score": 106.68,
       "impact_score": 43,
       "expected_return_pct": 8.0,
-      "up_probability_pct": 93.78,
-      "pattern_score": 3.0,
-      "pattern_bias": 0.3,
-      "chart_pattern": "완만한 상승 패턴",
+      "up_probability_pct": 90.35,
+      "pattern_score": 0.0,
+      "pattern_bias": 0.0,
+      "chart_pattern": "중립",
       "pattern_tags": [
         "정배열 추세",
         "20일선 상승",
+        "단기 과열",
         "종가 약세"
       ],
       "average_sentiment": 0.14,
@@ -2069,9 +2070,9 @@
         "lawsuit"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0393,
-      "learning_adjustment": 0.47,
-      "final_score": 88.12
+      "learning_signal": 0.0098,
+      "learning_adjustment": 0.12,
+      "final_score": 83.94
     }
   ]
 }
