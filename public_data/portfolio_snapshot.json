@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-21T09:39:38+09:00",
+  "created_at": "2026-04-21T09:40:12+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 5,
     "holding_quantity": 200,
     "total_buy_amount": 5803140.0,
-    "total_eval_amount": 5773175.0,
-    "unrealized_pnl": -29965.0,
+    "total_eval_amount": 5764005.0,
+    "unrealized_pnl": -39135.0,
     "realized_pnl": -464487.0,
-    "total_profit": -494452.0,
-    "cumulative_return_pct": -8.520421702733348
+    "total_profit": -503622.0,
+    "cumulative_return_pct": -8.678439603387131
   },
   "positions": [
     {
@@ -27,46 +27,18 @@
       "created_at": "2026-04-21T09:33:41"
     },
     {
-      "id": "452190-20260421093039",
-      "symbol": "452190",
-      "name": "한빛레이저",
-      "market": "KOSDAQ",
-      "quantity": 4,
-      "entry_price": 6380.0,
-      "current_price": 6360.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.31347962382445305,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:30:39"
-    },
-    {
       "id": "112040-20260421092748",
       "symbol": "112040",
       "name": "위메이드",
       "market": "KOSDAQ",
       "quantity": 161,
       "entry_price": 24700.0,
-      "current_price": 24600.0,
+      "current_price": 24550.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.4048582995951455,
+      "current_return_pct": -0.6072874493927127,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:27:48"
-    },
-    {
-      "id": "023530-20260421093023",
-      "symbol": "023530",
-      "name": "롯데쇼핑",
-      "market": "KOSPI",
-      "quantity": 14,
-      "entry_price": 120600.0,
-      "current_price": 119700.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.7462686567164201,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:30:23"
     },
     {
       "id": "020710-20260421092850",
@@ -75,12 +47,40 @@
       "market": "KOSDAQ",
       "quantity": 20,
       "entry_price": 5470.0,
-      "current_price": 5410.0,
+      "current_price": 5430.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.0968921389396757,
+      "current_return_pct": -0.7312614259597838,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:28:50"
+    },
+    {
+      "id": "452190-20260421093039",
+      "symbol": "452190",
+      "name": "한빛레이저",
+      "market": "KOSDAQ",
+      "quantity": 4,
+      "entry_price": 6380.0,
+      "current_price": 6330.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.7836990595611271,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-21T09:30:39"
+    },
+    {
+      "id": "023530-20260421093023",
+      "symbol": "023530",
+      "name": "롯데쇼핑",
+      "market": "KOSPI",
+      "quantity": 14,
+      "entry_price": 120600.0,
+      "current_price": 119600.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.8291873963515717,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-21T09:30:23"
     }
   ],
   "trade_history": [
