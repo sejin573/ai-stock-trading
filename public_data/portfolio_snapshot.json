@@ -1,17 +1,31 @@
 {
-  "created_at": "2026-04-21T12:52:16+09:00",
+  "created_at": "2026-04-21T12:53:02+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 2,
     "holding_quantity": 896,
     "total_buy_amount": 3104336.0,
-    "total_eval_amount": 3108870.0,
-    "unrealized_pnl": 4534.0,
+    "total_eval_amount": 3108960.0,
+    "unrealized_pnl": 4624.0,
     "realized_pnl": -509737.0,
-    "total_profit": -505203.0,
-    "cumulative_return_pct": -16.27410821509012
+    "total_profit": -505113.0,
+    "cumulative_return_pct": -16.27120904438179
   },
   "positions": [
+    {
+      "id": "419650-20260421094808",
+      "symbol": "419650",
+      "name": "PLUS 글로벌수소&차세대연료전지",
+      "market": "KOSPI",
+      "quantity": 18,
+      "entry_price": 5887.0,
+      "current_price": 5900.0,
+      "expected_return_pct": 5.48,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.22082554781721608,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-21T09:48:08"
+    },
     {
       "id": "208350-20260421123516",
       "symbol": "208350",
@@ -25,20 +39,6 @@
       "current_return_pct": 0.14641288433381305,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T12:35:16"
-    },
-    {
-      "id": "419650-20260421094808",
-      "symbol": "419650",
-      "name": "PLUS 글로벌수소&차세대연료전지",
-      "market": "KOSPI",
-      "quantity": 18,
-      "entry_price": 5887.0,
-      "current_price": 5895.0,
-      "expected_return_pct": 5.48,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.13589264481059793,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:48:08"
     }
   ],
   "trade_history": [
