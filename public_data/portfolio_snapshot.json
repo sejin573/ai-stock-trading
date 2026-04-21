@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-21T09:28:15+09:00",
+  "created_at": "2026-04-21T09:28:39+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 3,
     "holding_quantity": 1542,
     "total_buy_amount": 8086528.0,
-    "total_eval_amount": 8078478.0,
-    "unrealized_pnl": -8050.0,
+    "total_eval_amount": 8076258.0,
+    "unrealized_pnl": -10270.0,
     "realized_pnl": -187745.0,
-    "total_profit": -195795.0,
-    "cumulative_return_pct": -2.4212492679181965
+    "total_profit": -198015.0,
+    "cumulative_return_pct": -2.4487023355388122
   },
   "positions": [
     {
@@ -27,20 +27,6 @@
       "created_at": "2026-04-21T09:26:32"
     },
     {
-      "id": "309930-20260421092812",
-      "symbol": "309930",
-      "name": "조이웍스앤코",
-      "market": "KOSDAQ",
-      "quantity": 74,
-      "entry_price": 1492.0,
-      "current_price": 1492.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:28:12"
-    },
-    {
       "id": "112040-20260421092748",
       "symbol": "112040",
       "name": "위메이드",
@@ -53,6 +39,20 @@
       "current_return_pct": -0.2024291497975672,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:27:48"
+    },
+    {
+      "id": "309930-20260421092812",
+      "symbol": "309930",
+      "name": "조이웍스앤코",
+      "market": "KOSDAQ",
+      "quantity": 74,
+      "entry_price": 1492.0,
+      "current_price": 1462.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -2.0107238605898137,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-21T09:28:12"
     }
   ],
   "trade_history": [
