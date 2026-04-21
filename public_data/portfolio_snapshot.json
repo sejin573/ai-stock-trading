@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-21T09:59:34+09:00",
+  "created_at": "2026-04-21T10:00:11+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 5,
-    "holding_quantity": 110,
-    "total_buy_amount": 2424606.0,
-    "total_eval_amount": 2406860.0,
-    "unrealized_pnl": -17746.0,
-    "realized_pnl": -565337.0,
-    "total_profit": -583083.0,
-    "cumulative_return_pct": -24.048567066154252
+    "holding_count": 4,
+    "holding_quantity": 24,
+    "total_buy_amount": 137006.0,
+    "total_eval_amount": 136465.0,
+    "unrealized_pnl": -541.0,
+    "realized_pnl": -604037.0,
+    "total_profit": -604578.0,
+    "cumulative_return_pct": -441.27848415397864
   },
   "positions": [
     {
@@ -27,30 +27,16 @@
       "created_at": "2026-04-21T09:48:08"
     },
     {
-      "id": "317330-20260421095616",
-      "symbol": "317330",
-      "name": "덕산테코피아",
-      "market": "KOSDAQ",
-      "quantity": 86,
-      "entry_price": 26600.0,
-      "current_price": 26400.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.7518796992481258,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:56:16"
-    },
-    {
       "id": "293580-20260421094836",
       "symbol": "293580",
       "name": "나우IB",
       "market": "KOSDAQ",
       "quantity": 1,
       "entry_price": 2400.0,
-      "current_price": 2380.0,
+      "current_price": 2385.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.8333333333333304,
+      "current_return_pct": -0.6249999999999978,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:48:36"
     },
@@ -91,7 +77,7 @@
       "name": "덕산테코피아",
       "quantity": 86,
       "price": 26600.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -1678,6 +1664,17 @@
       "status": "closed",
       "realized_pnl": -26600.0,
       "realized_pnl_pct": -1.5754560530679917
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "317330",
+      "name": "덕산테코피아",
+      "quantity": 86,
+      "price": 26150.0,
+      "status": "closed",
+      "realized_pnl": -38700.0,
+      "realized_pnl_pct": -1.6917293233082664
     }
   ],
   "candidates": [
