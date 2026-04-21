@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-21T09:50:25+09:00",
+  "created_at": "2026-04-21T09:51:10+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 6,
     "holding_quantity": 199,
     "total_buy_amount": 5802106.0,
-    "total_eval_amount": 5724600.0,
-    "unrealized_pnl": -77506.0,
+    "total_eval_amount": 5720320.0,
+    "unrealized_pnl": -81786.0,
     "realized_pnl": -466287.0,
-    "total_profit": -543793.0,
-    "cumulative_return_pct": -9.372338250973009
+    "total_profit": -548073.0,
+    "cumulative_return_pct": -9.446104569616619
   },
   "positions": [
     {
@@ -47,26 +47,12 @@
       "market": "KOSDAQ",
       "quantity": 4,
       "entry_price": 6380.0,
-      "current_price": 6340.0,
+      "current_price": 6320.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.6269592476489061,
+      "current_return_pct": -0.9404388714733591,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:30:39"
-    },
-    {
-      "id": "023530-20260421093023",
-      "symbol": "023530",
-      "name": "롯데쇼핑",
-      "market": "KOSPI",
-      "quantity": 14,
-      "entry_price": 120600.0,
-      "current_price": 119100.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -1.243781094527363,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:30:23"
     },
     {
       "id": "221840-20260421093341",
@@ -95,6 +81,20 @@
       "current_return_pct": -1.4170040485829927,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:27:48"
+    },
+    {
+      "id": "023530-20260421093023",
+      "symbol": "023530",
+      "name": "롯데쇼핑",
+      "market": "KOSPI",
+      "quantity": 14,
+      "entry_price": 120600.0,
+      "current_price": 118800.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -1.4925373134328401,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-21T09:30:23"
     }
   ],
   "trade_history": [
