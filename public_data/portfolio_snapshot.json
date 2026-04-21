@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-21T09:58:29+09:00",
+  "created_at": "2026-04-21T09:58:49+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 6,
     "holding_quantity": 124,
     "total_buy_amount": 4113006.0,
-    "total_eval_amount": 4072925.0,
-    "unrealized_pnl": -40081.0,
+    "total_eval_amount": 4070215.0,
+    "unrealized_pnl": -42791.0,
     "realized_pnl": -538737.0,
-    "total_profit": -578818.0,
-    "cumulative_return_pct": -14.07287030458988
+    "total_profit": -581528.0,
+    "cumulative_return_pct": -14.13875885422973
   },
   "positions": [
     {
@@ -19,10 +19,10 @@
       "market": "KOSDAQ",
       "quantity": 1,
       "entry_price": 2400.0,
-      "current_price": 2405.0,
+      "current_price": 2410.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.2083333333333437,
+      "current_return_pct": 0.4166666666666652,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:48:36"
     },
@@ -33,10 +33,10 @@
       "market": "KOSPI",
       "quantity": 18,
       "entry_price": 5887.0,
-      "current_price": 5880.0,
+      "current_price": 5885.0,
       "expected_return_pct": 5.48,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.11890606420927874,
+      "current_return_pct": -0.03397316120264948,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:48:08"
     },
@@ -75,10 +75,10 @@
       "market": "KOSDAQ",
       "quantity": 1,
       "entry_price": 3120.0,
-      "current_price": 3080.0,
+      "current_price": 3075.0,
       "expected_return_pct": 7.33,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.2820512820512775,
+      "current_return_pct": -1.4423076923076872,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:33:41"
     },
@@ -89,10 +89,10 @@
       "market": "KOSPI",
       "quantity": 14,
       "entry_price": 120600.0,
-      "current_price": 119000.0,
+      "current_price": 118800.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.3266998341625258,
+      "current_return_pct": -1.4925373134328401,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:30:23"
     }
