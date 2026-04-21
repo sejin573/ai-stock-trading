@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-21T12:15:19+09:00",
+  "created_at": "2026-04-21T12:16:04+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 3,
-    "holding_quantity": 2306,
-    "total_buy_amount": 6103196.0,
-    "total_eval_amount": 6072700.0,
-    "unrealized_pnl": -30496.0,
-    "realized_pnl": -604537.0,
-    "total_profit": -635033.0,
-    "cumulative_return_pct": -10.404925550482075
+    "holding_count": 2,
+    "holding_quantity": 784,
+    "total_buy_amount": 3104856.0,
+    "total_eval_amount": 3085760.0,
+    "unrealized_pnl": -19096.0,
+    "realized_pnl": -459947.0,
+    "total_profit": -479043.0,
+    "cumulative_return_pct": -15.428831482039746
   },
   "positions": [
     {
@@ -19,26 +19,12 @@
       "market": "KOSPI",
       "quantity": 18,
       "entry_price": 5887.0,
-      "current_price": 5895.0,
+      "current_price": 5890.0,
       "expected_return_pct": 5.48,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.13589264481059793,
+      "current_return_pct": 0.050959741803979774,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:48:08"
-    },
-    {
-      "id": "354200-20260421121516",
-      "symbol": "354200",
-      "name": "엔젠바이오",
-      "market": "KOSDAQ",
-      "quantity": 1522,
-      "entry_price": 1970.0,
-      "current_price": 1970.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T12:15:16"
     },
     {
       "id": "460870-20260421111558",
@@ -47,15 +33,26 @@
       "market": "KOSDAQ",
       "quantity": 766,
       "entry_price": 3915.0,
-      "current_price": 3875.0,
+      "current_price": 3890.0,
       "expected_return_pct": 7.28,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.0217113665389577,
+      "current_return_pct": -0.6385696040868472,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T11:15:58"
     }
   ],
   "trade_history": [
+    {
+      "ordered_at": "2026-04-21T12:15:59",
+      "side": "sell",
+      "symbol": "354200",
+      "name": "엔젠바이오",
+      "quantity": 1522,
+      "price": 2065.0,
+      "status": "closed",
+      "realized_pnl": 144590.0,
+      "realized_pnl_pct": 4.82233502538072
+    },
     {
       "ordered_at": "2026-04-21T12:15:16",
       "side": "buy",
@@ -63,7 +60,7 @@
       "name": "엔젠바이오",
       "quantity": 1522,
       "price": 1970.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
