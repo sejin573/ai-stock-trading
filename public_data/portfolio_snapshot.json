@@ -1,31 +1,17 @@
 {
-  "created_at": "2026-04-21T11:20:21+09:00",
+  "created_at": "2026-04-21T11:21:02+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 3,
     "holding_quantity": 788,
     "total_buy_amount": 3130376.0,
-    "total_eval_amount": 3153310.0,
-    "unrealized_pnl": 22934.0,
+    "total_eval_amount": 3122670.0,
+    "unrealized_pnl": -7706.0,
     "realized_pnl": -604137.0,
-    "total_profit": -581203.0,
-    "cumulative_return_pct": -18.566555583099284
+    "total_profit": -611843.0,
+    "cumulative_return_pct": -19.545351740493793
   },
   "positions": [
-    {
-      "id": "460870-20260421111558",
-      "symbol": "460870",
-      "name": "에스엠씨지",
-      "market": "KOSDAQ",
-      "quantity": 766,
-      "entry_price": 3915.0,
-      "current_price": 3945.0,
-      "expected_return_pct": 7.28,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.766283524904221,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T11:15:58"
-    },
     {
       "id": "419650-20260421094808",
       "symbol": "419650",
@@ -39,6 +25,20 @@
       "current_return_pct": 0.22082554781721608,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:48:08"
+    },
+    {
+      "id": "460870-20260421111558",
+      "symbol": "460870",
+      "name": "에스엠씨지",
+      "market": "KOSDAQ",
+      "quantity": 766,
+      "entry_price": 3915.0,
+      "current_price": 3905.0,
+      "expected_return_pct": 7.28,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.25542784163473664,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-21T11:15:58"
     },
     {
       "id": "452190-20260421093039",
