@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-04-21T17:31:59+09:00",
+  "created_at": "2026-04-21T17:33:16+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 0,
@@ -2060,8 +2060,8 @@
       "average_sentiment": 0.051,
       "article_count": 20,
       "top_tags": [
-        "general",
         "partnership",
+        "general",
         "product_launch"
       ],
       "direction": "상승 예상",
