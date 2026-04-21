@@ -1,17 +1,31 @@
 {
-  "created_at": "2026-04-21T09:48:40+09:00",
+  "created_at": "2026-04-21T09:49:09+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 6,
     "holding_quantity": 199,
     "total_buy_amount": 5802106.0,
-    "total_eval_amount": 5713845.0,
-    "unrealized_pnl": -88261.0,
+    "total_eval_amount": 5721940.0,
+    "unrealized_pnl": -80166.0,
     "realized_pnl": -466287.0,
-    "total_profit": -554548.0,
-    "cumulative_return_pct": -9.557701979246847
+    "total_profit": -546453.0,
+    "cumulative_return_pct": -9.418183673307588
   },
   "positions": [
+    {
+      "id": "293580-20260421094836",
+      "symbol": "293580",
+      "name": "나우IB",
+      "market": "KOSDAQ",
+      "quantity": 1,
+      "entry_price": 2400.0,
+      "current_price": 2405.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.2083333333333437,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-21T09:48:36"
+    },
     {
       "id": "419650-20260421094808",
       "symbol": "419650",
@@ -27,30 +41,16 @@
       "created_at": "2026-04-21T09:48:08"
     },
     {
-      "id": "293580-20260421094836",
-      "symbol": "293580",
-      "name": "나우IB",
-      "market": "KOSDAQ",
-      "quantity": 1,
-      "entry_price": 2400.0,
-      "current_price": 2400.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:48:36"
-    },
-    {
       "id": "452190-20260421093039",
       "symbol": "452190",
       "name": "한빛레이저",
       "market": "KOSDAQ",
       "quantity": 4,
       "entry_price": 6380.0,
-      "current_price": 6360.0,
+      "current_price": 6370.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.31347962382445305,
+      "current_return_pct": -0.15673981191222097,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:30:39"
     },
@@ -89,10 +89,10 @@
       "market": "KOSDAQ",
       "quantity": 161,
       "entry_price": 24700.0,
-      "current_price": 24300.0,
+      "current_price": 24350.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.619433198380571,
+      "current_return_pct": -1.4170040485829927,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:27:48"
     }
