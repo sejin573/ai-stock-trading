@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-04-21T16:50:15+09:00",
+  "created_at": "2026-04-21T16:51:15+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 0,
@@ -1946,8 +1946,8 @@
       "volatility_balance_bonus": 6.17,
       "base_score": 98.9,
       "impact_score": 61,
-      "expected_return_pct": 7.83,
-      "up_probability_pct": 96.91,
+      "expected_return_pct": 7.84,
+      "up_probability_pct": 96.97,
       "pattern_score": 3.0,
       "pattern_bias": 0.3,
       "chart_pattern": "완만한 상승 패턴",
@@ -1956,17 +1956,17 @@
         "20일선 상승",
         "종가 약세"
       ],
-      "average_sentiment": 0.134,
+      "average_sentiment": 0.15,
       "article_count": 20,
       "top_tags": [
-        "earnings",
         "merger_acquisition",
+        "earnings",
         "policy_support"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0257,
-      "learning_adjustment": 0.31,
-      "final_score": 89.25
+      "learning_signal": 0.0264,
+      "learning_adjustment": 0.32,
+      "final_score": 89.43
     },
     {
       "symbol": "307870",
