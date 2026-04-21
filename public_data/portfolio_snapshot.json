@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-04-21T13:40:07+09:00",
+  "created_at": "2026-04-21T13:40:40+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 1,
@@ -1740,23 +1740,23 @@
       "name": "조이웍스앤코",
       "market": "KOSDAQ",
       "news_query": "조이웍스앤코",
-      "current_price": 1825.0,
-      "realtime_change_rate": 17.74,
-      "recent_return_5d_pct": 76.7,
-      "recent_volatility_pct": 11.23,
-      "volatility_balance_bonus": -3.99,
-      "base_score": 159.55,
+      "current_price": 1851.0,
+      "realtime_change_rate": 19.42,
+      "recent_return_5d_pct": 68.75,
+      "recent_volatility_pct": 10.65,
+      "volatility_balance_bonus": -3.47,
+      "base_score": 148.88,
       "impact_score": 65,
       "expected_return_pct": 8.0,
       "up_probability_pct": 100.0,
-      "pattern_score": 7.6,
-      "pattern_bias": 0.76,
-      "chart_pattern": "강한 상승 패턴",
+      "pattern_score": 3.6,
+      "pattern_bias": 0.36,
+      "chart_pattern": "완만한 상승 패턴",
       "pattern_tags": [
         "정배열 추세",
         "20일선 상승",
-        "20일 돌파",
-        "단기 과열"
+        "단기 과열",
+        "거래량 증가"
       ],
       "average_sentiment": 0.23,
       "article_count": 33,
@@ -1765,9 +1765,9 @@
         "earnings"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0088,
-      "learning_adjustment": 0.11,
-      "final_score": 122.28
+      "learning_signal": -0.0227,
+      "learning_adjustment": -0.27,
+      "final_score": 114.3
     },
     {
       "symbol": "317330",
@@ -1808,8 +1808,8 @@
       "name": "하이즈항공",
       "market": "KOSDAQ",
       "news_query": "하이즈항공",
-      "current_price": 3090.0,
-      "realtime_change_rate": -0.32,
+      "current_price": 3070.0,
+      "realtime_change_rate": -0.97,
       "recent_return_5d_pct": 15.3,
       "recent_volatility_pct": 3.89,
       "volatility_balance_bonus": 7.76,
@@ -1834,9 +1834,9 @@
         "partnership"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0271,
-      "learning_adjustment": 0.32,
-      "final_score": 96.23
+      "learning_signal": 0.0302,
+      "learning_adjustment": 0.36,
+      "final_score": 96.27
     },
     {
       "symbol": "419650",
@@ -1845,13 +1845,13 @@
       "news_query": "PLUS 글로벌수소&차세대연료전지",
       "current_price": 5910.0,
       "realtime_change_rate": 4.88,
-      "recent_return_5d_pct": 13.8,
-      "recent_volatility_pct": 2.97,
-      "volatility_balance_bonus": 5.8,
-      "base_score": 100.24,
-      "impact_score": 68,
-      "expected_return_pct": 5.51,
-      "up_probability_pct": 99.38,
+      "recent_return_5d_pct": 14.09,
+      "recent_volatility_pct": 3.0,
+      "volatility_balance_bonus": 5.86,
+      "base_score": 100.67,
+      "impact_score": 67,
+      "expected_return_pct": 5.58,
+      "up_probability_pct": 99.4,
       "pattern_score": 7.6,
       "pattern_bias": 0.76,
       "chart_pattern": "강한 상승 패턴",
@@ -1867,17 +1867,17 @@
         "general"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0341,
+      "learning_signal": 0.0342,
       "learning_adjustment": 0.41,
-      "final_score": 94.21
+      "final_score": 94.11
     },
     {
       "symbol": "452190",
       "name": "한빛레이저",
       "market": "KOSDAQ",
       "news_query": "한빛레이저",
-      "current_price": 6260.0,
-      "realtime_change_rate": -6.98,
+      "current_price": 6250.0,
+      "realtime_change_rate": -7.13,
       "recent_return_5d_pct": 33.33,
       "recent_volatility_pct": 11.03,
       "volatility_balance_bonus": -3.8,
@@ -1901,17 +1901,17 @@
         "policy_support"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0162,
-      "learning_adjustment": 0.19,
-      "final_score": 93.31
+      "learning_signal": 0.0169,
+      "learning_adjustment": 0.2,
+      "final_score": 93.32
     },
     {
       "symbol": "208350",
       "name": "지란지교시큐리티",
       "market": "KOSDAQ",
       "news_query": "지란지교시큐리티",
-      "current_price": 3470.0,
-      "realtime_change_rate": 1.91,
+      "current_price": 3490.0,
+      "realtime_change_rate": 2.5,
       "recent_return_5d_pct": 11.56,
       "recent_volatility_pct": 3.5,
       "volatility_balance_bonus": 6.93,
@@ -1933,9 +1933,9 @@
         "general"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0194,
-      "learning_adjustment": 0.23,
-      "final_score": 92.97
+      "learning_signal": 0.0165,
+      "learning_adjustment": 0.2,
+      "final_score": 92.94
     },
     {
       "symbol": "293580",
