@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-21T11:07:48+09:00",
+  "created_at": "2026-04-21T11:08:06+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 3,
     "holding_quantity": 23,
     "total_buy_amount": 133886.0,
-    "total_eval_amount": 133770.0,
-    "unrealized_pnl": -116.0,
+    "total_eval_amount": 133810.0,
+    "unrealized_pnl": -76.0,
     "realized_pnl": -604097.0,
-    "total_profit": -604213.0,
-    "cumulative_return_pct": -451.2891564465291
+    "total_profit": -604173.0,
+    "cumulative_return_pct": -451.259280283226
   },
   "positions": [
     {
@@ -27,6 +27,20 @@
       "created_at": "2026-04-21T09:48:08"
     },
     {
+      "id": "452190-20260421093039",
+      "symbol": "452190",
+      "name": "한빛레이저",
+      "market": "KOSDAQ",
+      "quantity": 4,
+      "entry_price": 6380.0,
+      "current_price": 6330.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.7836990595611271,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-21T09:30:39"
+    },
+    {
       "id": "293580-20260421094836",
       "symbol": "293580",
       "name": "나우IB",
@@ -39,20 +53,6 @@
       "current_return_pct": -0.8333333333333304,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:48:36"
-    },
-    {
-      "id": "452190-20260421093039",
-      "symbol": "452190",
-      "name": "한빛레이저",
-      "market": "KOSDAQ",
-      "quantity": 4,
-      "entry_price": 6380.0,
-      "current_price": 6320.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.9404388714733591,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:30:39"
     }
   ],
   "trade_history": [
