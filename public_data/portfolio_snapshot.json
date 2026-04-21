@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-21T11:11:40+09:00",
+  "created_at": "2026-04-21T11:11:56+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 3,
-    "holding_quantity": 23,
-    "total_buy_amount": 133886.0,
-    "total_eval_amount": 133570.0,
-    "unrealized_pnl": -316.0,
-    "realized_pnl": -604097.0,
-    "total_profit": -604413.0,
-    "cumulative_return_pct": -451.4385372630446
+    "holding_count": 2,
+    "holding_quantity": 22,
+    "total_buy_amount": 131486.0,
+    "total_eval_amount": 131560.0,
+    "unrealized_pnl": 74.0,
+    "realized_pnl": -604137.0,
+    "total_profit": -604063.0,
+    "cumulative_return_pct": -459.4124089256651
   },
   "positions": [
     {
@@ -19,10 +19,10 @@
       "market": "KOSPI",
       "quantity": 18,
       "entry_price": 5887.0,
-      "current_price": 5885.0,
+      "current_price": 5900.0,
       "expected_return_pct": 5.48,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.03397316120264948,
+      "current_return_pct": 0.22082554781721608,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:48:08"
     },
@@ -33,26 +33,12 @@
       "market": "KOSDAQ",
       "quantity": 4,
       "entry_price": 6380.0,
-      "current_price": 6320.0,
+      "current_price": 6340.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.9404388714733591,
+      "current_return_pct": -0.6269592476489061,
       "auto_sell_enabled": true,
       "created_at": "2026-04-21T09:30:39"
-    },
-    {
-      "id": "293580-20260421094836",
-      "symbol": "293580",
-      "name": "나우IB",
-      "market": "KOSDAQ",
-      "quantity": 1,
-      "entry_price": 2400.0,
-      "current_price": 2360.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -1.6666666666666718,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-21T09:48:36"
     }
   ],
   "trade_history": [
@@ -74,7 +60,7 @@
       "name": "나우IB",
       "quantity": 1,
       "price": 2400.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -1672,6 +1658,17 @@
       "status": "closed",
       "realized_pnl": -60.0,
       "realized_pnl_pct": -1.9230769230769273
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "293580",
+      "name": "나우IB",
+      "quantity": 1,
+      "price": 2360.0,
+      "status": "closed",
+      "realized_pnl": -40.0,
+      "realized_pnl_pct": -1.6666666666666718
     }
   ],
   "candidates": [
