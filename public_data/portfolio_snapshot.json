@@ -1,17 +1,31 @@
 {
-  "created_at": "2026-04-22T10:07:42+09:00",
+  "created_at": "2026-04-22T10:08:00+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 1,
-    "holding_quantity": 480,
-    "total_buy_amount": 3000000.0,
-    "total_eval_amount": 2995200.0,
-    "unrealized_pnl": -4800.0,
+    "holding_count": 2,
+    "holding_quantity": 859,
+    "total_buy_amount": 5997890.0,
+    "total_eval_amount": 5995870.0,
+    "unrealized_pnl": -2020.0,
     "realized_pnl": -434693.0,
-    "total_profit": -439493.0,
-    "cumulative_return_pct": -14.649766666666666
+    "total_profit": -436713.0,
+    "cumulative_return_pct": -7.281110523867559
   },
   "positions": [
+    {
+      "id": "189330-20260422100747",
+      "symbol": "189330",
+      "name": "씨이랩",
+      "market": "KOSDAQ",
+      "quantity": 379,
+      "entry_price": 7910.0,
+      "current_price": 7930.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.25284450063212116,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-22T10:07:47"
+    },
     {
       "id": "209640-20260422100741",
       "symbol": "209640",
@@ -19,15 +33,26 @@
       "market": "KOSDAQ",
       "quantity": 480,
       "entry_price": 6250.0,
-      "current_price": 6240.0,
+      "current_price": 6230.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.16000000000000458,
+      "current_return_pct": -0.31999999999999806,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:07:41"
     }
   ],
   "trade_history": [
+    {
+      "ordered_at": "2026-04-22T10:07:47",
+      "side": "buy",
+      "symbol": "189330",
+      "name": "씨이랩",
+      "quantity": 379,
+      "price": 7910.0,
+      "status": "holding",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
     {
       "ordered_at": "2026-04-22T10:07:41",
       "side": "buy",
