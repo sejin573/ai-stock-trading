@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-22T12:14:27+09:00",
+  "created_at": "2026-04-22T12:15:08+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 6,
     "holding_quantity": 2299,
     "total_buy_amount": 9341260.0,
-    "total_eval_amount": 9355220.0,
-    "unrealized_pnl": 13960.0,
+    "total_eval_amount": 9372990.0,
+    "unrealized_pnl": 31730.0,
     "realized_pnl": -450878.0,
-    "total_profit": -436918.0,
-    "cumulative_return_pct": -4.677291928497868
+    "total_profit": -419148.0,
+    "cumulative_return_pct": -4.487060632077471
   },
   "positions": [
     {
@@ -19,40 +19,26 @@
       "market": "KOSPI",
       "quantity": 3,
       "entry_price": 210500.0,
-      "current_price": 213500.0,
+      "current_price": 213000.0,
       "expected_return_pct": 5.36,
       "target_profit_pct": 2.2,
-      "current_return_pct": 1.4251781472684133,
+      "current_return_pct": 1.187648456057011,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:12:54"
     },
     {
-      "id": "046940-20260422102033",
-      "symbol": "046940",
-      "name": "우원개발",
+      "id": "125490-20260422115823",
+      "symbol": "125490",
+      "name": "한라캐스트",
       "market": "KOSDAQ",
-      "quantity": 22,
-      "entry_price": 5550.0,
-      "current_price": 5570.0,
-      "expected_return_pct": 7.35,
+      "quantity": 187,
+      "entry_price": 16030.0,
+      "current_price": 16180.0,
+      "expected_return_pct": 5.28,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.3603603603603567,
+      "current_return_pct": 0.9357454772301876,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-22T10:20:33"
-    },
-    {
-      "id": "204610-20260422120051",
-      "symbol": "204610",
-      "name": "티쓰리",
-      "market": "KOSDAQ",
-      "quantity": 820,
-      "entry_price": 3130.0,
-      "current_price": 3140.0,
-      "expected_return_pct": 3.06,
-      "target_profit_pct": 1.377,
-      "current_return_pct": 0.31948881789136685,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T12:00:51"
+      "created_at": "2026-04-22T11:58:23"
     },
     {
       "id": "054210-20260422101317",
@@ -69,6 +55,20 @@
       "created_at": "2026-04-22T10:13:17"
     },
     {
+      "id": "046940-20260422102033",
+      "symbol": "046940",
+      "name": "우원개발",
+      "market": "KOSDAQ",
+      "quantity": 22,
+      "entry_price": 5550.0,
+      "current_price": 5560.0,
+      "expected_return_pct": 7.35,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.18018018018017834,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-22T10:20:33"
+    },
+    {
       "id": "140070-20260422114723",
       "symbol": "140070",
       "name": "서플러스글로벌",
@@ -83,18 +83,18 @@
       "created_at": "2026-04-22T11:47:23"
     },
     {
-      "id": "125490-20260422115823",
-      "symbol": "125490",
-      "name": "한라캐스트",
+      "id": "204610-20260422120051",
+      "symbol": "204610",
+      "name": "티쓰리",
       "market": "KOSDAQ",
-      "quantity": 187,
-      "entry_price": 16030.0,
-      "current_price": 16010.0,
-      "expected_return_pct": 5.28,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.12476606363068798,
+      "quantity": 820,
+      "entry_price": 3130.0,
+      "current_price": 3125.0,
+      "expected_return_pct": 3.06,
+      "target_profit_pct": 1.377,
+      "current_return_pct": -0.15974440894568342,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-22T11:58:23"
+      "created_at": "2026-04-22T12:00:51"
     }
   ],
   "trade_history": [
