@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-22T11:44:02+09:00",
+  "created_at": "2026-04-22T11:44:21+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 3,
     "holding_quantity": 27,
     "total_buy_amount": 779000.0,
-    "total_eval_amount": 787240.0,
-    "unrealized_pnl": 8240.0,
+    "total_eval_amount": 788800.0,
+    "unrealized_pnl": 9800.0,
     "realized_pnl": -450878.0,
-    "total_profit": -442638.0,
-    "cumulative_return_pct": -56.82130937098845
+    "total_profit": -441078.0,
+    "cumulative_return_pct": -56.62105263157895
   },
   "positions": [
     {
@@ -19,12 +19,26 @@
       "market": "KOSPI",
       "quantity": 3,
       "entry_price": 210500.0,
-      "current_price": 213000.0,
+      "current_price": 213500.0,
       "expected_return_pct": 5.36,
       "target_profit_pct": 2.2,
-      "current_return_pct": 1.187648456057011,
+      "current_return_pct": 1.4251781472684133,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:12:54"
+    },
+    {
+      "id": "054210-20260422101317",
+      "symbol": "054210",
+      "name": "이랜텍",
+      "market": "KOSDAQ",
+      "quantity": 2,
+      "entry_price": 12700.0,
+      "current_price": 12770.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.5511811023622082,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-22T10:13:17"
     },
     {
       "id": "046940-20260422102033",
@@ -39,20 +53,6 @@
       "current_return_pct": 0.540540540540535,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:20:33"
-    },
-    {
-      "id": "054210-20260422101317",
-      "symbol": "054210",
-      "name": "이랜텍",
-      "market": "KOSDAQ",
-      "quantity": 2,
-      "entry_price": 12700.0,
-      "current_price": 12740.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.31496062992126816,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T10:13:17"
     }
   ],
   "trade_history": [
