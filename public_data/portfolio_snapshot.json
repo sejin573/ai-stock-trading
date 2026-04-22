@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-22T13:50:26+09:00",
+  "created_at": "2026-04-22T13:51:09+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 4,
     "holding_quantity": 1360,
     "total_buy_amount": 6642950.0,
-    "total_eval_amount": 6671535.0,
-    "unrealized_pnl": 28585.0,
+    "total_eval_amount": 6662515.0,
+    "unrealized_pnl": 19565.0,
     "realized_pnl": -403468.0,
-    "total_profit": -374883.0,
-    "cumulative_return_pct": -5.643321114866136
+    "total_profit": -383903.0,
+    "cumulative_return_pct": -5.779104163060087
   },
   "positions": [
     {
@@ -41,32 +41,32 @@
       "created_at": "2026-04-22T10:12:54"
     },
     {
-      "id": "098460-20260422134529",
-      "symbol": "098460",
-      "name": "고영",
-      "market": "KOSDAQ",
-      "quantity": 90,
-      "entry_price": 33200.0,
-      "current_price": 33150.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.1506024096385561,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T13:45:29"
-    },
-    {
       "id": "054210-20260422101317",
       "symbol": "054210",
       "name": "이랜텍",
       "market": "KOSDAQ",
       "quantity": 2,
       "entry_price": 12700.0,
-      "current_price": 12680.0,
+      "current_price": 12670.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.15748031496063408,
+      "current_return_pct": -0.23622047244094002,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:13:17"
+    },
+    {
+      "id": "098460-20260422134529",
+      "symbol": "098460",
+      "name": "고영",
+      "market": "KOSDAQ",
+      "quantity": 90,
+      "entry_price": 33200.0,
+      "current_price": 33050.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.45180722891565717,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-22T13:45:29"
     }
   ],
   "trade_history": [
