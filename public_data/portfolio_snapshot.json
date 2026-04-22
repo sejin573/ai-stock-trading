@@ -1,31 +1,17 @@
 {
-  "created_at": "2026-04-22T10:22:27+09:00",
+  "created_at": "2026-04-22T10:23:14+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 6,
     "holding_quantity": 1630,
     "total_buy_amount": 9432625.0,
-    "total_eval_amount": 9414545.0,
-    "unrealized_pnl": -18080.0,
+    "total_eval_amount": 9427555.0,
+    "unrealized_pnl": -5070.0,
     "realized_pnl": -454473.0,
-    "total_profit": -472553.0,
-    "cumulative_return_pct": -5.009771935171811
+    "total_profit": -459543.0,
+    "cumulative_return_pct": -4.871846384224964
   },
   "positions": [
-    {
-      "id": "127980-20260422101220",
-      "symbol": "127980",
-      "name": "화인써키트",
-      "market": "KOSDAQ",
-      "quantity": 394,
-      "entry_price": 7010.0,
-      "current_price": 7040.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.42796005706133844,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T10:12:20"
-    },
     {
       "id": "046940-20260422102033",
       "symbol": "046940",
@@ -39,6 +25,34 @@
       "current_return_pct": 0.18018018018017834,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:20:33"
+    },
+    {
+      "id": "127980-20260422101220",
+      "symbol": "127980",
+      "name": "화인써키트",
+      "market": "KOSDAQ",
+      "quantity": 394,
+      "entry_price": 7010.0,
+      "current_price": 7020.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.14265335235377208,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-22T10:12:20"
+    },
+    {
+      "id": "239890-20260422101829",
+      "symbol": "239890",
+      "name": "피엔에이치테크",
+      "market": "KOSDAQ",
+      "quantity": 440,
+      "entry_price": 6810.0,
+      "current_price": 6810.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.0,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-22T10:18:29"
     },
     {
       "id": "054210-20260422101317",
@@ -69,30 +83,16 @@
       "created_at": "2026-04-22T10:12:54"
     },
     {
-      "id": "239890-20260422101829",
-      "symbol": "239890",
-      "name": "피엔에이치테크",
-      "market": "KOSDAQ",
-      "quantity": 440,
-      "entry_price": 6810.0,
-      "current_price": 6780.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.4405286343612369,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T10:18:29"
-    },
-    {
       "id": "317770-20260422101955",
       "symbol": "317770",
       "name": "엑스페릭스",
       "market": "KOSDAQ",
       "quantity": 769,
       "entry_price": 3765.0,
-      "current_price": 3745.0,
+      "current_price": 3755.0,
       "expected_return_pct": 7.09,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.5312084993359889,
+      "current_return_pct": -0.26560424966799445,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:19:55"
     }
