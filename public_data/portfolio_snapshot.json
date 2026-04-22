@@ -1,31 +1,17 @@
 {
-  "created_at": "2026-04-22T11:31:26+09:00",
+  "created_at": "2026-04-22T11:32:05+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 4,
-    "holding_quantity": 31,
-    "total_buy_amount": 1847000.0,
-    "total_eval_amount": 1876760.0,
-    "unrealized_pnl": 29760.0,
-    "realized_pnl": -480878.0,
-    "total_profit": -451118.0,
-    "cumulative_return_pct": -24.424363833243095
+    "holding_count": 3,
+    "holding_quantity": 27,
+    "total_buy_amount": 779000.0,
+    "total_eval_amount": 788240.0,
+    "unrealized_pnl": 9240.0,
+    "realized_pnl": -450878.0,
+    "total_profit": -441638.0,
+    "cumulative_return_pct": -56.69293966623877
   },
   "positions": [
-    {
-      "id": "036570-20260422103823",
-      "symbol": "036570",
-      "name": "NC",
-      "market": "KOSPI",
-      "quantity": 4,
-      "entry_price": 267000.0,
-      "current_price": 272500.0,
-      "expected_return_pct": 6.72,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 2.0599250936329527,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T10:38:23"
-    },
     {
       "id": "046940-20260422102033",
       "symbol": "046940",
@@ -47,10 +33,10 @@
       "market": "KOSPI",
       "quantity": 3,
       "entry_price": 210500.0,
-      "current_price": 212500.0,
+      "current_price": 213000.0,
       "expected_return_pct": 5.36,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.9501187648456089,
+      "current_return_pct": 1.187648456057011,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:12:54"
     },
@@ -61,15 +47,26 @@
       "market": "KOSDAQ",
       "quantity": 2,
       "entry_price": 12700.0,
-      "current_price": 12700.0,
+      "current_price": 12690.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
+      "current_return_pct": -0.07874015748031704,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:13:17"
     }
   ],
   "trade_history": [
+    {
+      "ordered_at": "2026-04-22T11:32:00",
+      "side": "sell",
+      "symbol": "036570",
+      "name": "NC",
+      "quantity": 4,
+      "price": 274500.0,
+      "status": "closed",
+      "realized_pnl": 30000.0,
+      "realized_pnl_pct": 2.8089887640449396
+    },
     {
       "ordered_at": "2026-04-22T11:18:00",
       "side": "sell",
@@ -88,7 +85,7 @@
       "name": "NC",
       "quantity": 4,
       "price": 267000.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
