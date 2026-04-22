@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-22T10:47:30+09:00",
+  "created_at": "2026-04-22T10:48:12+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 6,
     "holding_quantity": 865,
     "total_buy_amount": 7605340.0,
-    "total_eval_amount": 7636680.0,
-    "unrealized_pnl": 31340.0,
+    "total_eval_amount": 7669320.0,
+    "unrealized_pnl": 63980.0,
     "realized_pnl": -504458.0,
-    "total_profit": -473118.0,
-    "cumulative_return_pct": -6.220865865299908
+    "total_profit": -440478.0,
+    "cumulative_return_pct": -5.791693730983756
   },
   "positions": [
     {
@@ -27,18 +27,46 @@
       "created_at": "2026-04-22T10:18:29"
     },
     {
+      "id": "036570-20260422103823",
+      "symbol": "036570",
+      "name": "NC",
+      "market": "KOSPI",
+      "quantity": 4,
+      "entry_price": 267000.0,
+      "current_price": 269000.0,
+      "expected_return_pct": 6.72,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.7490636704119868,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-22T10:38:23"
+    },
+    {
       "id": "483650-20260422101254",
       "symbol": "483650",
       "name": "달바글로벌",
       "market": "KOSPI",
       "quantity": 3,
       "entry_price": 210500.0,
-      "current_price": 211000.0,
+      "current_price": 212000.0,
       "expected_return_pct": 5.36,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.23752969121140222,
+      "current_return_pct": 0.7125890736342066,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:12:54"
+    },
+    {
+      "id": "127980-20260422101220",
+      "symbol": "127980",
+      "name": "화인써키트",
+      "market": "KOSDAQ",
+      "quantity": 394,
+      "entry_price": 7010.0,
+      "current_price": 7040.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.42796005706133844,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-22T10:12:20"
     },
     {
       "id": "054210-20260422101317",
@@ -55,20 +83,6 @@
       "created_at": "2026-04-22T10:13:17"
     },
     {
-      "id": "036570-20260422103823",
-      "symbol": "036570",
-      "name": "NC",
-      "market": "KOSPI",
-      "quantity": 4,
-      "entry_price": 267000.0,
-      "current_price": 267500.0,
-      "expected_return_pct": 6.72,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.1872659176029856,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T10:38:23"
-    },
-    {
       "id": "046940-20260422102033",
       "symbol": "046940",
       "name": "우원개발",
@@ -81,20 +95,6 @@
       "current_return_pct": 0.0,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:20:33"
-    },
-    {
-      "id": "127980-20260422101220",
-      "symbol": "127980",
-      "name": "화인써키트",
-      "market": "KOSDAQ",
-      "quantity": 394,
-      "entry_price": 7010.0,
-      "current_price": 6980.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.42796005706133844,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T10:12:20"
     }
   ],
   "trade_history": [
