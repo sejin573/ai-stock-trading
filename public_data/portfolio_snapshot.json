@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-04-23T05:33:06+09:00",
+  "created_at": "2026-04-23T05:34:22+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 4,
@@ -2207,7 +2207,7 @@
       "market": "KOSDAQ",
       "news_query": "조이웍스앤코",
       "current_price": 1612.0,
-      "realtime_change_rate": -1.1,
+      "realtime_change_rate": 0.0,
       "recent_return_5d_pct": 39.33,
       "recent_volatility_pct": 9.75,
       "volatility_balance_bonus": -2.65,
@@ -2229,9 +2229,9 @@
         "general"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0244,
-      "learning_adjustment": 0.29,
-      "final_score": 100.27
+      "learning_signal": 0.0202,
+      "learning_adjustment": 0.24,
+      "final_score": 100.22
     },
     {
       "symbol": "204610",
