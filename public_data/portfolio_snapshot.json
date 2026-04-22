@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-22T10:33:28+09:00",
+  "created_at": "2026-04-22T10:34:11+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 6,
     "holding_quantity": 1630,
     "total_buy_amount": 9432625.0,
-    "total_eval_amount": 9422100.0,
-    "unrealized_pnl": -10525.0,
+    "total_eval_amount": 9421700.0,
+    "unrealized_pnl": -10925.0,
     "realized_pnl": -454473.0,
-    "total_profit": -464998.0,
-    "cumulative_return_pct": -4.92967758179722
+    "total_profit": -465398.0,
+    "cumulative_return_pct": -4.933918182902426
   },
   "positions": [
     {
@@ -27,20 +27,6 @@
       "created_at": "2026-04-22T10:18:29"
     },
     {
-      "id": "054210-20260422101317",
-      "symbol": "054210",
-      "name": "이랜텍",
-      "market": "KOSDAQ",
-      "quantity": 2,
-      "entry_price": 12700.0,
-      "current_price": 12770.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.5511811023622082,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T10:13:17"
-    },
-    {
       "id": "483650-20260422101254",
       "symbol": "483650",
       "name": "달바글로벌",
@@ -55,16 +41,30 @@
       "created_at": "2026-04-22T10:12:54"
     },
     {
+      "id": "054210-20260422101317",
+      "symbol": "054210",
+      "name": "이랜텍",
+      "market": "KOSDAQ",
+      "quantity": 2,
+      "entry_price": 12700.0,
+      "current_price": 12680.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.15748031496063408,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-22T10:13:17"
+    },
+    {
       "id": "046940-20260422102033",
       "symbol": "046940",
       "name": "우원개발",
       "market": "KOSDAQ",
       "quantity": 22,
       "entry_price": 5550.0,
-      "current_price": 5540.0,
+      "current_price": 5530.0,
       "expected_return_pct": 7.35,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.18018018018017834,
+      "current_return_pct": -0.3603603603603567,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:20:33"
     },
