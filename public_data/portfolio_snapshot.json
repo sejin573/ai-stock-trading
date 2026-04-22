@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-22T10:41:25+09:00",
+  "created_at": "2026-04-22T10:42:12+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 6,
     "holding_quantity": 865,
     "total_buy_amount": 7605340.0,
-    "total_eval_amount": 7620640.0,
-    "unrealized_pnl": 15300.0,
+    "total_eval_amount": 7616760.0,
+    "unrealized_pnl": 11420.0,
     "realized_pnl": -504458.0,
-    "total_profit": -489158.0,
-    "cumulative_return_pct": -6.431770308756741
+    "total_profit": -493038.0,
+    "cumulative_return_pct": -6.482787094331089
   },
   "positions": [
     {
@@ -33,10 +33,10 @@
       "market": "KOSDAQ",
       "quantity": 22,
       "entry_price": 5550.0,
-      "current_price": 5570.0,
+      "current_price": 5590.0,
       "expected_return_pct": 7.35,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.3603603603603567,
+      "current_return_pct": 0.7207207207207134,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:20:33"
     },
@@ -47,10 +47,10 @@
       "market": "KOSPI",
       "quantity": 3,
       "entry_price": 210500.0,
-      "current_price": 210500.0,
+      "current_price": 211000.0,
       "expected_return_pct": 5.36,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
+      "current_return_pct": 0.23752969121140222,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:12:54"
     },
@@ -61,26 +61,12 @@
       "market": "KOSPI",
       "quantity": 4,
       "entry_price": 267000.0,
-      "current_price": 267000.0,
+      "current_price": 266500.0,
       "expected_return_pct": 6.72,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
+      "current_return_pct": -0.1872659176029967,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:38:23"
-    },
-    {
-      "id": "127980-20260422101220",
-      "symbol": "127980",
-      "name": "화인써키트",
-      "market": "KOSDAQ",
-      "quantity": 394,
-      "entry_price": 7010.0,
-      "current_price": 6970.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.5706134094151216,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T10:12:20"
     },
     {
       "id": "054210-20260422101317",
@@ -89,12 +75,26 @@
       "market": "KOSDAQ",
       "quantity": 2,
       "entry_price": 12700.0,
-      "current_price": 12610.0,
+      "current_price": 12670.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.7086614173228312,
+      "current_return_pct": -0.23622047244094002,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:13:17"
+    },
+    {
+      "id": "127980-20260422101220",
+      "symbol": "127980",
+      "name": "화인써키트",
+      "market": "KOSDAQ",
+      "quantity": 394,
+      "entry_price": 7010.0,
+      "current_price": 6960.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.7132667617689048,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-22T10:12:20"
     }
   ],
   "trade_history": [
