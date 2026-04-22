@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-22T11:13:29+09:00",
+  "created_at": "2026-04-22T11:13:48+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 5,
     "holding_quantity": 471,
     "total_buy_amount": 4843400.0,
-    "total_eval_amount": 4895520.0,
-    "unrealized_pnl": 52120.0,
+    "total_eval_amount": 4893740.0,
+    "unrealized_pnl": 50340.0,
     "realized_pnl": -555678.0,
-    "total_profit": -503558.0,
-    "cumulative_return_pct": -10.396787380765577
+    "total_profit": -505338.0,
+    "cumulative_return_pct": -10.433538423421563
   },
   "positions": [
     {
@@ -27,20 +27,6 @@
       "created_at": "2026-04-22T10:12:54"
     },
     {
-      "id": "036570-20260422103823",
-      "symbol": "036570",
-      "name": "NC",
-      "market": "KOSPI",
-      "quantity": 4,
-      "entry_price": 267000.0,
-      "current_price": 269500.0,
-      "expected_return_pct": 6.72,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.9363295880149725,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T10:38:23"
-    },
-    {
       "id": "239890-20260422101829",
       "symbol": "239890",
       "name": "피엔에이치테크",
@@ -55,16 +41,30 @@
       "created_at": "2026-04-22T10:18:29"
     },
     {
+      "id": "036570-20260422103823",
+      "symbol": "036570",
+      "name": "NC",
+      "market": "KOSPI",
+      "quantity": 4,
+      "entry_price": 267000.0,
+      "current_price": 269000.0,
+      "expected_return_pct": 6.72,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.7490636704119868,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-22T10:38:23"
+    },
+    {
       "id": "046940-20260422102033",
       "symbol": "046940",
       "name": "우원개발",
       "market": "KOSDAQ",
       "quantity": 22,
       "entry_price": 5550.0,
-      "current_price": 5580.0,
+      "current_price": 5590.0,
       "expected_return_pct": 7.35,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.540540540540535,
+      "current_return_pct": 0.7207207207207134,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:20:33"
     },
