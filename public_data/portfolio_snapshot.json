@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-22T15:29:07+09:00",
+  "created_at": "2026-04-22T15:30:24+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 4,
     "holding_quantity": 1650,
     "total_buy_amount": 6653150.0,
-    "total_eval_amount": 6659165.0,
-    "unrealized_pnl": 6015.0,
+    "total_eval_amount": 6666765.0,
+    "unrealized_pnl": 13615.0,
     "realized_pnl": -448468.0,
-    "total_profit": -442453.0,
-    "cumulative_return_pct": -6.65027843953616
+    "total_profit": -434853.0,
+    "cumulative_return_pct": -6.536046834957878
   },
   "positions": [
     {
@@ -61,10 +61,10 @@
       "market": "KOSDAQ",
       "quantity": 380,
       "entry_price": 7890.0,
-      "current_price": 7840.0,
+      "current_price": 7860.0,
       "expected_return_pct": 3.66,
       "target_profit_pct": 1.647,
-      "current_return_pct": -0.6337135614702172,
+      "current_return_pct": -0.38022813688213253,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T14:12:25"
     }
@@ -2239,8 +2239,8 @@
       "name": "NC",
       "market": "KOSPI",
       "news_query": "NC",
-      "current_price": 276000.0,
-      "realtime_change_rate": 6.15,
+      "current_price": 275000.0,
+      "realtime_change_rate": 5.77,
       "recent_return_5d_pct": 11.52,
       "recent_volatility_pct": 3.76,
       "volatility_balance_bonus": 7.48,
@@ -2265,43 +2265,9 @@
         "earnings"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0324,
-      "learning_adjustment": 0.39,
-      "final_score": 101.57
-    },
-    {
-      "symbol": "189330",
-      "name": "씨이랩",
-      "market": "KOSDAQ",
-      "news_query": "씨이랩",
-      "current_price": 7560.0,
-      "realtime_change_rate": -15.53,
-      "recent_return_5d_pct": 41.31,
-      "recent_volatility_pct": 14.42,
-      "volatility_balance_bonus": -6.86,
-      "base_score": 118.28,
-      "impact_score": 63,
-      "expected_return_pct": 8.0,
-      "up_probability_pct": 99.96,
-      "pattern_score": 1.2,
-      "pattern_bias": 0.12,
-      "chart_pattern": "중립",
-      "pattern_tags": [
-        "정배열 추세",
-        "20일선 상승",
-        "단기 과열",
-        "종가 약세"
-      ],
-      "average_sentiment": 0.125,
-      "article_count": 20,
-      "top_tags": [
-        "general",
-        "earnings"
-      ],
-      "direction": "상승 예상",
-      "learning_signal": 0.0393,
-      "learning_adjustment": 0.47,
-      "final_score": 97.93
+      "learning_signal": 0.0338,
+      "learning_adjustment": 0.41,
+      "final_score": 101.59
     },
     {
       "symbol": "204610",
@@ -2336,6 +2302,40 @@
       "learning_signal": 0.031,
       "learning_adjustment": 0.37,
       "final_score": 97.87
+    },
+    {
+      "symbol": "189330",
+      "name": "씨이랩",
+      "market": "KOSDAQ",
+      "news_query": "씨이랩",
+      "current_price": 7560.0,
+      "realtime_change_rate": -15.53,
+      "recent_return_5d_pct": 41.31,
+      "recent_volatility_pct": 14.42,
+      "volatility_balance_bonus": -6.86,
+      "base_score": 118.28,
+      "impact_score": 62,
+      "expected_return_pct": 8.0,
+      "up_probability_pct": 99.95,
+      "pattern_score": 1.2,
+      "pattern_bias": 0.12,
+      "chart_pattern": "중립",
+      "pattern_tags": [
+        "정배열 추세",
+        "20일선 상승",
+        "단기 과열",
+        "종가 약세"
+      ],
+      "average_sentiment": 0.084,
+      "article_count": 20,
+      "top_tags": [
+        "general",
+        "earnings"
+      ],
+      "direction": "상승 예상",
+      "learning_signal": 0.0374,
+      "learning_adjustment": 0.45,
+      "final_score": 97.2
     },
     {
       "symbol": "054210",
@@ -2377,8 +2377,8 @@
       "name": "고영",
       "market": "KOSDAQ",
       "news_query": "고영",
-      "current_price": 33200.0,
-      "realtime_change_rate": 3.75,
+      "current_price": 33100.0,
+      "realtime_change_rate": 3.44,
       "recent_return_5d_pct": 14.29,
       "recent_volatility_pct": 4.4,
       "volatility_balance_bonus": 7.14,
@@ -2401,17 +2401,17 @@
         "earnings"
       ],
       "direction": "상승 예상",
-      "learning_signal": -0.0192,
-      "learning_adjustment": -0.23,
-      "final_score": 86.66
+      "learning_signal": -0.018,
+      "learning_adjustment": -0.22,
+      "final_score": 86.67
     },
     {
       "symbol": "127980",
       "name": "화인써키트",
       "market": "KOSDAQ",
       "news_query": "화인써키트",
-      "current_price": 6330.0,
-      "realtime_change_rate": -7.32,
+      "current_price": 6460.0,
+      "realtime_change_rate": -5.42,
       "recent_return_5d_pct": 19.66,
       "recent_volatility_pct": 9.92,
       "volatility_balance_bonus": -2.81,
@@ -2434,9 +2434,9 @@
         "merger_acquisition"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0053,
-      "learning_adjustment": 0.06,
-      "final_score": 81.37
+      "learning_signal": -0.0019,
+      "learning_adjustment": -0.02,
+      "final_score": 81.29
     }
   ]
 }
