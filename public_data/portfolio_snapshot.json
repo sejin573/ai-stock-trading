@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-04-22T15:24:08+09:00",
+  "created_at": "2026-04-22T15:24:35+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 4,
@@ -2245,9 +2245,9 @@
       "recent_volatility_pct": 3.76,
       "volatility_balance_bonus": 7.48,
       "base_score": 112.8,
-      "impact_score": 67,
+      "impact_score": 68,
       "expected_return_pct": 8.0,
-      "up_probability_pct": 99.38,
+      "up_probability_pct": 99.41,
       "pattern_score": 7.6,
       "pattern_bias": 0.76,
       "chart_pattern": "강한 상승 패턴",
@@ -2257,7 +2257,7 @@
         "20일 돌파",
         "단기 과열"
       ],
-      "average_sentiment": 0.131,
+      "average_sentiment": 0.156,
       "article_count": 20,
       "top_tags": [
         "general",
@@ -2265,9 +2265,9 @@
         "earnings"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0313,
-      "learning_adjustment": 0.38,
-      "final_score": 101.01
+      "learning_signal": 0.0324,
+      "learning_adjustment": 0.39,
+      "final_score": 101.57
     },
     {
       "symbol": "189330",
