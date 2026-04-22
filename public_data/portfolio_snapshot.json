@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-22T13:20:32+09:00",
+  "created_at": "2026-04-22T13:21:22+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 5,
-    "holding_quantity": 1353,
-    "total_buy_amount": 6747750.0,
-    "total_eval_amount": 6723990.0,
-    "unrealized_pnl": -23760.0,
-    "realized_pnl": -331338.0,
-    "total_profit": -355098.0,
-    "cumulative_return_pct": -5.262465266199844
+    "holding_count": 3,
+    "holding_quantity": 1270,
+    "total_buy_amount": 3654950.0,
+    "total_eval_amount": 3681750.0,
+    "unrealized_pnl": 26800.0,
+    "realized_pnl": -403468.0,
+    "total_profit": -376668.0,
+    "cumulative_return_pct": -10.305695016347693
   },
   "positions": [
     {
@@ -53,34 +53,6 @@
       "current_return_pct": 0.0,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:13:17"
-    },
-    {
-      "id": "046940-20260422102033",
-      "symbol": "046940",
-      "name": "우원개발",
-      "market": "KOSDAQ",
-      "quantity": 22,
-      "entry_price": 5550.0,
-      "current_price": 5470.0,
-      "expected_return_pct": 7.35,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -1.4414414414414378,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T10:20:33"
-    },
-    {
-      "id": "138080-20260422131531",
-      "symbol": "138080",
-      "name": "오이솔루션",
-      "market": "KOSDAQ",
-      "quantity": 61,
-      "entry_price": 48700.0,
-      "current_price": 47900.0,
-      "expected_return_pct": 6.59,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -1.642710472279263,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T13:15:31"
     }
   ],
   "trade_history": [
@@ -91,7 +63,7 @@
       "name": "오이솔루션",
       "quantity": 61,
       "price": 48700.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -190,7 +162,7 @@
       "name": "우원개발",
       "quantity": 22,
       "price": 5550.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -2052,6 +2024,28 @@
       "status": "closed",
       "realized_pnl": -51220.0,
       "realized_pnl_pct": -1.854493580599148
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "046940",
+      "name": "우원개발",
+      "quantity": 22,
+      "price": 5460.0,
+      "status": "closed",
+      "realized_pnl": -1980.0,
+      "realized_pnl_pct": -1.6216216216216162
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "138080",
+      "name": "오이솔루션",
+      "quantity": 61,
+      "price": 47550.0,
+      "status": "closed",
+      "realized_pnl": -70150.0,
+      "realized_pnl_pct": -2.361396303901442
     }
   ],
   "candidates": [
