@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-22T11:03:32+09:00",
+  "created_at": "2026-04-22T11:03:49+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 6,
     "holding_quantity": 865,
     "total_buy_amount": 7605340.0,
-    "total_eval_amount": 7623220.0,
-    "unrealized_pnl": 17880.0,
+    "total_eval_amount": 7626060.0,
+    "unrealized_pnl": 20720.0,
     "realized_pnl": -504458.0,
-    "total_profit": -486578.0,
-    "cumulative_return_pct": -6.397846776081016
+    "total_profit": -483738.0,
+    "cumulative_return_pct": -6.360504592825568
   },
   "positions": [
     {
@@ -33,26 +33,12 @@
       "market": "KOSDAQ",
       "quantity": 394,
       "entry_price": 7010.0,
-      "current_price": 7060.0,
+      "current_price": 7050.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.7132667617689048,
+      "current_return_pct": 0.5706134094151105,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:12:20"
-    },
-    {
-      "id": "036570-20260422103823",
-      "symbol": "036570",
-      "name": "NC",
-      "market": "KOSPI",
-      "quantity": 4,
-      "entry_price": 267000.0,
-      "current_price": 268500.0,
-      "expected_return_pct": 6.72,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.561797752808979,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T10:38:23"
     },
     {
       "id": "046940-20260422102033",
@@ -69,16 +55,30 @@
       "created_at": "2026-04-22T10:20:33"
     },
     {
+      "id": "036570-20260422103823",
+      "symbol": "036570",
+      "name": "NC",
+      "market": "KOSPI",
+      "quantity": 4,
+      "entry_price": 267000.0,
+      "current_price": 268000.0,
+      "expected_return_pct": 6.72,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.3745318352059934,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-22T10:38:23"
+    },
+    {
       "id": "054210-20260422101317",
       "symbol": "054210",
       "name": "이랜텍",
       "market": "KOSDAQ",
       "quantity": 2,
       "entry_price": 12700.0,
-      "current_price": 12710.0,
+      "current_price": 12700.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.07874015748030594,
+      "current_return_pct": 0.0,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:13:17"
     },
@@ -89,10 +89,10 @@
       "market": "KOSDAQ",
       "quantity": 440,
       "entry_price": 6810.0,
-      "current_price": 6760.0,
+      "current_price": 6780.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.7342143906020504,
+      "current_return_pct": -0.4405286343612369,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:18:29"
     }
