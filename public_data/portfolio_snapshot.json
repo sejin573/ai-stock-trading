@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-22T10:57:50+09:00",
+  "created_at": "2026-04-22T10:58:08+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 6,
     "holding_quantity": 865,
     "total_buy_amount": 7605340.0,
-    "total_eval_amount": 7653900.0,
-    "unrealized_pnl": 48560.0,
+    "total_eval_amount": 7652900.0,
+    "unrealized_pnl": 47560.0,
     "realized_pnl": -504458.0,
-    "total_profit": -455898.0,
-    "cumulative_return_pct": -5.994446007673555
+    "total_profit": -456898.0,
+    "cumulative_return_pct": -6.007594663749418
   },
   "positions": [
     {
@@ -19,10 +19,10 @@
       "market": "KOSPI",
       "quantity": 3,
       "entry_price": 210500.0,
-      "current_price": 214500.0,
+      "current_price": 215000.0,
       "expected_return_pct": 5.36,
       "target_profit_pct": 2.2,
-      "current_return_pct": 1.9002375296912177,
+      "current_return_pct": 2.13776722090262,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:12:54"
     },
@@ -47,26 +47,12 @@
       "market": "KOSPI",
       "quantity": 4,
       "entry_price": 267000.0,
-      "current_price": 269000.0,
+      "current_price": 268500.0,
       "expected_return_pct": 6.72,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.7490636704119868,
+      "current_return_pct": 0.561797752808979,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:38:23"
-    },
-    {
-      "id": "046940-20260422102033",
-      "symbol": "046940",
-      "name": "우원개발",
-      "market": "KOSDAQ",
-      "quantity": 22,
-      "entry_price": 5550.0,
-      "current_price": 5580.0,
-      "expected_return_pct": 7.35,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.540540540540535,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T10:20:33"
     },
     {
       "id": "054210-20260422101317",
@@ -75,12 +61,26 @@
       "market": "KOSDAQ",
       "quantity": 2,
       "entry_price": 12700.0,
-      "current_price": 12760.0,
+      "current_price": 12730.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.47244094488188004,
+      "current_return_pct": 0.23622047244094002,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:13:17"
+    },
+    {
+      "id": "046940-20260422102033",
+      "symbol": "046940",
+      "name": "우원개발",
+      "market": "KOSDAQ",
+      "quantity": 22,
+      "entry_price": 5550.0,
+      "current_price": 5560.0,
+      "expected_return_pct": 7.35,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.18018018018017834,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-22T10:20:33"
     },
     {
       "id": "127980-20260422101220",
