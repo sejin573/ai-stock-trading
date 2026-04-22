@@ -1,31 +1,17 @@
 {
-  "created_at": "2026-04-22T14:48:33+09:00",
+  "created_at": "2026-04-22T14:49:17+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 4,
     "holding_quantity": 1650,
     "total_buy_amount": 6653150.0,
-    "total_eval_amount": 6682960.0,
-    "unrealized_pnl": 29810.0,
+    "total_eval_amount": 6676540.0,
+    "unrealized_pnl": 23390.0,
     "realized_pnl": -448468.0,
-    "total_profit": -418658.0,
-    "cumulative_return_pct": -6.292628303886129
+    "total_profit": -425078.0,
+    "cumulative_return_pct": -6.389123948806205
   },
   "positions": [
-    {
-      "id": "483650-20260422101254",
-      "symbol": "483650",
-      "name": "달바글로벌",
-      "market": "KOSPI",
-      "quantity": 3,
-      "entry_price": 210500.0,
-      "current_price": 213500.0,
-      "expected_return_pct": 5.36,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 1.4251781472684133,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T10:12:54"
-    },
     {
       "id": "140070-20260422114723",
       "symbol": "140070",
@@ -41,16 +27,30 @@
       "created_at": "2026-04-22T11:47:23"
     },
     {
+      "id": "483650-20260422101254",
+      "symbol": "483650",
+      "name": "달바글로벌",
+      "market": "KOSPI",
+      "quantity": 3,
+      "entry_price": 210500.0,
+      "current_price": 212000.0,
+      "expected_return_pct": 5.36,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.7125890736342066,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-22T10:12:54"
+    },
+    {
       "id": "054210-20260422101317",
       "symbol": "054210",
       "name": "이랜텍",
       "market": "KOSDAQ",
       "quantity": 2,
       "entry_price": 12700.0,
-      "current_price": 12680.0,
+      "current_price": 12670.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.15748031496063408,
+      "current_return_pct": -0.23622047244094002,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:13:17"
     },
@@ -61,10 +61,10 @@
       "market": "KOSDAQ",
       "quantity": 380,
       "entry_price": 7890.0,
-      "current_price": 7845.0,
+      "current_price": 7840.0,
       "expected_return_pct": 3.66,
       "target_profit_pct": 1.647,
-      "current_return_pct": -0.5703422053231932,
+      "current_return_pct": -0.6337135614702172,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T14:12:25"
     }
