@@ -1,31 +1,17 @@
 {
-  "created_at": "2026-04-22T12:07:27+09:00",
+  "created_at": "2026-04-22T12:08:27+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 6,
     "holding_quantity": 2299,
     "total_buy_amount": 9341260.0,
-    "total_eval_amount": 9343305.0,
-    "unrealized_pnl": 2045.0,
+    "total_eval_amount": 9340265.0,
+    "unrealized_pnl": -995.0,
     "realized_pnl": -450878.0,
-    "total_profit": -448833.0,
-    "cumulative_return_pct": -4.804844314364443
+    "total_profit": -451873.0,
+    "cumulative_return_pct": -4.837388103960279
   },
   "positions": [
-    {
-      "id": "046940-20260422102033",
-      "symbol": "046940",
-      "name": "우원개발",
-      "market": "KOSDAQ",
-      "quantity": 22,
-      "entry_price": 5550.0,
-      "current_price": 5590.0,
-      "expected_return_pct": 7.35,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.7207207207207134,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-22T10:20:33"
-    },
     {
       "id": "483650-20260422101254",
       "symbol": "483650",
@@ -33,10 +19,10 @@
       "market": "KOSPI",
       "quantity": 3,
       "entry_price": 210500.0,
-      "current_price": 212000.0,
+      "current_price": 212500.0,
       "expected_return_pct": 5.36,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.7125890736342066,
+      "current_return_pct": 0.9501187648456089,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T10:12:54"
     },
@@ -53,6 +39,20 @@
       "current_return_pct": 0.6329113924050667,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T11:47:23"
+    },
+    {
+      "id": "046940-20260422102033",
+      "symbol": "046940",
+      "name": "우원개발",
+      "market": "KOSDAQ",
+      "quantity": 22,
+      "entry_price": 5550.0,
+      "current_price": 5570.0,
+      "expected_return_pct": 7.35,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.3603603603603567,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-22T10:20:33"
     },
     {
       "id": "054210-20260422101317",
@@ -89,10 +89,10 @@
       "market": "KOSDAQ",
       "quantity": 820,
       "entry_price": 3130.0,
-      "current_price": 3105.0,
+      "current_price": 3100.0,
       "expected_return_pct": 3.06,
       "target_profit_pct": 1.377,
-      "current_return_pct": -0.7987220447284393,
+      "current_return_pct": -0.9584664536741228,
       "auto_sell_enabled": true,
       "created_at": "2026-04-22T12:00:51"
     }
@@ -2041,8 +2041,8 @@
       "name": "피엔에이치테크",
       "market": "KOSDAQ",
       "news_query": "피엔에이치테크",
-      "current_price": 6880.0,
-      "realtime_change_rate": 12.6,
+      "current_price": 6970.0,
+      "realtime_change_rate": 14.08,
       "recent_return_5d_pct": 26.7,
       "recent_volatility_pct": 3.73,
       "volatility_balance_bonus": 7.43,
@@ -2076,23 +2076,23 @@
       "name": "와이제이링크",
       "market": "KOSDAQ",
       "news_query": "와이제이링크",
-      "current_price": 6060.0,
-      "realtime_change_rate": 5.76,
-      "recent_return_5d_pct": 35.58,
-      "recent_volatility_pct": 9.89,
+      "current_price": 6020.0,
+      "realtime_change_rate": 5.06,
+      "recent_return_5d_pct": 36.03,
+      "recent_volatility_pct": 9.9,
       "volatility_balance_bonus": -2.79,
-      "base_score": 118.33,
+      "base_score": 120.33,
       "impact_score": 67,
       "expected_return_pct": 8.0,
-      "up_probability_pct": 99.83,
-      "pattern_score": 2.2,
-      "pattern_bias": 0.22,
+      "up_probability_pct": 99.89,
+      "pattern_score": 3.6,
+      "pattern_bias": 0.36,
       "chart_pattern": "완만한 상승 패턴",
       "pattern_tags": [
         "정배열 추세",
         "20일선 상승",
         "단기 과열",
-        "종가 약세"
+        "거래량 증가"
       ],
       "average_sentiment": 0.336,
       "article_count": 20,
@@ -2102,17 +2102,17 @@
         "product_launch"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0046,
-      "learning_adjustment": 0.06,
-      "final_score": 101.53
+      "learning_signal": 0.0182,
+      "learning_adjustment": 0.22,
+      "final_score": 103.58
     },
     {
       "symbol": "483650",
       "name": "달바글로벌",
       "market": "KOSPI",
       "news_query": "달바글로벌",
-      "current_price": 211500.0,
-      "realtime_change_rate": 6.44,
+      "current_price": 212000.0,
+      "realtime_change_rate": 6.69,
       "recent_return_5d_pct": 11.84,
       "recent_volatility_pct": 3.28,
       "volatility_balance_bonus": 6.46,
@@ -2137,9 +2137,43 @@
         "politics_risk"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0376,
-      "learning_adjustment": 0.45,
-      "final_score": 100.47
+      "learning_signal": 0.0366,
+      "learning_adjustment": 0.44,
+      "final_score": 100.46
+    },
+    {
+      "symbol": "189330",
+      "name": "씨이랩",
+      "market": "KOSDAQ",
+      "news_query": "씨이랩",
+      "current_price": 7755.0,
+      "realtime_change_rate": -13.35,
+      "recent_return_5d_pct": 44.86,
+      "recent_volatility_pct": 14.08,
+      "volatility_balance_bonus": -6.56,
+      "base_score": 121.95,
+      "impact_score": 63,
+      "expected_return_pct": 8.0,
+      "up_probability_pct": 99.98,
+      "pattern_score": 1.2,
+      "pattern_bias": 0.12,
+      "chart_pattern": "중립",
+      "pattern_tags": [
+        "정배열 추세",
+        "20일선 상승",
+        "단기 과열",
+        "종가 약세"
+      ],
+      "average_sentiment": 0.125,
+      "article_count": 20,
+      "top_tags": [
+        "general",
+        "earnings"
+      ],
+      "direction": "상승 예상",
+      "learning_signal": 0.0456,
+      "learning_adjustment": 0.55,
+      "final_score": 99.67
     },
     {
       "symbol": "309930",
@@ -2176,53 +2210,19 @@
       "final_score": 99.6
     },
     {
-      "symbol": "189330",
-      "name": "씨이랩",
-      "market": "KOSDAQ",
-      "news_query": "씨이랩",
-      "current_price": 7750.0,
-      "realtime_change_rate": -13.41,
-      "recent_return_5d_pct": 44.67,
-      "recent_volatility_pct": 14.1,
-      "volatility_balance_bonus": -6.57,
-      "base_score": 121.76,
-      "impact_score": 63,
-      "expected_return_pct": 8.0,
-      "up_probability_pct": 99.97,
-      "pattern_score": 1.2,
-      "pattern_bias": 0.12,
-      "chart_pattern": "중립",
-      "pattern_tags": [
-        "정배열 추세",
-        "20일선 상승",
-        "단기 과열",
-        "종가 약세"
-      ],
-      "average_sentiment": 0.125,
-      "article_count": 20,
-      "top_tags": [
-        "general",
-        "earnings"
-      ],
-      "direction": "상승 예상",
-      "learning_signal": 0.0456,
-      "learning_adjustment": 0.55,
-      "final_score": 99.58
-    },
-    {
       "symbol": "204610",
       "name": "티쓰리",
       "market": "KOSDAQ",
       "news_query": "티쓰리",
       "current_price": 3100.0,
       "realtime_change_rate": 0.32,
-      "recent_return_5d_pct": 13.27,
+      "recent_return_5d_pct": 13.45,
       "recent_volatility_pct": 3.07,
-      "volatility_balance_bonus": 6.02,
-      "base_score": 93.64,
-      "impact_score": 78,
-      "expected_return_pct": 2.64,
-      "up_probability_pct": 99.25,
+      "volatility_balance_bonus": 6.01,
+      "base_score": 93.56,
+      "impact_score": 77,
+      "expected_return_pct": 2.97,
+      "up_probability_pct": 99.17,
       "pattern_score": 7.8,
       "pattern_bias": 0.78,
       "chart_pattern": "강한 상승 패턴",
@@ -2239,9 +2239,9 @@
         "earnings"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0495,
-      "learning_adjustment": 0.59,
-      "final_score": 95.22
+      "learning_signal": 0.0502,
+      "learning_adjustment": 0.6,
+      "final_score": 94.88
     },
     {
       "symbol": "054210",
@@ -2250,10 +2250,10 @@
       "news_query": "이랜텍",
       "current_price": 12730.0,
       "realtime_change_rate": -6.4,
-      "recent_return_5d_pct": 18.86,
-      "recent_volatility_pct": 6.55,
-      "volatility_balance_bonus": 2.53,
-      "base_score": 103.1,
+      "recent_return_5d_pct": 18.77,
+      "recent_volatility_pct": 6.56,
+      "volatility_balance_bonus": 2.51,
+      "base_score": 102.95,
       "impact_score": 65,
       "expected_return_pct": 8.0,
       "up_probability_pct": 98.06,
@@ -2276,7 +2276,7 @@
       "direction": "상승 예상",
       "learning_signal": 0.0364,
       "learning_adjustment": 0.44,
-      "final_score": 92.36
+      "final_score": 92.3
     },
     {
       "symbol": "036570",
@@ -2316,22 +2316,23 @@
       "name": "우원개발",
       "market": "KOSDAQ",
       "news_query": "우원개발",
-      "current_price": 5590.0,
-      "realtime_change_rate": -4.61,
-      "recent_return_5d_pct": 10.47,
-      "recent_volatility_pct": 4.15,
-      "volatility_balance_bonus": 7.67,
-      "base_score": 97.54,
-      "impact_score": 64,
-      "expected_return_pct": 7.91,
-      "up_probability_pct": 96.67,
-      "pattern_score": 2.6,
-      "pattern_bias": 0.26,
-      "chart_pattern": "완만한 상승 패턴",
+      "current_price": 5570.0,
+      "realtime_change_rate": -4.95,
+      "recent_return_5d_pct": 10.67,
+      "recent_volatility_pct": 4.12,
+      "volatility_balance_bonus": 7.73,
+      "base_score": 98.21,
+      "impact_score": 63,
+      "expected_return_pct": 7.35,
+      "up_probability_pct": 94.99,
+      "pattern_score": 1.2,
+      "pattern_bias": 0.12,
+      "chart_pattern": "중립",
       "pattern_tags": [
         "정배열 추세",
         "20일선 상승",
-        "단기 과열"
+        "단기 과열",
+        "종가 약세"
       ],
       "average_sentiment": 0.485,
       "article_count": 8,
@@ -2339,24 +2340,24 @@
         "general"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0515,
-      "learning_adjustment": 0.62,
-      "final_score": 90.58
+      "learning_signal": 0.0403,
+      "learning_adjustment": 0.48,
+      "final_score": 89.16
     },
     {
       "symbol": "127980",
       "name": "화인써키트",
       "market": "KOSDAQ",
       "news_query": "화인써키트",
-      "current_price": 6580.0,
-      "realtime_change_rate": -3.66,
-      "recent_return_5d_pct": 24.39,
-      "recent_volatility_pct": 9.58,
-      "volatility_balance_bonus": -2.5,
-      "base_score": 101.89,
+      "current_price": 6570.0,
+      "realtime_change_rate": -3.81,
+      "recent_return_5d_pct": 24.2,
+      "recent_volatility_pct": 9.59,
+      "volatility_balance_bonus": -2.51,
+      "base_score": 101.64,
       "impact_score": 54,
       "expected_return_pct": 8.0,
-      "up_probability_pct": 95.58,
+      "up_probability_pct": 95.47,
       "pattern_score": -2.0,
       "pattern_bias": -0.2,
       "chart_pattern": "약한 하락 패턴",
@@ -2372,9 +2373,9 @@
         "merger_acquisition"
       ],
       "direction": "상승 예상",
-      "learning_signal": -0.002,
+      "learning_signal": -0.0015,
       "learning_adjustment": -0.02,
-      "final_score": 85.26
+      "final_score": 85.13
     }
   ]
 }
