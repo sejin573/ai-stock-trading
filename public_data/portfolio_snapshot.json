@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-23T09:13:03+09:00",
+  "created_at": "2026-04-23T09:13:24+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 8,
-    "holding_quantity": 3834,
-    "total_buy_amount": 9357012.0,
-    "total_eval_amount": 9296507.0,
-    "unrealized_pnl": -60505.0,
+    "holding_count": 9,
+    "holding_quantity": 3837,
+    "total_buy_amount": 9373452.0,
+    "total_eval_amount": 9310742.0,
+    "unrealized_pnl": -62710.0,
     "realized_pnl": -473378.0,
-    "total_profit": -533883.0,
-    "cumulative_return_pct": -5.705699640013286
+    "total_profit": -536088.0,
+    "cumulative_return_pct": -5.719216357004869
   },
   "positions": [
     {
@@ -27,6 +27,20 @@
       "created_at": "2026-04-23T09:07:07"
     },
     {
+      "id": "052860-20260423091318",
+      "symbol": "052860",
+      "name": "아이앤씨",
+      "market": "KOSDAQ",
+      "quantity": 3,
+      "entry_price": 5480.0,
+      "current_price": 5480.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.0,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-23T09:13:18"
+    },
+    {
       "id": "046310-20260423091054",
       "symbol": "046310",
       "name": "백금T&A",
@@ -41,18 +55,18 @@
       "created_at": "2026-04-23T09:10:54"
     },
     {
-      "id": "033640-20260423091211",
-      "symbol": "033640",
-      "name": "네패스",
+      "id": "083500-20260423091255",
+      "symbol": "083500",
+      "name": "에프엔에스테크",
       "market": "KOSDAQ",
-      "quantity": 11,
-      "entry_price": 27400.0,
-      "current_price": 27300.0,
-      "expected_return_pct": 4.89,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.36496350364964014,
+      "quantity": 14,
+      "entry_price": 20700.0,
+      "current_price": 20650.0,
+      "expected_return_pct": 4.32,
+      "target_profit_pct": 1.9440000000000002,
+      "current_return_pct": -0.24154589371980784,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-23T09:12:11"
+      "created_at": "2026-04-23T09:12:55"
     },
     {
       "id": "217330-20260423091113",
@@ -61,12 +75,26 @@
       "market": "KOSDAQ",
       "quantity": 1,
       "entry_price": 4890.0,
-      "current_price": 4870.0,
+      "current_price": 4865.0,
       "expected_return_pct": 7.45,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.4089979550102263,
+      "current_return_pct": -0.5112474437627856,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:11:13"
+    },
+    {
+      "id": "033640-20260423091211",
+      "symbol": "033640",
+      "name": "네패스",
+      "market": "KOSDAQ",
+      "quantity": 11,
+      "entry_price": 27400.0,
+      "current_price": 27250.0,
+      "expected_return_pct": 4.89,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.5474452554744547,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-23T09:12:11"
     },
     {
       "id": "014940-20260423090632",
@@ -75,10 +103,10 @@
       "market": "KOSDAQ",
       "quantity": 361,
       "entry_price": 8290.0,
-      "current_price": 8230.0,
+      "current_price": 8220.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.7237635705669487,
+      "current_return_pct": -0.8443908323281013,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:06:32"
     },
@@ -89,26 +117,12 @@
       "market": "KOSDAQ",
       "quantity": 14,
       "entry_price": 6720.0,
-      "current_price": 6660.0,
+      "current_price": 6650.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.8928571428571397,
+      "current_return_pct": -1.041666666666663,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:10:40"
-    },
-    {
-      "id": "083500-20260423091255",
-      "symbol": "083500",
-      "name": "에프엔에스테크",
-      "market": "KOSDAQ",
-      "quantity": 14,
-      "entry_price": 20700.0,
-      "current_price": 20500.0,
-      "expected_return_pct": 4.32,
-      "target_profit_pct": 1.9440000000000002,
-      "current_return_pct": -0.9661835748792313,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-23T09:12:55"
     },
     {
       "id": "256630-20260423090914",
@@ -126,6 +140,17 @@
     }
   ],
   "trade_history": [
+    {
+      "ordered_at": "2026-04-23T09:13:18",
+      "side": "buy",
+      "symbol": "052860",
+      "name": "아이앤씨",
+      "quantity": 3,
+      "price": 5480.0,
+      "status": "holding",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
     {
       "ordered_at": "2026-04-23T09:12:55",
       "side": "buy",
