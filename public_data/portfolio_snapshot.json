@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-23T09:22:37+09:00",
+  "created_at": "2026-04-23T09:22:53+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 8,
     "holding_quantity": 3837,
     "total_buy_amount": 9360012.0,
-    "total_eval_amount": 9256867.0,
-    "unrealized_pnl": -103145.0,
+    "total_eval_amount": 9255627.0,
+    "unrealized_pnl": -104385.0,
     "realized_pnl": -478168.0,
-    "total_profit": -581313.0,
-    "cumulative_return_pct": -6.210601012049985
+    "total_profit": -582553.0,
+    "cumulative_return_pct": -6.2238488583134295
   },
   "positions": [
     {
@@ -41,20 +41,6 @@
       "created_at": "2026-04-23T09:10:54"
     },
     {
-      "id": "033640-20260423091211",
-      "symbol": "033640",
-      "name": "네패스",
-      "market": "KOSDAQ",
-      "quantity": 11,
-      "entry_price": 27400.0,
-      "current_price": 27200.0,
-      "expected_return_pct": 4.89,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.7299270072992692,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-23T09:12:11"
-    },
-    {
       "id": "452280-20260423091631",
       "symbol": "452280",
       "name": "한선엔지니어링",
@@ -69,20 +55,6 @@
       "created_at": "2026-04-23T09:16:31"
     },
     {
-      "id": "452190-20260423091040",
-      "symbol": "452190",
-      "name": "한빛레이저",
-      "market": "KOSDAQ",
-      "quantity": 14,
-      "entry_price": 6720.0,
-      "current_price": 6660.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.8928571428571397,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-23T09:10:40"
-    },
-    {
       "id": "014940-20260423090632",
       "symbol": "014940",
       "name": "오리엔탈정공",
@@ -95,6 +67,34 @@
       "current_return_pct": -0.965018094089265,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:06:32"
+    },
+    {
+      "id": "452190-20260423091040",
+      "symbol": "452190",
+      "name": "한빛레이저",
+      "market": "KOSDAQ",
+      "quantity": 14,
+      "entry_price": 6720.0,
+      "current_price": 6650.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -1.041666666666663,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-23T09:10:40"
+    },
+    {
+      "id": "033640-20260423091211",
+      "symbol": "033640",
+      "name": "네패스",
+      "market": "KOSDAQ",
+      "quantity": 11,
+      "entry_price": 27400.0,
+      "current_price": 27100.0,
+      "expected_return_pct": 4.89,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -1.0948905109489093,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-23T09:12:11"
     },
     {
       "id": "067170-20260423090707",
