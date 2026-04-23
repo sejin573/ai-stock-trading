@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-04-23T20:03:07+09:00",
+  "created_at": "2026-04-23T20:04:23+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 2,
@@ -2682,40 +2682,6 @@
       "final_score": 87.07
     },
     {
-      "symbol": "052860",
-      "name": "아이앤씨",
-      "market": "KOSDAQ",
-      "news_query": "아이앤씨",
-      "current_price": 5810.0,
-      "realtime_change_rate": 7.59,
-      "recent_return_5d_pct": 14.15,
-      "recent_volatility_pct": 6.73,
-      "volatility_balance_bonus": 2.15,
-      "base_score": 101.78,
-      "impact_score": 43,
-      "expected_return_pct": 8.0,
-      "up_probability_pct": 92.88,
-      "pattern_score": 2.6,
-      "pattern_bias": 0.26,
-      "chart_pattern": "완만한 상승 패턴",
-      "pattern_tags": [
-        "정배열 추세",
-        "20일선 상승",
-        "단기 과열"
-      ],
-      "average_sentiment": 0.155,
-      "article_count": 20,
-      "top_tags": [
-        "general",
-        "merger_acquisition",
-        "politics_risk"
-      ],
-      "direction": "상승 예상",
-      "learning_signal": -0.034,
-      "learning_adjustment": -0.41,
-      "final_score": 83.63
-    },
-    {
       "symbol": "031330",
       "name": "에스에이엠티",
       "market": "KOSDAQ",
@@ -2747,6 +2713,40 @@
       "learning_signal": -0.0065,
       "learning_adjustment": -0.08,
       "final_score": 83.41
+    },
+    {
+      "symbol": "052860",
+      "name": "아이앤씨",
+      "market": "KOSDAQ",
+      "news_query": "아이앤씨",
+      "current_price": 5810.0,
+      "realtime_change_rate": 7.59,
+      "recent_return_5d_pct": 14.15,
+      "recent_volatility_pct": 6.73,
+      "volatility_balance_bonus": 2.15,
+      "base_score": 101.78,
+      "impact_score": 42,
+      "expected_return_pct": 8.0,
+      "up_probability_pct": 92.26,
+      "pattern_score": 2.6,
+      "pattern_bias": 0.26,
+      "chart_pattern": "완만한 상승 패턴",
+      "pattern_tags": [
+        "정배열 추세",
+        "20일선 상승",
+        "단기 과열"
+      ],
+      "average_sentiment": 0.114,
+      "article_count": 20,
+      "top_tags": [
+        "general",
+        "politics_risk",
+        "lawsuit"
+      ],
+      "direction": "상승 예상",
+      "learning_signal": -0.0355,
+      "learning_adjustment": -0.43,
+      "final_score": 82.79
     },
     {
       "symbol": "046310",
