@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-23T09:28:13+09:00",
+  "created_at": "2026-04-23T09:28:30+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 8,
     "holding_quantity": 3837,
     "total_buy_amount": 9360012.0,
-    "total_eval_amount": 9248780.0,
-    "unrealized_pnl": -111232.0,
+    "total_eval_amount": 9248730.0,
+    "unrealized_pnl": -111282.0,
     "realized_pnl": -478168.0,
-    "total_profit": -589400.0,
-    "cumulative_return_pct": -6.297000473931017
+    "total_profit": -589450.0,
+    "cumulative_return_pct": -6.297534661280349
   },
   "positions": [
     {
@@ -19,26 +19,12 @@
       "market": "KOSDAQ",
       "quantity": 11,
       "entry_price": 27400.0,
-      "current_price": 27700.0,
+      "current_price": 27750.0,
       "expected_return_pct": 4.89,
       "target_profit_pct": 2.2,
-      "current_return_pct": 1.0948905109489093,
+      "current_return_pct": 1.2773722627737127,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:12:11"
-    },
-    {
-      "id": "452280-20260423091631",
-      "symbol": "452280",
-      "name": "한선엔지니어링",
-      "market": "KOSDAQ",
-      "quantity": 15,
-      "entry_price": 18750.0,
-      "current_price": 18850.0,
-      "expected_return_pct": 3.44,
-      "target_profit_pct": 1.548,
-      "current_return_pct": 0.5333333333333412,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-23T09:16:31"
     },
     {
       "id": "052860-20260423091318",
@@ -53,6 +39,20 @@
       "current_return_pct": 0.36496350364962904,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:13:18"
+    },
+    {
+      "id": "452280-20260423091631",
+      "symbol": "452280",
+      "name": "한선엔지니어링",
+      "market": "KOSDAQ",
+      "quantity": 15,
+      "entry_price": 18750.0,
+      "current_price": 18810.0,
+      "expected_return_pct": 3.44,
+      "target_profit_pct": 1.548,
+      "current_return_pct": 0.32000000000000917,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-23T09:16:31"
     },
     {
       "id": "046310-20260423091054",
