@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-23T12:39:26+09:00",
+  "created_at": "2026-04-23T12:40:06+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 1,
     "holding_quantity": 633,
     "total_buy_amount": 2997255.0,
-    "total_eval_amount": 2994090.0,
-    "unrealized_pnl": -3165.0,
+    "total_eval_amount": 2984595.0,
+    "unrealized_pnl": -12660.0,
     "realized_pnl": -714480.0,
-    "total_profit": -717645.0,
-    "cumulative_return_pct": -23.943408218519945
+    "total_profit": -727140.0,
+    "cumulative_return_pct": -24.26019808124434
   },
   "positions": [
     {
@@ -19,10 +19,10 @@
       "market": "KOSPI",
       "quantity": 633,
       "entry_price": 4735.0,
-      "current_price": 4730.0,
+      "current_price": 4715.0,
       "expected_return_pct": 2.15,
       "target_profit_pct": 0.9675,
-      "current_return_pct": -0.10559662090813271,
+      "current_return_pct": -0.42238648363251974,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T12:16:20"
     }
