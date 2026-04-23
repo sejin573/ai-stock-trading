@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-23T09:24:45+09:00",
+  "created_at": "2026-04-23T09:25:14+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 8,
     "holding_quantity": 3837,
     "total_buy_amount": 9360012.0,
-    "total_eval_amount": 9267080.0,
-    "unrealized_pnl": -92932.0,
+    "total_eval_amount": 9268950.0,
+    "unrealized_pnl": -91062.0,
     "realized_pnl": -478168.0,
-    "total_profit": -571100.0,
-    "cumulative_return_pct": -6.101487904075337
+    "total_profit": -569230.0,
+    "cumulative_return_pct": -6.081509297210302
   },
   "positions": [
     {
@@ -19,10 +19,10 @@
       "market": "KOSDAQ",
       "quantity": 11,
       "entry_price": 27400.0,
-      "current_price": 27550.0,
+      "current_price": 27750.0,
       "expected_return_pct": 4.89,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.5474452554744547,
+      "current_return_pct": 1.2773722627737127,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:12:11"
     },
@@ -41,32 +41,32 @@
       "created_at": "2026-04-23T09:13:18"
     },
     {
-      "id": "046310-20260423091054",
-      "symbol": "046310",
-      "name": "백금T&A",
-      "market": "KOSDAQ",
-      "quantity": 1,
-      "entry_price": 3680.0,
-      "current_price": 3690.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.27173913043478937,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-23T09:10:54"
-    },
-    {
       "id": "452280-20260423091631",
       "symbol": "452280",
       "name": "한선엔지니어링",
       "market": "KOSDAQ",
       "quantity": 15,
       "entry_price": 18750.0,
-      "current_price": 18750.0,
+      "current_price": 18720.0,
       "expected_return_pct": 3.44,
       "target_profit_pct": 1.548,
-      "current_return_pct": 0.0,
+      "current_return_pct": -0.16000000000000458,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:16:31"
+    },
+    {
+      "id": "046310-20260423091054",
+      "symbol": "046310",
+      "name": "백금T&A",
+      "market": "KOSDAQ",
+      "quantity": 1,
+      "entry_price": 3680.0,
+      "current_price": 3670.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.27173913043477826,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-23T09:10:54"
     },
     {
       "id": "452190-20260423091040",
@@ -75,10 +75,10 @@
       "market": "KOSDAQ",
       "quantity": 14,
       "entry_price": 6720.0,
-      "current_price": 6690.0,
+      "current_price": 6700.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.44642857142856984,
+      "current_return_pct": -0.29761904761904656,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:10:40"
     },
