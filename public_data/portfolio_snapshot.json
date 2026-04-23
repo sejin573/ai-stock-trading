@@ -1,30 +1,30 @@
 {
-  "created_at": "2026-04-23T09:10:42+09:00",
+  "created_at": "2026-04-23T09:10:58+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 4,
-    "holding_quantity": 3807,
-    "total_buy_amount": 8757242.0,
-    "total_eval_amount": 8707128.0,
-    "unrealized_pnl": -50114.0,
+    "holding_count": 5,
+    "holding_quantity": 3808,
+    "total_buy_amount": 8760922.0,
+    "total_eval_amount": 8706633.0,
+    "unrealized_pnl": -54289.0,
     "realized_pnl": -473378.0,
-    "total_profit": -523492.0,
-    "cumulative_return_pct": -5.977818130411379
+    "total_profit": -527667.0,
+    "cumulative_return_pct": -6.0229619667884275
   },
   "positions": [
     {
-      "id": "014940-20260423090632",
-      "symbol": "014940",
-      "name": "오리엔탈정공",
+      "id": "046310-20260423091054",
+      "symbol": "046310",
+      "name": "백금T&A",
       "market": "KOSDAQ",
-      "quantity": 361,
-      "entry_price": 8290.0,
-      "current_price": 8260.0,
+      "quantity": 1,
+      "entry_price": 3680.0,
+      "current_price": 3675.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.3618817852834688,
+      "current_return_pct": -0.13586956521739468,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-23T09:06:32"
+      "created_at": "2026-04-23T09:10:54"
     },
     {
       "id": "067170-20260423090707",
@@ -41,18 +41,18 @@
       "created_at": "2026-04-23T09:07:07"
     },
     {
-      "id": "452190-20260423091040",
-      "symbol": "452190",
-      "name": "한빛레이저",
+      "id": "014940-20260423090632",
+      "symbol": "014940",
+      "name": "오리엔탈정공",
       "market": "KOSDAQ",
-      "quantity": 14,
-      "entry_price": 6720.0,
-      "current_price": 6690.0,
+      "quantity": 361,
+      "entry_price": 8290.0,
+      "current_price": 8250.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.44642857142856984,
+      "current_return_pct": -0.4825090470446325,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-23T09:10:40"
+      "created_at": "2026-04-23T09:06:32"
     },
     {
       "id": "256630-20260423090914",
@@ -67,9 +67,34 @@
       "current_return_pct": -1.0204081632653073,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:09:14"
+    },
+    {
+      "id": "452190-20260423091040",
+      "symbol": "452190",
+      "name": "한빛레이저",
+      "market": "KOSDAQ",
+      "quantity": 14,
+      "entry_price": 6720.0,
+      "current_price": 6650.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -1.041666666666663,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-23T09:10:40"
     }
   ],
   "trade_history": [
+    {
+      "ordered_at": "2026-04-23T09:10:54",
+      "side": "buy",
+      "symbol": "046310",
+      "name": "백금T&A",
+      "quantity": 1,
+      "price": 3680.0,
+      "status": "holding",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
     {
       "ordered_at": "2026-04-23T09:10:40",
       "side": "buy",
