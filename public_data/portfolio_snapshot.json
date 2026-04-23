@@ -1,32 +1,17 @@
 {
-  "created_at": "2026-04-23T11:56:24+09:00",
+  "created_at": "2026-04-23T11:57:16+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 1,
-    "holding_quantity": 425,
-    "total_buy_amount": 2996250.0,
-    "total_eval_amount": 2953750.0,
-    "unrealized_pnl": -42500.0,
-    "realized_pnl": -667730.0,
-    "total_profit": -710230.0,
-    "cumulative_return_pct": -23.703963287442637
+    "holding_count": 0,
+    "holding_quantity": 0,
+    "total_buy_amount": 0.0,
+    "total_eval_amount": 0.0,
+    "unrealized_pnl": 0.0,
+    "realized_pnl": -714480.0,
+    "total_profit": -714480.0,
+    "cumulative_return_pct": 0.0
   },
-  "positions": [
-    {
-      "id": "031330-20260423101116",
-      "symbol": "031330",
-      "name": "에스에이엠티",
-      "market": "KOSDAQ",
-      "quantity": 425,
-      "entry_price": 7050.0,
-      "current_price": 6950.0,
-      "expected_return_pct": 2.5,
-      "target_profit_pct": 1.125,
-      "current_return_pct": -1.4184397163120588,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-23T10:11:16"
-    }
-  ],
+  "positions": [],
   "trade_history": [
     {
       "ordered_at": "2026-04-23T10:11:16",
@@ -35,7 +20,7 @@
       "name": "에스에이엠티",
       "quantity": 425,
       "price": 7050.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -2370,6 +2355,17 @@
       "status": "closed",
       "realized_pnl": -46950.0,
       "realized_pnl_pct": -1.565762004175364
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "031330",
+      "name": "에스에이엠티",
+      "quantity": 425,
+      "price": 6940.0,
+      "status": "closed",
+      "realized_pnl": -46750.0,
+      "realized_pnl_pct": -1.5602836879432647
     }
   ],
   "candidates": [
