@@ -1,17 +1,31 @@
 {
-  "created_at": "2026-04-23T15:30:25+09:00",
+  "created_at": "2026-04-23T15:31:05+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 2,
     "holding_quantity": 695,
     "total_buy_amount": 5967055.0,
-    "total_eval_amount": 5954460.0,
-    "unrealized_pnl": -12595.0,
+    "total_eval_amount": 5970285.0,
+    "unrealized_pnl": 3230.0,
     "realized_pnl": -761730.0,
-    "total_profit": -774325.0,
-    "cumulative_return_pct": -12.976669395539343
+    "total_profit": -758500.0,
+    "cumulative_return_pct": -12.711463192479371
   },
   "positions": [
+    {
+      "id": "404990-20260423121620",
+      "symbol": "404990",
+      "name": "신한서부티엔디리츠",
+      "market": "KOSPI",
+      "quantity": 633,
+      "entry_price": 4735.0,
+      "current_price": 4745.0,
+      "expected_return_pct": 2.15,
+      "target_profit_pct": 0.9675,
+      "current_return_pct": 0.21119324181626542,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-23T12:16:20"
+    },
     {
       "id": "257720-20260423144834",
       "symbol": "257720",
@@ -25,20 +39,6 @@
       "current_return_pct": -0.10438413361169019,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T14:48:34"
-    },
-    {
-      "id": "404990-20260423121620",
-      "symbol": "404990",
-      "name": "신한서부티엔디리츠",
-      "market": "KOSPI",
-      "quantity": 633,
-      "entry_price": 4735.0,
-      "current_price": 4720.0,
-      "expected_return_pct": 2.15,
-      "target_profit_pct": 0.9675,
-      "current_return_pct": -0.31678986272439813,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-23T12:16:20"
     }
   ],
   "trade_history": [
