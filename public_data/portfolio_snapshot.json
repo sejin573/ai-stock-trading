@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-23T10:06:46+09:00",
+  "created_at": "2026-04-23T10:07:05+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 2,
     "holding_quantity": 314,
     "total_buy_amount": 3002220.0,
-    "total_eval_amount": 2992795.0,
-    "unrealized_pnl": -9425.0,
+    "total_eval_amount": 2986535.0,
+    "unrealized_pnl": -15685.0,
     "realized_pnl": -620720.0,
-    "total_profit": -630145.0,
-    "cumulative_return_pct": -20.989301250408033
+    "total_profit": -636405.0,
+    "cumulative_return_pct": -21.197813617922737
   },
   "positions": [
     {
@@ -19,10 +19,10 @@
       "market": "KOSDAQ",
       "quantity": 313,
       "entry_price": 9580.0,
-      "current_price": 9550.0,
+      "current_price": 9530.0,
       "expected_return_pct": 4.22,
       "target_profit_pct": 1.899,
-      "current_return_pct": -0.31315240083507057,
+      "current_return_pct": -0.5219206680584509,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:53:15"
     },
