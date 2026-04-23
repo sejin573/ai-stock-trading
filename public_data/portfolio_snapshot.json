@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-23T09:29:44+09:00",
+  "created_at": "2026-04-23T09:30:14+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 8,
-    "holding_quantity": 3837,
-    "total_buy_amount": 9360012.0,
-    "total_eval_amount": 9249230.0,
-    "unrealized_pnl": -110782.0,
-    "realized_pnl": -478168.0,
-    "total_profit": -588950.0,
-    "cumulative_return_pct": -6.292192787787024
+    "holding_count": 7,
+    "holding_quantity": 2677,
+    "total_buy_amount": 6361412.0,
+    "total_eval_amount": 6295725.0,
+    "unrealized_pnl": -65687.0,
+    "realized_pnl": -524568.0,
+    "total_profit": -590255.0,
+    "cumulative_return_pct": -9.27867901025747
   },
   "positions": [
     {
@@ -19,10 +19,10 @@
       "market": "KOSDAQ",
       "quantity": 11,
       "entry_price": 27400.0,
-      "current_price": 27650.0,
+      "current_price": 27750.0,
       "expected_return_pct": 4.89,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.9124087591240837,
+      "current_return_pct": 1.2773722627737127,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:12:11"
     },
@@ -33,10 +33,10 @@
       "market": "KOSDAQ",
       "quantity": 15,
       "entry_price": 18750.0,
-      "current_price": 18770.0,
+      "current_price": 18760.0,
       "expected_return_pct": 3.44,
       "target_profit_pct": 1.548,
-      "current_return_pct": 0.10666666666667712,
+      "current_return_pct": 0.05333333333332746,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:16:31"
     },
@@ -61,10 +61,10 @@
       "market": "KOSDAQ",
       "quantity": 1,
       "entry_price": 3680.0,
-      "current_price": 3670.0,
+      "current_price": 3675.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.27173913043477826,
+      "current_return_pct": -0.13586956521739468,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:10:54"
     },
@@ -75,10 +75,10 @@
       "market": "KOSDAQ",
       "quantity": 14,
       "entry_price": 6720.0,
-      "current_price": 6665.0,
+      "current_price": 6660.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.8184523809523836,
+      "current_return_pct": -0.8928571428571397,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:10:40"
     },
@@ -89,26 +89,12 @@
       "market": "KOSDAQ",
       "quantity": 361,
       "entry_price": 8290.0,
-      "current_price": 8190.0,
+      "current_price": 8200.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.2062726176115812,
+      "current_return_pct": -1.0856453558504175,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:06:32"
-    },
-    {
-      "id": "067170-20260423090707",
-      "symbol": "067170",
-      "name": "오텍",
-      "market": "KOSDAQ",
-      "quantity": 1160,
-      "entry_price": 2585.0,
-      "current_price": 2550.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -1.3539651837524147,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-23T09:07:07"
     },
     {
       "id": "256630-20260423090914",
@@ -232,7 +218,7 @@
       "name": "오텍",
       "quantity": 1160,
       "price": 2585.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -2347,6 +2333,17 @@
       "status": "closed",
       "realized_pnl": -4900.0,
       "realized_pnl_pct": -1.6908212560386437
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "067170",
+      "name": "오텍",
+      "quantity": 1160,
+      "price": 2545.0,
+      "status": "closed",
+      "realized_pnl": -46400.0,
+      "realized_pnl_pct": -1.5473887814313358
     }
   ],
   "candidates": [
