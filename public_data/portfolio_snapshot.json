@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-23T09:06:35+09:00",
+  "created_at": "2026-04-23T09:07:09+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 2,
-    "holding_quantity": 876,
-    "total_buy_amount": 5989990.0,
-    "total_eval_amount": 5953940.0,
-    "unrealized_pnl": -36050.0,
-    "realized_pnl": -416728.0,
-    "total_profit": -452778.0,
-    "cumulative_return_pct": -7.558910782822675
+    "holding_quantity": 1521,
+    "total_buy_amount": 5991290.0,
+    "total_eval_amount": 5991290.0,
+    "unrealized_pnl": 0.0,
+    "realized_pnl": -473378.0,
+    "total_profit": -473378.0,
+    "cumulative_return_pct": -7.901103101335439
   },
   "positions": [
     {
@@ -27,21 +27,32 @@
       "created_at": "2026-04-23T09:06:32"
     },
     {
-      "id": "187790-20260423090547",
-      "symbol": "187790",
-      "name": "나노",
+      "id": "067170-20260423090707",
+      "symbol": "067170",
+      "name": "오텍",
       "market": "KOSDAQ",
-      "quantity": 515,
-      "entry_price": 5820.0,
-      "current_price": 5750.0,
+      "quantity": 1160,
+      "entry_price": 2585.0,
+      "current_price": 2585.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.2027491408934665,
+      "current_return_pct": 0.0,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-23T09:05:47"
+      "created_at": "2026-04-23T09:07:07"
     }
   ],
   "trade_history": [
+    {
+      "ordered_at": "2026-04-23T09:07:07",
+      "side": "buy",
+      "symbol": "067170",
+      "name": "오텍",
+      "quantity": 1160,
+      "price": 2585.0,
+      "status": "holding",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
     {
       "ordered_at": "2026-04-23T09:06:32",
       "side": "buy",
@@ -60,7 +71,7 @@
       "name": "나노",
       "quantity": 515,
       "price": 5820.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -2131,6 +2142,17 @@
       "status": "closed",
       "realized_pnl": -26600.0,
       "realized_pnl_pct": -0.8871989860583018
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "187790",
+      "name": "나노",
+      "quantity": 515,
+      "price": 5710.0,
+      "status": "closed",
+      "realized_pnl": -56650.0,
+      "realized_pnl_pct": -1.8900343642611728
     }
   ],
   "candidates": [
