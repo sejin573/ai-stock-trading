@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-04-23T15:25:29+09:00",
+  "created_at": "2026-04-23T15:26:29+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 2,
@@ -2469,7 +2469,7 @@
       "top_tags": [
         "general",
         "policy_support",
-        "product_launch"
+        "earnings"
       ],
       "direction": "상승 예상",
       "learning_signal": -0.0306,
