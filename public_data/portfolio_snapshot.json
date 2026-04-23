@@ -1,31 +1,17 @@
 {
-  "created_at": "2026-04-23T13:51:25+09:00",
+  "created_at": "2026-04-23T13:52:07+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 2,
     "holding_quantity": 858,
     "total_buy_amount": 5994255.0,
-    "total_eval_amount": 5969430.0,
-    "unrealized_pnl": -24825.0,
+    "total_eval_amount": 5942850.0,
+    "unrealized_pnl": -51405.0,
     "realized_pnl": -714480.0,
-    "total_profit": -739305.0,
-    "cumulative_return_pct": -12.333559383109327
+    "total_profit": -765885.0,
+    "cumulative_return_pct": -12.776983962143754
   },
   "positions": [
-    {
-      "id": "102120-20260423135122",
-      "symbol": "102120",
-      "name": "어보브반도체",
-      "market": "KOSDAQ",
-      "quantity": 225,
-      "entry_price": 13320.0,
-      "current_price": 13280.0,
-      "expected_return_pct": 2.32,
-      "target_profit_pct": 1.044,
-      "current_return_pct": -0.30030030030030463,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-23T13:51:22"
-    },
     {
       "id": "404990-20260423121620",
       "symbol": "404990",
@@ -33,12 +19,26 @@
       "market": "KOSPI",
       "quantity": 633,
       "entry_price": 4735.0,
-      "current_price": 4710.0,
+      "current_price": 4700.0,
       "expected_return_pct": 2.15,
       "target_profit_pct": 0.9675,
-      "current_return_pct": -0.5279831045406524,
+      "current_return_pct": -0.7391763463569179,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T12:16:20"
+    },
+    {
+      "id": "102120-20260423135122",
+      "symbol": "102120",
+      "name": "어보브반도체",
+      "market": "KOSDAQ",
+      "quantity": 225,
+      "entry_price": 13320.0,
+      "current_price": 13190.0,
+      "expected_return_pct": 2.32,
+      "target_profit_pct": 1.044,
+      "current_return_pct": -0.9759759759759734,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-23T13:51:22"
     }
   ],
   "trade_history": [
