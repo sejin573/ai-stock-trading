@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-23T09:18:39+09:00",
+  "created_at": "2026-04-23T09:19:22+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 9,
     "holding_quantity": 3838,
     "total_buy_amount": 9364902.0,
-    "total_eval_amount": 9262630.0,
-    "unrealized_pnl": -102272.0,
+    "total_eval_amount": 9267707.0,
+    "unrealized_pnl": -97195.0,
     "realized_pnl": -478278.0,
-    "total_profit": -580550.0,
-    "cumulative_return_pct": -6.1992106270839775
+    "total_profit": -575473.0,
+    "cumulative_return_pct": -6.144997566445436
   },
   "positions": [
     {
@@ -27,44 +27,16 @@
       "created_at": "2026-04-23T09:11:13"
     },
     {
-      "id": "452280-20260423091631",
-      "symbol": "452280",
-      "name": "한선엔지니어링",
-      "market": "KOSDAQ",
-      "quantity": 15,
-      "entry_price": 18750.0,
-      "current_price": 18730.0,
-      "expected_return_pct": 3.44,
-      "target_profit_pct": 1.548,
-      "current_return_pct": -0.10666666666666602,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-23T09:16:31"
-    },
-    {
-      "id": "452190-20260423091040",
-      "symbol": "452190",
-      "name": "한빛레이저",
-      "market": "KOSDAQ",
-      "quantity": 14,
-      "entry_price": 6720.0,
-      "current_price": 6700.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.29761904761904656,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-23T09:10:40"
-    },
-    {
       "id": "052860-20260423091318",
       "symbol": "052860",
       "name": "아이앤씨",
       "market": "KOSDAQ",
       "quantity": 3,
       "entry_price": 5480.0,
-      "current_price": 5460.0,
+      "current_price": 5490.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.36496350364964014,
+      "current_return_pct": 0.18248175182482562,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:13:18"
     },
@@ -75,12 +47,40 @@
       "market": "KOSDAQ",
       "quantity": 1,
       "entry_price": 3680.0,
-      "current_price": 3665.0,
+      "current_price": 3670.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.40760869565217295,
+      "current_return_pct": -0.27173913043477826,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:10:54"
+    },
+    {
+      "id": "452280-20260423091631",
+      "symbol": "452280",
+      "name": "한선엔지니어링",
+      "market": "KOSDAQ",
+      "quantity": 15,
+      "entry_price": 18750.0,
+      "current_price": 18680.0,
+      "expected_return_pct": 3.44,
+      "target_profit_pct": 1.548,
+      "current_return_pct": -0.3733333333333366,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-23T09:16:31"
+    },
+    {
+      "id": "014940-20260423090632",
+      "symbol": "014940",
+      "name": "오리엔탈정공",
+      "market": "KOSDAQ",
+      "quantity": 361,
+      "entry_price": 8290.0,
+      "current_price": 8210.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.965018094089265,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-23T09:06:32"
     },
     {
       "id": "067170-20260423090707",
@@ -97,18 +97,18 @@
       "created_at": "2026-04-23T09:07:07"
     },
     {
-      "id": "014940-20260423090632",
-      "symbol": "014940",
-      "name": "오리엔탈정공",
+      "id": "452190-20260423091040",
+      "symbol": "452190",
+      "name": "한빛레이저",
       "market": "KOSDAQ",
-      "quantity": 361,
-      "entry_price": 8290.0,
-      "current_price": 8200.0,
+      "quantity": 14,
+      "entry_price": 6720.0,
+      "current_price": 6650.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.0856453558504175,
+      "current_return_pct": -1.041666666666663,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-23T09:06:32"
+      "created_at": "2026-04-23T09:10:40"
     },
     {
       "id": "033640-20260423091211",
@@ -117,10 +117,10 @@
       "market": "KOSDAQ",
       "quantity": 11,
       "entry_price": 27400.0,
-      "current_price": 27050.0,
+      "current_price": 27100.0,
       "expected_return_pct": 4.89,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.2773722627737238,
+      "current_return_pct": -1.0948905109489093,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:12:11"
     },
@@ -131,10 +131,10 @@
       "market": "KOSDAQ",
       "quantity": 2272,
       "entry_price": 1176.0,
-      "current_price": 1160.0,
+      "current_price": 1161.0,
       "expected_return_pct": 6.91,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.3605442176870763,
+      "current_return_pct": -1.2755102040816313,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:09:14"
     }
