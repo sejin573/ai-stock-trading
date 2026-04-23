@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-23T10:09:13+09:00",
+  "created_at": "2026-04-23T10:09:38+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 2,
-    "holding_quantity": 314,
-    "total_buy_amount": 3002220.0,
-    "total_eval_amount": 2977125.0,
-    "unrealized_pnl": -25095.0,
-    "realized_pnl": -620720.0,
-    "total_profit": -645815.0,
-    "cumulative_return_pct": -21.511248342892923
+    "holding_count": 1,
+    "holding_quantity": 313,
+    "total_buy_amount": 2998540.0,
+    "total_eval_amount": 2973500.0,
+    "unrealized_pnl": -25040.0,
+    "realized_pnl": -620780.0,
+    "total_profit": -645820.0,
+    "cumulative_return_pct": -21.537815070000736
   },
   "positions": [
     {
@@ -25,20 +25,6 @@
       "current_return_pct": -0.8350730688935326,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:53:15"
-    },
-    {
-      "id": "046310-20260423091054",
-      "symbol": "046310",
-      "name": "백금T&A",
-      "market": "KOSDAQ",
-      "quantity": 1,
-      "entry_price": 3680.0,
-      "current_price": 3625.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -1.4945652173913082,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-23T09:10:54"
     }
   ],
   "trade_history": [
@@ -148,7 +134,7 @@
       "name": "백금T&A",
       "quantity": 1,
       "price": 3680.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -2351,6 +2337,17 @@
       "status": "closed",
       "realized_pnl": -270.0,
       "realized_pnl_pct": -1.6423357664233529
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "046310",
+      "name": "백금T&A",
+      "quantity": 1,
+      "price": 3620.0,
+      "status": "closed",
+      "realized_pnl": -60.0,
+      "realized_pnl_pct": -1.6304347826086918
     }
   ],
   "candidates": [
