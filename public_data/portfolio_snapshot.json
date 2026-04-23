@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-04-23T16:42:07+09:00",
+  "created_at": "2026-04-23T16:43:23+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 2,
@@ -2453,7 +2453,7 @@
       "recent_volatility_pct": 9.81,
       "volatility_balance_bonus": -2.71,
       "base_score": 130.35,
-      "impact_score": 61,
+      "impact_score": 60,
       "expected_return_pct": 8.0,
       "up_probability_pct": 99.92,
       "pattern_score": -2.0,
@@ -2464,17 +2464,17 @@
         "단기 과열",
         "종가 약세"
       ],
-      "average_sentiment": 0.026,
+      "average_sentiment": 0.001,
       "article_count": 20,
       "top_tags": [
         "general",
         "policy_support",
-        "earnings"
+        "partnership"
       ],
       "direction": "상승 예상",
-      "learning_signal": -0.0319,
-      "learning_adjustment": -0.38,
-      "final_score": 98.67
+      "learning_signal": -0.0329,
+      "learning_adjustment": -0.4,
+      "final_score": 98.1
     },
     {
       "symbol": "217330",
@@ -2557,7 +2557,7 @@
       "base_score": 87.94,
       "impact_score": 82,
       "expected_return_pct": 3.33,
-      "up_probability_pct": 99.24,
+      "up_probability_pct": 99.23,
       "pattern_score": 4.4,
       "pattern_bias": 0.44,
       "chart_pattern": "완만한 상승 패턴",
@@ -2567,17 +2567,17 @@
         "단기 과열",
         "거래량 증가"
       ],
-      "average_sentiment": 0.413,
-      "article_count": 10,
+      "average_sentiment": 0.408,
+      "article_count": 11,
       "top_tags": [
         "general",
         "product_launch",
         "partnership"
       ],
       "direction": "상승 예상",
-      "learning_signal": -0.0032,
+      "learning_signal": -0.0033,
       "learning_adjustment": -0.04,
-      "final_score": 92.71
+      "final_score": 93.0
     },
     {
       "symbol": "256630",
