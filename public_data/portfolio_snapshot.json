@@ -1,17 +1,31 @@
 {
-  "created_at": "2026-04-23T09:12:00+09:00",
+  "created_at": "2026-04-23T09:12:22+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 6,
-    "holding_quantity": 3809,
-    "total_buy_amount": 8765812.0,
-    "total_eval_amount": 8714248.0,
-    "unrealized_pnl": -51564.0,
+    "holding_count": 7,
+    "holding_quantity": 3820,
+    "total_buy_amount": 9067212.0,
+    "total_eval_amount": 9007665.0,
+    "unrealized_pnl": -59547.0,
     "realized_pnl": -473378.0,
-    "total_profit": -524942.0,
-    "cumulative_return_pct": -5.98851538226008
+    "total_profit": -532925.0,
+    "cumulative_return_pct": -5.877495750623234
   },
   "positions": [
+    {
+      "id": "067170-20260423090707",
+      "symbol": "067170",
+      "name": "오텍",
+      "market": "KOSDAQ",
+      "quantity": 1160,
+      "entry_price": 2585.0,
+      "current_price": 2585.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.0,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-23T09:07:07"
+    },
     {
       "id": "046310-20260423091054",
       "symbol": "046310",
@@ -27,18 +41,32 @@
       "created_at": "2026-04-23T09:10:54"
     },
     {
-      "id": "067170-20260423090707",
-      "symbol": "067170",
-      "name": "오텍",
+      "id": "217330-20260423091113",
+      "symbol": "217330",
+      "name": "싸이토젠",
       "market": "KOSDAQ",
-      "quantity": 1160,
-      "entry_price": 2585.0,
-      "current_price": 2580.0,
-      "expected_return_pct": 8.0,
+      "quantity": 1,
+      "entry_price": 4890.0,
+      "current_price": 4880.0,
+      "expected_return_pct": 7.45,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.19342359767892114,
+      "current_return_pct": -0.2044989775051076,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-23T09:07:07"
+      "created_at": "2026-04-23T09:11:13"
+    },
+    {
+      "id": "033640-20260423091211",
+      "symbol": "033640",
+      "name": "네패스",
+      "market": "KOSDAQ",
+      "quantity": 11,
+      "entry_price": 27400.0,
+      "current_price": 27300.0,
+      "expected_return_pct": 4.89,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.36496350364964014,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-23T09:12:11"
     },
     {
       "id": "452190-20260423091040",
@@ -55,30 +83,16 @@
       "created_at": "2026-04-23T09:10:40"
     },
     {
-      "id": "217330-20260423091113",
-      "symbol": "217330",
-      "name": "싸이토젠",
-      "market": "KOSDAQ",
-      "quantity": 1,
-      "entry_price": 4890.0,
-      "current_price": 4865.0,
-      "expected_return_pct": 7.45,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.5112474437627856,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-23T09:11:13"
-    },
-    {
       "id": "014940-20260423090632",
       "symbol": "014940",
       "name": "오리엔탈정공",
       "market": "KOSDAQ",
       "quantity": 361,
       "entry_price": 8290.0,
-      "current_price": 8240.0,
+      "current_price": 8230.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.6031363088057851,
+      "current_return_pct": -0.7237635705669487,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:06:32"
     },
@@ -89,15 +103,26 @@
       "market": "KOSDAQ",
       "quantity": 2272,
       "entry_price": 1176.0,
-      "current_price": 1164.0,
+      "current_price": 1160.0,
       "expected_return_pct": 6.91,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.0204081632653073,
+      "current_return_pct": -1.3605442176870763,
       "auto_sell_enabled": true,
       "created_at": "2026-04-23T09:09:14"
     }
   ],
   "trade_history": [
+    {
+      "ordered_at": "2026-04-23T09:12:11",
+      "side": "buy",
+      "symbol": "033640",
+      "name": "네패스",
+      "quantity": 11,
+      "price": 27400.0,
+      "status": "holding",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
     {
       "ordered_at": "2026-04-23T09:11:13",
       "side": "buy",
