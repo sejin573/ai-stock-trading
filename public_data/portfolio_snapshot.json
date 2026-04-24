@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-24T11:37:01+09:00",
+  "created_at": "2026-04-24T11:37:25+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 4,
     "holding_quantity": 571,
     "total_buy_amount": 5678300.0,
-    "total_eval_amount": 5663690.0,
-    "unrealized_pnl": -14610.0,
+    "total_eval_amount": 5660030.0,
+    "unrealized_pnl": -18270.0,
     "realized_pnl": -627285.0,
-    "total_profit": -641895.0,
-    "cumulative_return_pct": -11.304351654544494
+    "total_profit": -645555.0,
+    "cumulative_return_pct": -11.368807565644646
   },
   "positions": [
     {
@@ -41,20 +41,6 @@
       "created_at": "2026-04-24T09:53:56"
     },
     {
-      "id": "033790-20260424095334",
-      "symbol": "033790",
-      "name": "피노",
-      "market": "KOSDAQ",
-      "quantity": 122,
-      "entry_price": 12500.0,
-      "current_price": 12460.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.31999999999999806,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:53:34"
-    },
-    {
       "id": "177900-20260424095852",
       "symbol": "177900",
       "name": "쓰리에이로직스",
@@ -67,6 +53,20 @@
       "current_return_pct": -0.41899441340782495,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:58:52"
+    },
+    {
+      "id": "033790-20260424095334",
+      "symbol": "033790",
+      "name": "피노",
+      "market": "KOSDAQ",
+      "quantity": 122,
+      "entry_price": 12500.0,
+      "current_price": 12430.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.5600000000000049,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:53:34"
     }
   ],
   "trade_history": [
