@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-24T10:45:35+09:00",
+  "created_at": "2026-04-24T10:46:23+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 4,
     "holding_quantity": 571,
     "total_buy_amount": 5678300.0,
-    "total_eval_amount": 5659910.0,
-    "unrealized_pnl": -18390.0,
+    "total_eval_amount": 5668990.0,
+    "unrealized_pnl": -9310.0,
     "realized_pnl": -577965.0,
-    "total_profit": -596355.0,
-    "cumulative_return_pct": -10.502351055773735
+    "total_profit": -587275.0,
+    "cumulative_return_pct": -10.342444041350404
   },
   "positions": [
     {
@@ -19,12 +19,26 @@
       "market": "KOSDAQ",
       "quantity": 76,
       "entry_price": 18500.0,
-      "current_price": 18550.0,
+      "current_price": 18540.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.2702702702702675,
+      "current_return_pct": 0.216216216216214,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T10:07:53"
+    },
+    {
+      "id": "177900-20260424095852",
+      "symbol": "177900",
+      "name": "쓰리에이로직스",
+      "market": "KOSDAQ",
+      "quantity": 370,
+      "entry_price": 7160.0,
+      "current_price": 7160.0,
+      "expected_return_pct": 6.88,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.0,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:58:52"
     },
     {
       "id": "078350-20260424095356",
@@ -41,30 +55,16 @@
       "created_at": "2026-04-24T09:53:56"
     },
     {
-      "id": "177900-20260424095852",
-      "symbol": "177900",
-      "name": "쓰리에이로직스",
-      "market": "KOSDAQ",
-      "quantity": 370,
-      "entry_price": 7160.0,
-      "current_price": 7140.0,
-      "expected_return_pct": 6.88,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.27932960893854997,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:58:52"
-    },
-    {
       "id": "033790-20260424095334",
       "symbol": "033790",
       "name": "피노",
       "market": "KOSDAQ",
       "quantity": 122,
       "entry_price": 12500.0,
-      "current_price": 12380.0,
+      "current_price": 12400.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.9600000000000053,
+      "current_return_pct": -0.8000000000000007,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:34"
     }
