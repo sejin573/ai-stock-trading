@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-24T10:11:35+09:00",
+  "created_at": "2026-04-24T10:12:02+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 5,
     "holding_quantity": 584,
     "total_buy_amount": 6130050.0,
-    "total_eval_amount": 6090390.0,
-    "unrealized_pnl": -39660.0,
+    "total_eval_amount": 6095000.0,
+    "unrealized_pnl": -35050.0,
     "realized_pnl": -639415.0,
-    "total_profit": -679075.0,
-    "cumulative_return_pct": -11.077805238130194
+    "total_profit": -674465.0,
+    "cumulative_return_pct": -11.002601936362673
   },
   "positions": [
     {
@@ -19,10 +19,10 @@
       "market": "KOSDAQ",
       "quantity": 76,
       "entry_price": 18500.0,
-      "current_price": 18510.0,
+      "current_price": 18520.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.0540540540540535,
+      "current_return_pct": 0.108108108108107,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T10:07:53"
     },
@@ -33,12 +33,26 @@
       "market": "KOSDAQ",
       "quantity": 370,
       "entry_price": 7160.0,
-      "current_price": 7100.0,
+      "current_price": 7110.0,
       "expected_return_pct": 6.88,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.8379888268156388,
+      "current_return_pct": -0.6983240223463638,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:58:52"
+    },
+    {
+      "id": "078350-20260424095356",
+      "symbol": "078350",
+      "name": "한양디지텍",
+      "market": "KOSDAQ",
+      "quantity": 3,
+      "entry_price": 32700.0,
+      "current_price": 32450.0,
+      "expected_return_pct": 7.63,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.7645259938837912,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:53:56"
     },
     {
       "id": "037460-20260424095956",
@@ -67,20 +81,6 @@
       "current_return_pct": -0.880000000000003,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:34"
-    },
-    {
-      "id": "078350-20260424095356",
-      "symbol": "078350",
-      "name": "한양디지텍",
-      "market": "KOSDAQ",
-      "quantity": 3,
-      "entry_price": 32700.0,
-      "current_price": 32400.0,
-      "expected_return_pct": 7.63,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.917431192660545,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:53:56"
     }
   ],
   "trade_history": [
