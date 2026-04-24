@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-24T11:06:58+09:00",
+  "created_at": "2026-04-24T11:07:13+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 4,
     "holding_quantity": 571,
     "total_buy_amount": 5678300.0,
-    "total_eval_amount": 5685800.0,
-    "unrealized_pnl": 7500.0,
+    "total_eval_amount": 5688740.0,
+    "unrealized_pnl": 10440.0,
     "realized_pnl": -627285.0,
-    "total_profit": -619785.0,
-    "cumulative_return_pct": -10.914974552242748
+    "total_profit": -616845.0,
+    "cumulative_return_pct": -10.863198492506559
   },
   "positions": [
     {
@@ -19,26 +19,12 @@
       "market": "KOSDAQ",
       "quantity": 370,
       "entry_price": 7160.0,
-      "current_price": 7210.0,
+      "current_price": 7220.0,
       "expected_return_pct": 6.88,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.6983240223463749,
+      "current_return_pct": 0.8379888268156499,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:58:52"
-    },
-    {
-      "id": "393890-20260424100753",
-      "symbol": "393890",
-      "name": "더블유씨피",
-      "market": "KOSDAQ",
-      "quantity": 76,
-      "entry_price": 18500.0,
-      "current_price": 18560.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.324324324324321,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T10:07:53"
     },
     {
       "id": "078350-20260424095356",
@@ -53,6 +39,20 @@
       "current_return_pct": 0.3058103975535076,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:56"
+    },
+    {
+      "id": "393890-20260424100753",
+      "symbol": "393890",
+      "name": "더블유씨피",
+      "market": "KOSDAQ",
+      "quantity": 76,
+      "entry_price": 18500.0,
+      "current_price": 18550.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.2702702702702675,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T10:07:53"
     },
     {
       "id": "033790-20260424095334",
