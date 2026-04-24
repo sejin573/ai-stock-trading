@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-24T13:41:55+09:00",
+  "created_at": "2026-04-24T13:42:23+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 3,
     "holding_quantity": 449,
     "total_buy_amount": 4153300.0,
-    "total_eval_amount": 4182890.0,
-    "unrealized_pnl": 29590.0,
+    "total_eval_amount": 4153140.0,
+    "unrealized_pnl": -160.0,
     "realized_pnl": -639785.0,
-    "total_profit": -610195.0,
-    "cumulative_return_pct": -14.691811330749044
+    "total_profit": -639945.0,
+    "cumulative_return_pct": -15.408109214359666
   },
   "positions": [
     {
@@ -27,32 +27,32 @@
       "created_at": "2026-04-24T10:07:53"
     },
     {
-      "id": "177900-20260424095852",
-      "symbol": "177900",
-      "name": "쓰리에이로직스",
-      "market": "KOSDAQ",
-      "quantity": 370,
-      "entry_price": 7160.0,
-      "current_price": 7210.0,
-      "expected_return_pct": 6.88,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.6983240223463749,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:58:52"
-    },
-    {
       "id": "078350-20260424095356",
       "symbol": "078350",
       "name": "한양디지텍",
       "market": "KOSDAQ",
       "quantity": 3,
       "entry_price": 32700.0,
-      "current_price": 32850.0,
+      "current_price": 32800.0,
       "expected_return_pct": 7.63,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.4587155963302836,
+      "current_return_pct": 0.3058103975535076,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:56"
+    },
+    {
+      "id": "177900-20260424095852",
+      "symbol": "177900",
+      "name": "쓰리에이로직스",
+      "market": "KOSDAQ",
+      "quantity": 370,
+      "entry_price": 7160.0,
+      "current_price": 7130.0,
+      "expected_return_pct": 6.88,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.41899441340782495,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:58:52"
     }
   ],
   "trade_history": [
