@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-04-24T15:30:30+09:00",
+  "created_at": "2026-04-24T15:31:27+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 4,
@@ -2805,8 +2805,8 @@
       "name": "슈프리마에이치큐",
       "market": "KOSDAQ",
       "news_query": "슈프리마에이치큐",
-      "current_price": 11590.0,
-      "realtime_change_rate": 8.32,
+      "current_price": 11650.0,
+      "realtime_change_rate": 8.88,
       "recent_return_5d_pct": 28.21,
       "recent_volatility_pct": 4.66,
       "volatility_balance_bonus": 6.59,
@@ -2829,17 +2829,17 @@
         "general"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.0218,
-      "learning_adjustment": 0.26,
-      "final_score": 105.59
+      "learning_signal": 0.02,
+      "learning_adjustment": 0.24,
+      "final_score": 105.57
     },
     {
       "symbol": "187790",
       "name": "나노",
       "market": "KOSDAQ",
       "news_query": "나노",
-      "current_price": 6370.0,
-      "realtime_change_rate": 15.61,
+      "current_price": 6400.0,
+      "realtime_change_rate": 16.15,
       "recent_return_5d_pct": 47.62,
       "recent_volatility_pct": 10.27,
       "volatility_balance_bonus": -3.12,
@@ -2873,8 +2873,8 @@
       "name": "성광벤드",
       "market": "KOSDAQ",
       "news_query": "성광벤드",
-      "current_price": 47250.0,
-      "realtime_change_rate": 18.27,
+      "current_price": 47550.0,
+      "realtime_change_rate": 19.02,
       "recent_return_5d_pct": 22.41,
       "recent_volatility_pct": 6.17,
       "volatility_balance_bonus": 3.34,
@@ -2916,7 +2916,7 @@
       "base_score": 104.05,
       "impact_score": 68,
       "expected_return_pct": 8.0,
-      "up_probability_pct": 99.5,
+      "up_probability_pct": 99.52,
       "pattern_score": 7.6,
       "pattern_bias": 0.76,
       "chart_pattern": "강한 상승 패턴",
@@ -3019,7 +3019,7 @@
       "base_score": 101.5,
       "impact_score": 62,
       "expected_return_pct": 8.0,
-      "up_probability_pct": 98.19,
+      "up_probability_pct": 98.24,
       "pattern_score": 1.6,
       "pattern_bias": 0.16,
       "chart_pattern": "완만한 상승 패턴",
@@ -3039,7 +3039,7 @@
       "direction": "상승 예상",
       "learning_signal": -0.0168,
       "learning_adjustment": -0.2,
-      "final_score": 91.32
+      "final_score": 91.33
     },
     {
       "symbol": "092070",
@@ -3079,15 +3079,15 @@
       "name": "쓰리에이로직스",
       "market": "KOSDAQ",
       "news_query": "쓰리에이로직스",
-      "current_price": 7290.0,
-      "realtime_change_rate": -3.83,
+      "current_price": 7230.0,
+      "realtime_change_rate": -4.62,
       "recent_return_5d_pct": 12.5,
       "recent_volatility_pct": 4.79,
       "volatility_balance_bonus": 6.3,
       "base_score": 104.79,
       "impact_score": 50,
-      "expected_return_pct": 8.0,
-      "up_probability_pct": 94.93,
+      "expected_return_pct": 7.61,
+      "up_probability_pct": 94.22,
       "pattern_score": 4.4,
       "pattern_bias": 0.44,
       "chart_pattern": "완만한 상승 패턴",
@@ -3101,9 +3101,9 @@
         "general"
       ],
       "direction": "상승 예상",
-      "learning_signal": 0.02,
-      "learning_adjustment": 0.24,
-      "final_score": 87.7
+      "learning_signal": 0.0221,
+      "learning_adjustment": 0.27,
+      "final_score": 87.6
     },
     {
       "symbol": "078350",
@@ -3117,8 +3117,8 @@
       "volatility_balance_bonus": 3.39,
       "base_score": 98.99,
       "impact_score": 61,
-      "expected_return_pct": 7.89,
-      "up_probability_pct": 95.6,
+      "expected_return_pct": 8.0,
+      "up_probability_pct": 95.8,
       "pattern_score": 0.4,
       "pattern_bias": 0.04,
       "chart_pattern": "중립",
@@ -3132,9 +3132,9 @@
         "general"
       ],
       "direction": "상승 예상",
-      "learning_signal": -0.0104,
+      "learning_signal": -0.0103,
       "learning_adjustment": -0.12,
-      "final_score": 87.55
+      "final_score": 87.59
     }
   ]
 }
