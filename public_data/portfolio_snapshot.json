@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-24T10:12:33+09:00",
+  "created_at": "2026-04-24T10:12:57+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 5,
     "holding_quantity": 584,
     "total_buy_amount": 6130050.0,
-    "total_eval_amount": 6100610.0,
-    "unrealized_pnl": -29440.0,
+    "total_eval_amount": 6104690.0,
+    "unrealized_pnl": -25360.0,
     "realized_pnl": -639415.0,
-    "total_profit": -668855.0,
-    "cumulative_return_pct": -10.911085553951436
+    "total_profit": -664775.0,
+    "cumulative_return_pct": -10.844528184925082
   },
   "positions": [
     {
@@ -19,12 +19,26 @@
       "market": "KOSDAQ",
       "quantity": 76,
       "entry_price": 18500.0,
-      "current_price": 18530.0,
+      "current_price": 18540.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.1621621621621605,
+      "current_return_pct": 0.216216216216214,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T10:07:53"
+    },
+    {
+      "id": "037460-20260424095956",
+      "symbol": "037460",
+      "name": "삼지전자",
+      "market": "KOSDAQ",
+      "quantity": 13,
+      "entry_price": 34750.0,
+      "current_price": 34700.0,
+      "expected_return_pct": 7.29,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.14388489208633226,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:59:56"
     },
     {
       "id": "177900-20260424095852",
@@ -41,18 +55,18 @@
       "created_at": "2026-04-24T09:58:52"
     },
     {
-      "id": "037460-20260424095956",
-      "symbol": "037460",
-      "name": "삼지전자",
+      "id": "078350-20260424095356",
+      "symbol": "078350",
+      "name": "한양디지텍",
       "market": "KOSDAQ",
-      "quantity": 13,
-      "entry_price": 34750.0,
-      "current_price": 34550.0,
-      "expected_return_pct": 7.29,
+      "quantity": 3,
+      "entry_price": 32700.0,
+      "current_price": 32450.0,
+      "expected_return_pct": 7.63,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.575539568345329,
+      "current_return_pct": -0.7645259938837912,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:59:56"
+      "created_at": "2026-04-24T09:53:56"
     },
     {
       "id": "033790-20260424095334",
@@ -61,26 +75,12 @@
       "market": "KOSDAQ",
       "quantity": 122,
       "entry_price": 12500.0,
-      "current_price": 12390.0,
+      "current_price": 12400.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.880000000000003,
+      "current_return_pct": -0.8000000000000007,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:34"
-    },
-    {
-      "id": "078350-20260424095356",
-      "symbol": "078350",
-      "name": "한양디지텍",
-      "market": "KOSDAQ",
-      "quantity": 3,
-      "entry_price": 32700.0,
-      "current_price": 32400.0,
-      "expected_return_pct": 7.63,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.917431192660545,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:53:56"
     }
   ],
   "trade_history": [
