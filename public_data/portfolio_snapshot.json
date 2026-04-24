@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-24T10:23:47+09:00",
+  "created_at": "2026-04-24T10:24:02+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 5,
     "holding_quantity": 620,
     "total_buy_amount": 8652600.0,
-    "total_eval_amount": 8657360.0,
-    "unrealized_pnl": 4760.0,
+    "total_eval_amount": 8657720.0,
+    "unrealized_pnl": 5120.0,
     "realized_pnl": -646565.0,
-    "total_profit": -641805.0,
-    "cumulative_return_pct": -7.417481450662229
+    "total_profit": -641445.0,
+    "cumulative_return_pct": -7.413320851535953
   },
   "positions": [
     {
@@ -33,10 +33,10 @@
       "market": "KOSDAQ",
       "quantity": 76,
       "entry_price": 18500.0,
-      "current_price": 18550.0,
+      "current_price": 18510.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.2702702702702675,
+      "current_return_pct": 0.0540540540540535,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T10:07:53"
     },
@@ -47,10 +47,10 @@
       "market": "KOSDAQ",
       "quantity": 370,
       "entry_price": 7160.0,
-      "current_price": 7150.0,
+      "current_price": 7160.0,
       "expected_return_pct": 6.88,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.13966480446927498,
+      "current_return_pct": 0.0,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:58:52"
     },
@@ -61,10 +61,10 @@
       "market": "KOSDAQ",
       "quantity": 3,
       "entry_price": 32700.0,
-      "current_price": 32600.0,
+      "current_price": 32500.0,
       "expected_return_pct": 7.63,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.3058103975535187,
+      "current_return_pct": -0.6116207951070374,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:56"
     },
