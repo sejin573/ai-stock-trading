@@ -1,17 +1,31 @@
 {
-  "created_at": "2026-04-24T14:21:40+09:00",
+  "created_at": "2026-04-24T14:22:29+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 5,
     "holding_quantity": 989,
     "total_buy_amount": 9127620.0,
-    "total_eval_amount": 9134990.0,
-    "unrealized_pnl": 7370.0,
+    "total_eval_amount": 9214290.0,
+    "unrealized_pnl": 86670.0,
     "realized_pnl": -639785.0,
-    "total_profit": -632415.0,
-    "cumulative_return_pct": -6.928585984079091
+    "total_profit": -553115.0,
+    "cumulative_return_pct": -6.05979433850226
   },
   "positions": [
+    {
+      "id": "307180-20260424141533",
+      "symbol": "307180",
+      "name": "아이엘",
+      "market": "KOSDAQ",
+      "quantity": 506,
+      "entry_price": 5920.0,
+      "current_price": 6030.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 1.858108108108114,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T14:15:33"
+    },
     {
       "id": "078350-20260424095356",
       "symbol": "078350",
@@ -61,26 +75,12 @@
       "market": "KOSPI",
       "quantity": 34,
       "entry_price": 58200.0,
-      "current_price": 58200.0,
+      "current_price": 58300.0,
       "expected_return_pct": 6.4,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
+      "current_return_pct": 0.1718213058419238,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T14:19:38"
-    },
-    {
-      "id": "307180-20260424141533",
-      "symbol": "307180",
-      "name": "아이엘",
-      "market": "KOSDAQ",
-      "quantity": 506,
-      "entry_price": 5920.0,
-      "current_price": 5880.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.6756756756756799,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T14:15:33"
     }
   ],
   "trade_history": [
