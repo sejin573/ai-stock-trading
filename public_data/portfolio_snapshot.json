@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-24T10:01:06+09:00",
+  "created_at": "2026-04-24T10:01:27+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 7,
     "holding_quantity": 987,
     "total_buy_amount": 9185100.0,
-    "total_eval_amount": 9231290.0,
-    "unrealized_pnl": 46190.0,
+    "total_eval_amount": 9204760.0,
+    "unrealized_pnl": 19660.0,
     "realized_pnl": -641595.0,
-    "total_profit": -595405.0,
-    "cumulative_return_pct": -6.482291972869103
+    "total_profit": -621935.0,
+    "cumulative_return_pct": -6.771129329022004
   },
   "positions": [
     {
@@ -19,26 +19,12 @@
       "market": "KOSDAQ",
       "quantity": 269,
       "entry_price": 11140.0,
-      "current_price": 11340.0,
+      "current_price": 11260.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 1.795332136445249,
+      "current_return_pct": 1.077199281867136,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:20"
-    },
-    {
-      "id": "452190-20260424095435",
-      "symbol": "452190",
-      "name": "한빛레이저",
-      "market": "KOSDAQ",
-      "quantity": 208,
-      "entry_price": 6990.0,
-      "current_price": 7020.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.42918454935623185,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:54:35"
     },
     {
       "id": "037460-20260424095956",
@@ -47,12 +33,26 @@
       "market": "KOSDAQ",
       "quantity": 13,
       "entry_price": 34750.0,
-      "current_price": 34750.0,
+      "current_price": 34900.0,
       "expected_return_pct": 7.29,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
+      "current_return_pct": 0.4316546762589857,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:59:56"
+    },
+    {
+      "id": "452190-20260424095435",
+      "symbol": "452190",
+      "name": "한빛레이저",
+      "market": "KOSDAQ",
+      "quantity": 208,
+      "entry_price": 6990.0,
+      "current_price": 7010.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.28612303290413976,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:54:35"
     },
     {
       "id": "177900-20260424095852",
@@ -83,20 +83,6 @@
       "created_at": "2026-04-24T09:53:56"
     },
     {
-      "id": "033790-20260424095334",
-      "symbol": "033790",
-      "name": "피노",
-      "market": "KOSDAQ",
-      "quantity": 122,
-      "entry_price": 12500.0,
-      "current_price": 12450.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.40000000000000036,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:53:34"
-    },
-    {
       "id": "093640-20260424095454",
       "symbol": "093640",
       "name": "케이알엠",
@@ -109,6 +95,20 @@
       "current_return_pct": -0.47755491881565915,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:54:54"
+    },
+    {
+      "id": "033790-20260424095334",
+      "symbol": "033790",
+      "name": "피노",
+      "market": "KOSDAQ",
+      "quantity": 122,
+      "entry_price": 12500.0,
+      "current_price": 12410.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.7199999999999984,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:53:34"
     }
   ],
   "trade_history": [
