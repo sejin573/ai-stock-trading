@@ -1,17 +1,31 @@
 {
-  "created_at": "2026-04-24T11:13:39+09:00",
+  "created_at": "2026-04-24T11:13:55+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 4,
     "holding_quantity": 571,
     "total_buy_amount": 5678300.0,
-    "total_eval_amount": 5672710.0,
-    "unrealized_pnl": -5590.0,
+    "total_eval_amount": 5682590.0,
+    "unrealized_pnl": 4290.0,
     "realized_pnl": -627285.0,
-    "total_profit": -632875.0,
-    "cumulative_return_pct": -11.145501294401493
+    "total_profit": -622995.0,
+    "cumulative_return_pct": -10.971505556240423
   },
   "positions": [
+    {
+      "id": "177900-20260424095852",
+      "symbol": "177900",
+      "name": "쓰리에이로직스",
+      "market": "KOSDAQ",
+      "quantity": 370,
+      "entry_price": 7160.0,
+      "current_price": 7210.0,
+      "expected_return_pct": 6.88,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.6983240223463749,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:58:52"
+    },
     {
       "id": "078350-20260424095356",
       "symbol": "078350",
@@ -41,30 +55,16 @@
       "created_at": "2026-04-24T10:07:53"
     },
     {
-      "id": "177900-20260424095852",
-      "symbol": "177900",
-      "name": "쓰리에이로직스",
-      "market": "KOSDAQ",
-      "quantity": 370,
-      "entry_price": 7160.0,
-      "current_price": 7180.0,
-      "expected_return_pct": 6.88,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.27932960893854997,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:58:52"
-    },
-    {
       "id": "033790-20260424095334",
       "symbol": "033790",
       "name": "피노",
       "market": "KOSDAQ",
       "quantity": 122,
       "entry_price": 12500.0,
-      "current_price": 12340.0,
+      "current_price": 12330.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.2800000000000034,
+      "current_return_pct": -1.3599999999999945,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:34"
     }
