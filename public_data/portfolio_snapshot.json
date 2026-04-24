@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-24T10:04:49+09:00",
+  "created_at": "2026-04-24T10:05:12+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 7,
-    "holding_quantity": 850,
-    "total_buy_amount": 9178240.0,
-    "total_eval_amount": 9161940.0,
-    "unrealized_pnl": -16300.0,
+    "holding_count": 8,
+    "holding_quantity": 853,
+    "total_buy_amount": 9255040.0,
+    "total_eval_amount": 9239880.0,
+    "unrealized_pnl": -15160.0,
     "realized_pnl": -568965.0,
-    "total_profit": -585265.0,
-    "cumulative_return_pct": -6.376658269995119
+    "total_profit": -584125.0,
+    "cumulative_return_pct": -6.311425990595394
   },
   "positions": [
     {
@@ -19,12 +19,26 @@
       "market": "KOSDAQ",
       "quantity": 132,
       "entry_price": 22650.0,
-      "current_price": 22800.0,
+      "current_price": 22700.0,
       "expected_return_pct": 5.45,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.6622516556291425,
+      "current_return_pct": 0.22075055187638082,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T10:04:39"
+    },
+    {
+      "id": "177900-20260424095852",
+      "symbol": "177900",
+      "name": "쓰리에이로직스",
+      "market": "KOSDAQ",
+      "quantity": 370,
+      "entry_price": 7160.0,
+      "current_price": 7170.0,
+      "expected_return_pct": 6.88,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.13966480446927498,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:58:52"
     },
     {
       "id": "078350-20260424095356",
@@ -41,6 +55,20 @@
       "created_at": "2026-04-24T09:53:56"
     },
     {
+      "id": "092070-20260424100502",
+      "symbol": "092070",
+      "name": "디엔에프",
+      "market": "KOSDAQ",
+      "quantity": 3,
+      "entry_price": 25600.0,
+      "current_price": 25600.0,
+      "expected_return_pct": 6.91,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.0,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T10:05:02"
+    },
+    {
       "id": "037460-20260424095956",
       "symbol": "037460",
       "name": "삼지전자",
@@ -55,34 +83,6 @@
       "created_at": "2026-04-24T09:59:56"
     },
     {
-      "id": "177900-20260424095852",
-      "symbol": "177900",
-      "name": "쓰리에이로직스",
-      "market": "KOSDAQ",
-      "quantity": 370,
-      "entry_price": 7160.0,
-      "current_price": 7120.0,
-      "expected_return_pct": 6.88,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.5586592178770999,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:58:52"
-    },
-    {
-      "id": "452190-20260424095435",
-      "symbol": "452190",
-      "name": "한빛레이저",
-      "market": "KOSDAQ",
-      "quantity": 208,
-      "entry_price": 6990.0,
-      "current_price": 6950.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.5722460658083017,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:54:35"
-    },
-    {
       "id": "033790-20260424095334",
       "symbol": "033790",
       "name": "피노",
@@ -95,6 +95,20 @@
       "current_return_pct": -0.8000000000000007,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:34"
+    },
+    {
+      "id": "452190-20260424095435",
+      "symbol": "452190",
+      "name": "한빛레이저",
+      "market": "KOSDAQ",
+      "quantity": 208,
+      "entry_price": 6990.0,
+      "current_price": 6930.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.8583690987124415,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:54:35"
     },
     {
       "id": "093640-20260424095454",
@@ -112,6 +126,17 @@
     }
   ],
   "trade_history": [
+    {
+      "ordered_at": "2026-04-24T10:05:02",
+      "side": "buy",
+      "symbol": "092070",
+      "name": "디엔에프",
+      "quantity": 3,
+      "price": 25600.0,
+      "status": "holding",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
     {
       "ordered_at": "2026-04-24T10:04:39",
       "side": "buy",
