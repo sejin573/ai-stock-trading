@@ -1,17 +1,31 @@
 {
-  "created_at": "2026-04-24T10:00:49+09:00",
+  "created_at": "2026-04-24T10:01:06+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 7,
     "holding_quantity": 987,
     "total_buy_amount": 9185100.0,
-    "total_eval_amount": 9170070.0,
-    "unrealized_pnl": -15030.0,
+    "total_eval_amount": 9231290.0,
+    "unrealized_pnl": 46190.0,
     "realized_pnl": -641595.0,
-    "total_profit": -656625.0,
-    "cumulative_return_pct": -7.148806218767352
+    "total_profit": -595405.0,
+    "cumulative_return_pct": -6.482291972869103
   },
   "positions": [
+    {
+      "id": "094840-20260424095320",
+      "symbol": "094840",
+      "name": "슈프리마에이치큐",
+      "market": "KOSDAQ",
+      "quantity": 269,
+      "entry_price": 11140.0,
+      "current_price": 11340.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 1.795332136445249,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:53:20"
+    },
     {
       "id": "452190-20260424095435",
       "symbol": "452190",
@@ -19,10 +33,10 @@
       "market": "KOSDAQ",
       "quantity": 208,
       "entry_price": 6990.0,
-      "current_price": 7010.0,
+      "current_price": 7020.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.28612303290413976,
+      "current_return_pct": 0.42918454935623185,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:54:35"
     },
@@ -47,26 +61,12 @@
       "market": "KOSDAQ",
       "quantity": 370,
       "entry_price": 7160.0,
-      "current_price": 7150.0,
+      "current_price": 7140.0,
       "expected_return_pct": 6.88,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.13966480446927498,
+      "current_return_pct": -0.27932960893854997,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:58:52"
-    },
-    {
-      "id": "094840-20260424095320",
-      "symbol": "094840",
-      "name": "슈프리마에이치큐",
-      "market": "KOSDAQ",
-      "quantity": 269,
-      "entry_price": 11140.0,
-      "current_price": 11120.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.17953321364452268,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:53:20"
     },
     {
       "id": "078350-20260424095356",
@@ -83,6 +83,20 @@
       "created_at": "2026-04-24T09:53:56"
     },
     {
+      "id": "033790-20260424095334",
+      "symbol": "033790",
+      "name": "피노",
+      "market": "KOSDAQ",
+      "quantity": 122,
+      "entry_price": 12500.0,
+      "current_price": 12450.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.40000000000000036,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:53:34"
+    },
+    {
       "id": "093640-20260424095454",
       "symbol": "093640",
       "name": "케이알엠",
@@ -95,20 +109,6 @@
       "current_return_pct": -0.47755491881565915,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:54:54"
-    },
-    {
-      "id": "033790-20260424095334",
-      "symbol": "033790",
-      "name": "피노",
-      "market": "KOSDAQ",
-      "quantity": 122,
-      "entry_price": 12500.0,
-      "current_price": 12420.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.6399999999999961,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:53:34"
     }
   ],
   "trade_history": [
