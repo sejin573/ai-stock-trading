@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-24T10:07:00+09:00",
+  "created_at": "2026-04-24T10:07:25+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 8,
-    "holding_quantity": 853,
-    "total_buy_amount": 9255040.0,
-    "total_eval_amount": 9186060.0,
-    "unrealized_pnl": -68980.0,
-    "realized_pnl": -568965.0,
-    "total_profit": -637945.0,
-    "cumulative_return_pct": -6.89294697807897
+    "holding_count": 7,
+    "holding_quantity": 645,
+    "total_buy_amount": 7801120.0,
+    "total_eval_amount": 7747300.0,
+    "unrealized_pnl": -53820.0,
+    "realized_pnl": -591845.0,
+    "total_profit": -645665.0,
+    "cumulative_return_pct": -8.276567979982362
   },
   "positions": [
     {
@@ -19,26 +19,12 @@
       "market": "KOSDAQ",
       "quantity": 370,
       "entry_price": 7160.0,
-      "current_price": 7170.0,
+      "current_price": 7140.0,
       "expected_return_pct": 6.88,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.13966480446927498,
+      "current_return_pct": -0.27932960893854997,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:58:52"
-    },
-    {
-      "id": "092070-20260424100502",
-      "symbol": "092070",
-      "name": "디엔에프",
-      "market": "KOSDAQ",
-      "quantity": 3,
-      "entry_price": 25600.0,
-      "current_price": 25600.0,
-      "expected_return_pct": 6.91,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T10:05:02"
     },
     {
       "id": "037460-20260424095956",
@@ -55,46 +41,46 @@
       "created_at": "2026-04-24T09:59:56"
     },
     {
-      "id": "078350-20260424095356",
-      "symbol": "078350",
-      "name": "한양디지텍",
-      "market": "KOSDAQ",
-      "quantity": 3,
-      "entry_price": 32700.0,
-      "current_price": 32450.0,
-      "expected_return_pct": 7.63,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.7645259938837912,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:53:56"
-    },
-    {
       "id": "033790-20260424095334",
       "symbol": "033790",
       "name": "피노",
       "market": "KOSDAQ",
       "quantity": 122,
       "entry_price": 12500.0,
-      "current_price": 12380.0,
+      "current_price": 12440.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.9600000000000053,
+      "current_return_pct": -0.48000000000000265,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:34"
     },
     {
-      "id": "093640-20260424095454",
-      "symbol": "093640",
-      "name": "케이알엠",
+      "id": "078350-20260424095356",
+      "symbol": "078350",
+      "name": "한양디지텍",
       "market": "KOSDAQ",
-      "quantity": 2,
-      "entry_price": 5235.0,
-      "current_price": 5180.0,
-      "expected_return_pct": 8.0,
+      "quantity": 3,
+      "entry_price": 32700.0,
+      "current_price": 32500.0,
+      "expected_return_pct": 7.63,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.0506208213944657,
+      "current_return_pct": -0.6116207951070374,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:54:54"
+      "created_at": "2026-04-24T09:53:56"
+    },
+    {
+      "id": "092070-20260424100502",
+      "symbol": "092070",
+      "name": "디엔에프",
+      "market": "KOSDAQ",
+      "quantity": 3,
+      "entry_price": 25600.0,
+      "current_price": 25350.0,
+      "expected_return_pct": 6.91,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.9765625,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T10:05:02"
     },
     {
       "id": "232140-20260424100439",
@@ -103,26 +89,26 @@
       "market": "KOSDAQ",
       "quantity": 132,
       "entry_price": 22650.0,
-      "current_price": 22400.0,
+      "current_price": 22375.0,
       "expected_return_pct": 5.45,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.103752759381893,
+      "current_return_pct": -1.2141280353200834,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T10:04:39"
     },
     {
-      "id": "452190-20260424095435",
-      "symbol": "452190",
-      "name": "한빛레이저",
+      "id": "093640-20260424095454",
+      "symbol": "093640",
+      "name": "케이알엠",
       "market": "KOSDAQ",
-      "quantity": 208,
-      "entry_price": 6990.0,
-      "current_price": 6880.0,
+      "quantity": 2,
+      "entry_price": 5235.0,
+      "current_price": 5160.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.573676680972813,
+      "current_return_pct": -1.4326647564469885,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:54:35"
+      "created_at": "2026-04-24T09:54:54"
     }
   ],
   "trade_history": [
@@ -210,7 +196,7 @@
       "name": "한빛레이저",
       "quantity": 208,
       "price": 6990.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
@@ -2677,6 +2663,17 @@
       "status": "closed",
       "realized_pnl": -15825.0,
       "realized_pnl_pct": -0.5279831045406524
+    },
+    {
+      "ordered_at": null,
+      "side": "sell",
+      "symbol": "452190",
+      "name": "한빛레이저",
+      "quantity": 208,
+      "price": 6880.0,
+      "status": "closed",
+      "realized_pnl": -22880.0,
+      "realized_pnl_pct": -1.573676680972813
     }
   ],
   "candidates": [
