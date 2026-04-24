@@ -1,17 +1,31 @@
 {
-  "created_at": "2026-04-24T10:21:58+09:00",
+  "created_at": "2026-04-24T10:22:14+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 5,
     "holding_quantity": 620,
     "total_buy_amount": 8652600.0,
-    "total_eval_amount": 8606590.0,
-    "unrealized_pnl": -46010.0,
+    "total_eval_amount": 8666630.0,
+    "unrealized_pnl": 14030.0,
     "realized_pnl": -646565.0,
-    "total_profit": -692575.0,
-    "cumulative_return_pct": -8.004241499664841
+    "total_profit": -632535.0,
+    "cumulative_return_pct": -7.310346023160669
   },
   "positions": [
+    {
+      "id": "089030-20260424101729",
+      "symbol": "089030",
+      "name": "테크윙",
+      "market": "KOSDAQ",
+      "quantity": 49,
+      "entry_price": 60700.0,
+      "current_price": 61400.0,
+      "expected_return_pct": 7.22,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 1.1532125205930832,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T10:17:29"
+    },
     {
       "id": "393890-20260424100753",
       "symbol": "393890",
@@ -47,26 +61,12 @@
       "market": "KOSDAQ",
       "quantity": 370,
       "entry_price": 7160.0,
-      "current_price": 7120.0,
+      "current_price": 7130.0,
       "expected_return_pct": 6.88,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.5586592178770999,
+      "current_return_pct": -0.41899441340782495,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:58:52"
-    },
-    {
-      "id": "089030-20260424101729",
-      "symbol": "089030",
-      "name": "테크윙",
-      "market": "KOSDAQ",
-      "quantity": 49,
-      "entry_price": 60700.0,
-      "current_price": 60300.0,
-      "expected_return_pct": 7.22,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.658978583196046,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T10:17:29"
     },
     {
       "id": "033790-20260424095334",
@@ -75,10 +75,10 @@
       "market": "KOSDAQ",
       "quantity": 122,
       "entry_price": 12500.0,
-      "current_price": 12350.0,
+      "current_price": 12370.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.200000000000001,
+      "current_return_pct": -1.0399999999999965,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:34"
     }
