@@ -1,17 +1,31 @@
 {
-  "created_at": "2026-04-24T13:46:32+09:00",
+  "created_at": "2026-04-24T13:47:17+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 3,
     "holding_quantity": 449,
     "total_buy_amount": 4153300.0,
-    "total_eval_amount": 4163630.0,
-    "unrealized_pnl": 10330.0,
+    "total_eval_amount": 4175390.0,
+    "unrealized_pnl": 22090.0,
     "realized_pnl": -639785.0,
-    "total_profit": -629455.0,
-    "cumulative_return_pct": -15.155538969012591
+    "total_profit": -617695.0,
+    "cumulative_return_pct": -14.872390629138277
   },
   "positions": [
+    {
+      "id": "177900-20260424095852",
+      "symbol": "177900",
+      "name": "쓰리에이로직스",
+      "market": "KOSDAQ",
+      "quantity": 370,
+      "entry_price": 7160.0,
+      "current_price": 7200.0,
+      "expected_return_pct": 6.88,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.5586592178770999,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:58:52"
+    },
     {
       "id": "393890-20260424100753",
       "symbol": "393890",
@@ -19,10 +33,10 @@
       "market": "KOSDAQ",
       "quantity": 76,
       "entry_price": 18500.0,
-      "current_price": 18630.0,
+      "current_price": 18590.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.7027027027026955,
+      "current_return_pct": 0.4864864864864815,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T10:07:53"
     },
@@ -39,20 +53,6 @@
       "current_return_pct": 0.4587155963302836,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:56"
-    },
-    {
-      "id": "177900-20260424095852",
-      "symbol": "177900",
-      "name": "쓰리에이로직스",
-      "market": "KOSDAQ",
-      "quantity": 370,
-      "entry_price": 7160.0,
-      "current_price": 7160.0,
-      "expected_return_pct": 6.88,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:58:52"
     }
   ],
   "trade_history": [
