@@ -1,31 +1,17 @@
 {
-  "created_at": "2026-04-24T11:13:55+09:00",
+  "created_at": "2026-04-24T11:14:26+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 4,
     "holding_quantity": 571,
     "total_buy_amount": 5678300.0,
-    "total_eval_amount": 5682590.0,
-    "unrealized_pnl": 4290.0,
+    "total_eval_amount": 5679040.0,
+    "unrealized_pnl": 740.0,
     "realized_pnl": -627285.0,
-    "total_profit": -622995.0,
-    "cumulative_return_pct": -10.971505556240423
+    "total_profit": -626545.0,
+    "cumulative_return_pct": -11.034024267826638
   },
   "positions": [
-    {
-      "id": "177900-20260424095852",
-      "symbol": "177900",
-      "name": "쓰리에이로직스",
-      "market": "KOSDAQ",
-      "quantity": 370,
-      "entry_price": 7160.0,
-      "current_price": 7210.0,
-      "expected_return_pct": 6.88,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.6983240223463749,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:58:52"
-    },
     {
       "id": "078350-20260424095356",
       "symbol": "078350",
@@ -33,12 +19,26 @@
       "market": "KOSDAQ",
       "quantity": 3,
       "entry_price": 32700.0,
-      "current_price": 32850.0,
+      "current_price": 32900.0,
       "expected_return_pct": 7.63,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.4587155963302836,
+      "current_return_pct": 0.6116207951070374,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:56"
+    },
+    {
+      "id": "177900-20260424095852",
+      "symbol": "177900",
+      "name": "쓰리에이로직스",
+      "market": "KOSDAQ",
+      "quantity": 370,
+      "entry_price": 7160.0,
+      "current_price": 7200.0,
+      "expected_return_pct": 6.88,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.5586592178770999,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:58:52"
     },
     {
       "id": "393890-20260424100753",
