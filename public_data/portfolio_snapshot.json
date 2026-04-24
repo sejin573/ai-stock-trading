@@ -1,31 +1,17 @@
 {
-  "created_at": "2026-04-24T09:54:42+09:00",
+  "created_at": "2026-04-24T09:55:02+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 5,
-    "holding_quantity": 1110,
-    "total_buy_amount": 9070880.0,
-    "total_eval_amount": 9151600.0,
-    "unrealized_pnl": 80720.0,
-    "realized_pnl": -727955.0,
-    "total_profit": -647235.0,
-    "cumulative_return_pct": -7.1353055050888115
+    "holding_quantity": 604,
+    "total_buy_amount": 6084150.0,
+    "total_eval_amount": 6077440.0,
+    "unrealized_pnl": -6710.0,
+    "realized_pnl": -641595.0,
+    "total_profit": -648305.0,
+    "cumulative_return_pct": -10.65563801023972
   },
   "positions": [
-    {
-      "id": "187790-20260424095312",
-      "symbol": "187790",
-      "name": "나노",
-      "market": "KOSDAQ",
-      "quantity": 508,
-      "entry_price": 5900.0,
-      "current_price": 6070.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 2.8813559322034,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:53:12"
-    },
     {
       "id": "452190-20260424095435",
       "symbol": "452190",
@@ -39,6 +25,34 @@
       "current_return_pct": 0.14306151645206988,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:54:35"
+    },
+    {
+      "id": "078350-20260424095356",
+      "symbol": "078350",
+      "name": "한양디지텍",
+      "market": "KOSDAQ",
+      "quantity": 3,
+      "entry_price": 32700.0,
+      "current_price": 32700.0,
+      "expected_return_pct": 7.63,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.0,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:53:56"
+    },
+    {
+      "id": "093640-20260424095454",
+      "symbol": "093640",
+      "name": "케이알엠",
+      "market": "KOSDAQ",
+      "quantity": 2,
+      "entry_price": 5235.0,
+      "current_price": 5235.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.0,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:54:54"
     },
     {
       "id": "094840-20260424095320",
@@ -55,35 +69,43 @@
       "created_at": "2026-04-24T09:53:20"
     },
     {
-      "id": "078350-20260424095356",
-      "symbol": "078350",
-      "name": "한양디지텍",
-      "market": "KOSDAQ",
-      "quantity": 3,
-      "entry_price": 32700.0,
-      "current_price": 32650.0,
-      "expected_return_pct": 7.63,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.1529051987767538,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:53:56"
-    },
-    {
       "id": "033790-20260424095334",
       "symbol": "033790",
       "name": "피노",
       "market": "KOSDAQ",
       "quantity": 122,
       "entry_price": 12500.0,
-      "current_price": 12460.0,
+      "current_price": 12450.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.31999999999999806,
+      "current_return_pct": -0.40000000000000036,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:34"
     }
   ],
   "trade_history": [
+    {
+      "ordered_at": "2026-04-24T09:54:54",
+      "side": "buy",
+      "symbol": "093640",
+      "name": "케이알엠",
+      "quantity": 2,
+      "price": 5235.0,
+      "status": "holding",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
+    {
+      "ordered_at": "2026-04-24T09:54:46",
+      "side": "sell",
+      "symbol": "187790",
+      "name": "나노",
+      "quantity": 508,
+      "price": 6070.0,
+      "status": "closed",
+      "realized_pnl": 86360.0,
+      "realized_pnl_pct": 2.8813559322034
+    },
     {
       "ordered_at": "2026-04-24T09:54:35",
       "side": "buy",
@@ -135,7 +157,7 @@
       "name": "나노",
       "quantity": 508,
       "price": 5900.0,
-      "status": "holding",
+      "status": "closed",
       "realized_pnl": 0.0,
       "realized_pnl_pct": 0.0
     },
