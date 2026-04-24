@@ -1,31 +1,17 @@
 {
-  "created_at": "2026-04-24T14:46:40+09:00",
+  "created_at": "2026-04-24T14:47:22+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 4,
     "holding_quantity": 483,
     "total_buy_amount": 6132100.0,
-    "total_eval_amount": 6158610.0,
-    "unrealized_pnl": 26510.0,
+    "total_eval_amount": 6170850.0,
+    "unrealized_pnl": 38750.0,
     "realized_pnl": -700505.0,
-    "total_profit": -673995.0,
-    "cumulative_return_pct": -10.99125911188663
+    "total_profit": -661755.0,
+    "cumulative_return_pct": -10.791653756461898
   },
   "positions": [
-    {
-      "id": "393890-20260424100753",
-      "symbol": "393890",
-      "name": "더블유씨피",
-      "market": "KOSDAQ",
-      "quantity": 76,
-      "entry_price": 18500.0,
-      "current_price": 18685.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 1.0000000000000009,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T10:07:53"
-    },
     {
       "id": "177900-20260424095852",
       "symbol": "177900",
@@ -33,12 +19,26 @@
       "market": "KOSDAQ",
       "quantity": 370,
       "entry_price": 7160.0,
-      "current_price": 7230.0,
+      "current_price": 7260.0,
       "expected_return_pct": 6.88,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.9776536312849249,
+      "current_return_pct": 1.3966480446927276,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:58:52"
+    },
+    {
+      "id": "393890-20260424100753",
+      "symbol": "393890",
+      "name": "더블유씨피",
+      "market": "KOSDAQ",
+      "quantity": 76,
+      "entry_price": 18500.0,
+      "current_price": 18700.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 1.08108108108107,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T10:07:53"
     },
     {
       "id": "078350-20260424095356",
