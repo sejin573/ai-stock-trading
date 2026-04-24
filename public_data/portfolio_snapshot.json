@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-24T10:10:26+09:00",
+  "created_at": "2026-04-24T10:10:44+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 5,
     "holding_quantity": 584,
     "total_buy_amount": 6130050.0,
-    "total_eval_amount": 6089580.0,
-    "unrealized_pnl": -40470.0,
+    "total_eval_amount": 6093170.0,
+    "unrealized_pnl": -36880.0,
     "realized_pnl": -639415.0,
-    "total_profit": -679885.0,
-    "cumulative_return_pct": -11.091018833451603
+    "total_profit": -676295.0,
+    "cumulative_return_pct": -11.03245487394067
   },
   "positions": [
     {
@@ -27,20 +27,6 @@
       "created_at": "2026-04-24T10:07:53"
     },
     {
-      "id": "033790-20260424095334",
-      "symbol": "033790",
-      "name": "피노",
-      "market": "KOSDAQ",
-      "quantity": 122,
-      "entry_price": 12500.0,
-      "current_price": 12420.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.6399999999999961,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:53:34"
-    },
-    {
       "id": "037460-20260424095956",
       "symbol": "037460",
       "name": "삼지전자",
@@ -55,32 +41,46 @@
       "created_at": "2026-04-24T09:59:56"
     },
     {
-      "id": "078350-20260424095356",
-      "symbol": "078350",
-      "name": "한양디지텍",
-      "market": "KOSDAQ",
-      "quantity": 3,
-      "entry_price": 32700.0,
-      "current_price": 32400.0,
-      "expected_return_pct": 7.63,
-      "target_profit_pct": 2.2,
-      "current_return_pct": -0.917431192660545,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:53:56"
-    },
-    {
       "id": "177900-20260424095852",
       "symbol": "177900",
       "name": "쓰리에이로직스",
       "market": "KOSDAQ",
       "quantity": 370,
       "entry_price": 7160.0,
-      "current_price": 7080.0,
+      "current_price": 7100.0,
       "expected_return_pct": 6.88,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.1173184357541888,
+      "current_return_pct": -0.8379888268156388,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:58:52"
+    },
+    {
+      "id": "033790-20260424095334",
+      "symbol": "033790",
+      "name": "피노",
+      "market": "KOSDAQ",
+      "quantity": 122,
+      "entry_price": 12500.0,
+      "current_price": 12390.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.880000000000003,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:53:34"
+    },
+    {
+      "id": "078350-20260424095356",
+      "symbol": "078350",
+      "name": "한양디지텍",
+      "market": "KOSDAQ",
+      "quantity": 3,
+      "entry_price": 32700.0,
+      "current_price": 32350.0,
+      "expected_return_pct": 7.63,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -1.0703363914373099,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:53:56"
     }
   ],
   "trade_history": [
