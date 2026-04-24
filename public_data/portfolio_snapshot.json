@@ -1,17 +1,31 @@
 {
-  "created_at": "2026-04-24T11:17:11+09:00",
+  "created_at": "2026-04-24T11:17:32+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 4,
     "holding_quantity": 571,
     "total_buy_amount": 5678300.0,
-    "total_eval_amount": 5673820.0,
-    "unrealized_pnl": -4480.0,
+    "total_eval_amount": 5684120.0,
+    "unrealized_pnl": 5820.0,
     "realized_pnl": -627285.0,
-    "total_profit": -631765.0,
-    "cumulative_return_pct": -11.125953190215382
+    "total_profit": -621465.0,
+    "cumulative_return_pct": -10.944560872092
   },
   "positions": [
+    {
+      "id": "177900-20260424095852",
+      "symbol": "177900",
+      "name": "쓰리에이로직스",
+      "market": "KOSDAQ",
+      "quantity": 370,
+      "entry_price": 7160.0,
+      "current_price": 7210.0,
+      "expected_return_pct": 6.88,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.6983240223463749,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:58:52"
+    },
     {
       "id": "078350-20260424095356",
       "symbol": "078350",
@@ -27,30 +41,16 @@
       "created_at": "2026-04-24T09:53:56"
     },
     {
-      "id": "177900-20260424095852",
-      "symbol": "177900",
-      "name": "쓰리에이로직스",
-      "market": "KOSDAQ",
-      "quantity": 370,
-      "entry_price": 7160.0,
-      "current_price": 7190.0,
-      "expected_return_pct": 6.88,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.41899441340782495,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:58:52"
-    },
-    {
       "id": "393890-20260424100753",
       "symbol": "393890",
       "name": "더블유씨피",
       "market": "KOSDAQ",
       "quantity": 76,
       "entry_price": 18500.0,
-      "current_price": 18560.0,
+      "current_price": 18550.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.324324324324321,
+      "current_return_pct": 0.2702702702702675,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T10:07:53"
     },
@@ -61,10 +61,10 @@
       "market": "KOSDAQ",
       "quantity": 122,
       "entry_price": 12500.0,
-      "current_price": 12330.0,
+      "current_price": 12360.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -1.3599999999999945,
+      "current_return_pct": -1.1199999999999988,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:34"
     }
