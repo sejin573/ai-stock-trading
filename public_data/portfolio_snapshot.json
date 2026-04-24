@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-04-24T09:56:07+09:00",
+  "created_at": "2026-04-24T09:56:32+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 5,
     "holding_quantity": 604,
     "total_buy_amount": 6084150.0,
-    "total_eval_amount": 6064700.0,
-    "unrealized_pnl": -19450.0,
+    "total_eval_amount": 6071590.0,
+    "unrealized_pnl": -12560.0,
     "realized_pnl": -641595.0,
-    "total_profit": -661045.0,
-    "cumulative_return_pct": -10.865034557004675
+    "total_profit": -654155.0,
+    "cumulative_return_pct": -10.751789485795058
   },
   "positions": [
     {
@@ -19,26 +19,26 @@
       "market": "KOSDAQ",
       "quantity": 3,
       "entry_price": 32700.0,
-      "current_price": 32850.0,
+      "current_price": 32800.0,
       "expected_return_pct": 7.63,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.4587155963302836,
+      "current_return_pct": 0.3058103975535076,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:56"
     },
     {
-      "id": "093640-20260424095454",
-      "symbol": "093640",
-      "name": "케이알엠",
+      "id": "094840-20260424095320",
+      "symbol": "094840",
+      "name": "슈프리마에이치큐",
       "market": "KOSDAQ",
-      "quantity": 2,
-      "entry_price": 5235.0,
-      "current_price": 5240.0,
+      "quantity": 269,
+      "entry_price": 11140.0,
+      "current_price": 11150.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": 0.09551098376312517,
+      "current_return_pct": 0.08976660682227244,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:54:54"
+      "created_at": "2026-04-24T09:53:20"
     },
     {
       "id": "452190-20260424095435",
@@ -55,18 +55,18 @@
       "created_at": "2026-04-24T09:54:35"
     },
     {
-      "id": "094840-20260424095320",
-      "symbol": "094840",
-      "name": "슈프리마에이치큐",
+      "id": "093640-20260424095454",
+      "symbol": "093640",
+      "name": "케이알엠",
       "market": "KOSDAQ",
-      "quantity": 269,
-      "entry_price": 11140.0,
-      "current_price": 11110.0,
+      "quantity": 2,
+      "entry_price": 5235.0,
+      "current_price": 5210.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.269299820466784,
+      "current_return_pct": -0.47755491881565915,
       "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:53:20"
+      "created_at": "2026-04-24T09:54:54"
     },
     {
       "id": "033790-20260424095334",
@@ -75,10 +75,10 @@
       "market": "KOSDAQ",
       "quantity": 122,
       "entry_price": 12500.0,
-      "current_price": 12420.0,
+      "current_price": 12390.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.6399999999999961,
+      "current_return_pct": -0.880000000000003,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:34"
     }
