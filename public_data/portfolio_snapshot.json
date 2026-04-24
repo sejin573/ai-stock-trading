@@ -1,17 +1,45 @@
 {
-  "created_at": "2026-04-24T09:53:13+09:00",
+  "created_at": "2026-04-24T09:53:41+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
-    "holding_count": 1,
-    "holding_quantity": 508,
-    "total_buy_amount": 2997200.0,
-    "total_eval_amount": 2987040.0,
-    "unrealized_pnl": -10160.0,
+    "holding_count": 3,
+    "holding_quantity": 899,
+    "total_buy_amount": 7518860.0,
+    "total_eval_amount": 7522770.0,
+    "unrealized_pnl": 3910.0,
     "realized_pnl": -727955.0,
-    "total_profit": -738115.0,
-    "cumulative_return_pct": -24.62681836380622
+    "total_profit": -724045.0,
+    "cumulative_return_pct": -9.629717802964812
   },
   "positions": [
+    {
+      "id": "094840-20260424095320",
+      "symbol": "094840",
+      "name": "슈프리마에이치큐",
+      "market": "KOSDAQ",
+      "quantity": 269,
+      "entry_price": 11140.0,
+      "current_price": 11150.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.08976660682227244,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:53:20"
+    },
+    {
+      "id": "033790-20260424095334",
+      "symbol": "033790",
+      "name": "피노",
+      "market": "KOSDAQ",
+      "quantity": 122,
+      "entry_price": 12500.0,
+      "current_price": 12510.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": 0.07999999999999119,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:53:34"
+    },
     {
       "id": "187790-20260424095312",
       "symbol": "187790",
@@ -19,15 +47,37 @@
       "market": "KOSDAQ",
       "quantity": 508,
       "entry_price": 5900.0,
-      "current_price": 5880.0,
+      "current_price": 5900.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.3389830508474523,
+      "current_return_pct": 0.0,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:12"
     }
   ],
   "trade_history": [
+    {
+      "ordered_at": "2026-04-24T09:53:34",
+      "side": "buy",
+      "symbol": "033790",
+      "name": "피노",
+      "quantity": 122,
+      "price": 12500.0,
+      "status": "holding",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
+    {
+      "ordered_at": "2026-04-24T09:53:20",
+      "side": "buy",
+      "symbol": "094840",
+      "name": "슈프리마에이치큐",
+      "quantity": 269,
+      "price": 11140.0,
+      "status": "holding",
+      "realized_pnl": 0.0,
+      "realized_pnl_pct": 0.0
+    },
     {
       "ordered_at": "2026-04-24T09:53:12",
       "side": "buy",
