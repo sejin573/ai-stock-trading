@@ -1,45 +1,17 @@
 {
-  "created_at": "2026-04-24T11:40:18+09:00",
+  "created_at": "2026-04-24T11:40:40+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 5,
     "holding_quantity": 1062,
     "total_buy_amount": 8673400.0,
-    "total_eval_amount": 8661970.0,
-    "unrealized_pnl": -11430.0,
+    "total_eval_amount": 8644910.0,
+    "unrealized_pnl": -28490.0,
     "realized_pnl": -627285.0,
-    "total_profit": -638715.0,
-    "cumulative_return_pct": -7.3640671478313005
+    "total_profit": -655775.0,
+    "cumulative_return_pct": -7.560760486083888
   },
   "positions": [
-    {
-      "id": "177900-20260424095852",
-      "symbol": "177900",
-      "name": "쓰리에이로직스",
-      "market": "KOSDAQ",
-      "quantity": 370,
-      "entry_price": 7160.0,
-      "current_price": 7160.0,
-      "expected_return_pct": 6.88,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T09:58:52"
-    },
-    {
-      "id": "127980-20260424113800",
-      "symbol": "127980",
-      "name": "화인써키트",
-      "market": "KOSDAQ",
-      "quantity": 491,
-      "entry_price": 6100.0,
-      "current_price": 6100.0,
-      "expected_return_pct": 8.0,
-      "target_profit_pct": 2.2,
-      "current_return_pct": 0.0,
-      "auto_sell_enabled": true,
-      "created_at": "2026-04-24T11:38:00"
-    },
     {
       "id": "393890-20260424100753",
       "symbol": "393890",
@@ -47,12 +19,26 @@
       "market": "KOSDAQ",
       "quantity": 76,
       "entry_price": 18500.0,
-      "current_price": 18480.0,
+      "current_price": 18500.0,
       "expected_return_pct": 8.0,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.108108108108107,
+      "current_return_pct": 0.0,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T10:07:53"
+    },
+    {
+      "id": "177900-20260424095852",
+      "symbol": "177900",
+      "name": "쓰리에이로직스",
+      "market": "KOSDAQ",
+      "quantity": 370,
+      "entry_price": 7160.0,
+      "current_price": 7150.0,
+      "expected_return_pct": 6.88,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.13966480446927498,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T09:58:52"
     },
     {
       "id": "078350-20260424095356",
@@ -61,12 +47,26 @@
       "market": "KOSDAQ",
       "quantity": 3,
       "entry_price": 32700.0,
-      "current_price": 32650.0,
+      "current_price": 32600.0,
       "expected_return_pct": 7.63,
       "target_profit_pct": 2.2,
-      "current_return_pct": -0.1529051987767538,
+      "current_return_pct": -0.3058103975535187,
       "auto_sell_enabled": true,
       "created_at": "2026-04-24T09:53:56"
+    },
+    {
+      "id": "127980-20260424113800",
+      "symbol": "127980",
+      "name": "화인써키트",
+      "market": "KOSDAQ",
+      "quantity": 491,
+      "entry_price": 6100.0,
+      "current_price": 6070.0,
+      "expected_return_pct": 8.0,
+      "target_profit_pct": 2.2,
+      "current_return_pct": -0.4918032786885296,
+      "auto_sell_enabled": true,
+      "created_at": "2026-04-24T11:38:00"
     },
     {
       "id": "033790-20260424095334",
