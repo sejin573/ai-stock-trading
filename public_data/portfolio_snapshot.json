@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-04-25T09:00:11+09:00",
+  "created_at": "2026-04-25T09:01:24+09:00",
   "description": "로컬 자동 운용에서 생성한 공개 포트폴리오 스냅샷",
   "summary": {
     "holding_count": 4,
@@ -2811,7 +2811,7 @@
       "recent_volatility_pct": 10.32,
       "volatility_balance_bonus": -3.17,
       "base_score": 131.74,
-      "impact_score": 54,
+      "impact_score": 53,
       "expected_return_pct": 8.0,
       "up_probability_pct": 99.99,
       "pattern_score": 4.4,
@@ -2823,17 +2823,17 @@
         "단기 과열",
         "거래량 증가"
       ],
-      "average_sentiment": 0.188,
+      "average_sentiment": 0.16,
       "article_count": 20,
       "top_tags": [
         "general",
-        "product_launch",
-        "earnings"
+        "earnings",
+        "product_launch"
       ],
       "direction": "상승 예상",
-      "learning_signal": -0.0185,
-      "learning_adjustment": -0.22,
-      "final_score": 103.48
+      "learning_signal": -0.0195,
+      "learning_adjustment": -0.23,
+      "final_score": 102.88
     },
     {
       "symbol": "232140",
