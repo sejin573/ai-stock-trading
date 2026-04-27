@@ -927,6 +927,86 @@ def render_public_realized_chart(trade_history_df: pd.DataFrame) -> None:
     st.plotly_chart(fig, use_container_width=True)
 
 
+def render_public_trade_history(trade_history_df: pd.DataFrame) -> None:
+    if trade_history_df.empty:
+        st.info("\uc544\uc9c1 \uacf5\uac1c\ud560 \ub9e4\ub9e4 \uc774\ub825\uc774 \uc5c6\uc2b5\ub2c8\ub2e4.")
+        return
+
+    display_df = trade_history_df.copy()
+    display_df["ordered_at"] = pd.to_datetime(display_df["ordered_at"], errors="coerce")
+    display_df = display_df.sort_values("ordered_at", ascending=False).reset_index(drop=True)
+    display_df["ordered_at"] = display_df["ordered_at"].dt.strftime("%Y-%m-%d %H:%M:%S")
+    display_df["side"] = display_df["side"].map({"buy": "\ub9e4\uc218", "sell": "\ub9e4\ub3c4"}).fillna(display_df["side"])
+
+    def _signed_currency(row: pd.Series) -> str:
+        value = safe_float(row.get("realized_pnl"), 0.0)
+        side = str(row.get("side", ""))
+        if side != "\ub9e4\ub3c4":
+            return "-"
+        return f"{value:+,.0f}\uc6d0"
+
+    def _signed_percent(row: pd.Series) -> str:
+        value = safe_float(row.get("realized_pnl_pct"), 0.0)
+        side = str(row.get("side", ""))
+        if side != "\ub9e4\ub3c4":
+            return "-"
+        return f"{value:+.2f}%"
+
+    display_df["\uc2e4\ud604\uc190\uc775"] = display_df.apply(_signed_currency, axis=1)
+    display_df["\uc2e4\ud604\uc190\uc775\ub960(%)"] = display_df.apply(_signed_percent, axis=1)
+
+    output_df = display_df.rename(
+        columns={
+            "ordered_at": "\uccb4\uacb0 \uc2dc\uac01",
+            "side": "\uad6c\ubd84",
+            "symbol": "\uc885\ubaa9\ucf54\ub4dc",
+            "name": "\uc885\ubaa9\uba85",
+            "quantity": "\uc218\ub7c9",
+            "price": "\uccb4\uacb0\uac00",
+            "status": "\uc0c1\ud0dc",
+        }
+    )[
+        [
+            "\uccb4\uacb0 \uc2dc\uac01",
+            "\uad6c\ubd84",
+            "\uc885\ubaa9\ucf54\ub4dc",
+            "\uc885\ubaa9\uba85",
+            "\uc218\ub7c9",
+            "\uccb4\uacb0\uac00",
+            "\uc0c1\ud0dc",
+            "\uc2e4\ud604\uc190\uc775",
+            "\uc2e4\ud604\uc190\uc775\ub960(%)",
+        ]
+    ].copy()
+
+    def _text_style(value: object) -> str:
+        text = str(value).strip()
+        if text.startswith("+"):
+            return "color: #2563eb; font-weight: 700;"
+        if text.startswith("-") and text != "-":
+            return "color: #dc2626; font-weight: 700;"
+        return ""
+
+    styler = output_df.style
+    if hasattr(styler, "map"):
+        styler = styler.map(_text_style, subset=["\uc2e4\ud604\uc190\uc775", "\uc2e4\ud604\uc190\uc775\ub960(%)"])
+    else:
+        styler = styler.applymap(_text_style, subset=["\uc2e4\ud604\uc190\uc775", "\uc2e4\ud604\uc190\uc775\ub960(%)"])
+
+    st.caption(
+        "\ub9e4\ub3c4 \uac70\ub798\ub294 \uc2e4\ud604\uc190\uc775\uc744 `+ / -` \ubd80\ud638\ub85c \ud45c\uc2dc\ud558\uace0, \ub9e4\uc218 \uac70\ub798\ub294 \uc2e4\ud604\uc190\uc775\uac00 \uc5c6\uc5b4 `-` \ub85c \ud45c\uc2dc\ud569\ub2c8\ub2e4."
+    )
+    st.dataframe(
+        styler,
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "\uc218\ub7c9": st.column_config.NumberColumn("\uc218\ub7c9", format="%d"),
+            "\uccb4\uacb0\uac00": st.column_config.NumberColumn("\uccb4\uacb0\uac00", format="\u20a9%.0f"),
+        },
+    )
+
+
 @st.fragment(run_every=f"{get_public_cycle_config()['refresh_seconds']}s")
 def render_public_portfolio_fragment() -> None:
     settings = get_settings()
@@ -1138,6 +1218,104 @@ def render_public_portfolio_fragment() -> None:
         render_public_trade_history(trade_history_df)
     with candidates_tab:
         render_public_candidates(snapshot_payload)
+
+
+def render_public_positions(active_positions_df: pd.DataFrame) -> tuple[str, str]:
+    if active_positions_df.empty:
+        st.info("\ud604\uc7ac \uacf5\uac1c \ud3ec\ud2b8\ud3f4\ub9ac\uc624\uc5d0 \ubcf4\uc720 \uc911\uc778 \uc885\ubaa9\uc774 \uc5c6\uc2b5\ub2c8\ub2e4.")
+        return "", ""
+
+    display_df = active_positions_df.copy()
+    display_df["total_buy_amount"] = pd.to_numeric(display_df["quantity"], errors="coerce").fillna(0.0) * pd.to_numeric(
+        display_df["entry_price"], errors="coerce"
+    ).fillna(0.0)
+    display_df["eval_amount"] = pd.to_numeric(display_df["quantity"], errors="coerce").fillna(0.0) * pd.to_numeric(
+        display_df["current_price"], errors="coerce"
+    ).fillna(0.0)
+    display_df["pnl_amount"] = display_df["eval_amount"] - display_df["total_buy_amount"]
+    display_df = display_df.sort_values(["eval_amount", "current_return_pct"], ascending=[False, False]).reset_index(drop=True)
+
+    preview_df = pd.DataFrame(
+        {
+            "\uc885\ubaa9\uba85": display_df.get("name", "").astype(str),
+            "\uc885\ubaa9\ucf54\ub4dc": display_df.get("symbol", "").astype(str),
+            "\uc2dc\uc7a5": display_df.get("market", "").astype(str),
+            "\ubcf4\uc720\uc218\ub7c9": display_df.get("quantity", 0),
+            "\ud604\uc7ac\uac00": display_df.get("current_price", 0.0),
+            "\ud3c9\uac00\uc190\uc775": display_df.get("pnl_amount", 0.0),
+            "\ud604\uc7ac \uc218\uc775\ub960(%)": display_df.get("current_return_pct", 0.0),
+            "\uc608\uc0c1 \uc0c1\uc2b9\ub960(%)": display_df.get("expected_return_pct", 0.0),
+        }
+    )
+
+    def _profit_style(value: object) -> str:
+        number = safe_float(value)
+        if number > 0:
+            return "color: #2563eb; font-weight: 700;"
+        if number < 0:
+            return "color: #dc2626; font-weight: 700;"
+        return "color: #475569;"
+
+    styled_preview_df = preview_df.style.format(
+        {
+            "\ubcf4\uc720\uc218\ub7c9": "{:,.0f}",
+            "\ud604\uc7ac\uac00": "\u20a9{:,.0f}",
+            "\ud3c9\uac00\uc190\uc775": "\u20a9{:,.0f}",
+            "\ud604\uc7ac \uc218\uc775\ub960(%)": "{:,.2f}",
+            "\uc608\uc0c1 \uc0c1\uc2b9\ub960(%)": "{:,.2f}",
+        }
+    )
+    if hasattr(styled_preview_df, "map"):
+        styled_preview_df = styled_preview_df.map(
+            _profit_style,
+            subset=["\ud3c9\uac00\uc190\uc775", "\ud604\uc7ac \uc218\uc775\ub960(%)", "\uc608\uc0c1 \uc0c1\uc2b9\ub960(%)"],
+        )
+    else:
+        styled_preview_df = styled_preview_df.applymap(
+            _profit_style,
+            subset=["\ud3c9\uac00\uc190\uc775", "\ud604\uc7ac \uc218\uc775\ub960(%)", "\uc608\uc0c1 \uc0c1\uc2b9\ub960(%)"],
+        )
+
+    st.dataframe(
+        styled_preview_df,
+        use_container_width=True,
+        hide_index=True,
+        key="public_positions_preview_override",
+    )
+    st.caption("\ud45c\uc5d0\uc11c \ubcf4\uc720 \uc885\ubaa9 \ud55c \uc904\uc744 \uc120\ud0dd\ud558\uba74 \uc544\ub798\uc5d0 \ud574\ub2f9 \uc885\ubaa9\uc758 \uc8fc\uac00 \uadf8\ub798\ud504\uac00 \ud45c\uc2dc\ub429\ub2c8\ub2e4.")
+
+    selected_symbol = ""
+    selected_name = ""
+    selection_event = st.dataframe(
+        preview_df,
+        use_container_width=True,
+        hide_index=True,
+        on_select="rerun",
+        selection_mode="single-row",
+        key="public_positions_selector_override",
+        column_config={
+            "\ubcf4\uc720\uc218\ub7c9": st.column_config.NumberColumn("\ubcf4\uc720\uc218\ub7c9", format="%d"),
+            "\ud604\uc7ac\uac00": st.column_config.NumberColumn("\ud604\uc7ac\uac00", format="\u20a9%.0f"),
+            "\ud3c9\uac00\uc190\uc775": st.column_config.NumberColumn("\ud3c9\uac00\uc190\uc775", format="\u20a9%.0f"),
+            "\ud604\uc7ac \uc218\uc775\ub960(%)": st.column_config.NumberColumn("\ud604\uc7ac \uc218\uc775\ub960(%)", format="%.2f"),
+            "\uc608\uc0c1 \uc0c1\uc2b9\ub960(%)": st.column_config.NumberColumn("\uc608\uc0c1 \uc0c1\uc2b9\ub960(%)", format="%.2f"),
+        },
+    )
+    selected_rows = []
+    if isinstance(selection_event, dict):
+        selected_rows = selection_event.get("selection", {}).get("rows", [])
+    else:
+        selected_rows = getattr(selection_event.selection, "rows", [])
+
+    if selected_rows:
+        selected_index = int(selected_rows[0])
+        selected_symbol = str(preview_df.iloc[selected_index]["\uc885\ubaa9\ucf54\ub4dc"])
+        selected_name = str(preview_df.iloc[selected_index]["\uc885\ubaa9\uba85"])
+    else:
+        selected_symbol = str(preview_df.iloc[0]["\uc885\ubaa9\ucf54\ub4dc"])
+        selected_name = str(preview_df.iloc[0]["\uc885\ubaa9\uba85"])
+
+    return selected_symbol, selected_name
 
 
 def main() -> None:
